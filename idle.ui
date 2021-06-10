@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Idle</class>
+ <widget class="QDialog" name="Idle">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1050</width>
+    <height>422</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QPushButton" name="btOpenDoor">
+   <property name="geometry">
+    <rect>
+     <x>550</x>
+     <y>210</y>
+     <width>291</width>
+     <height>111</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>打开舱门</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

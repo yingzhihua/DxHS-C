@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Login</class>
+ <widget class="QDialog" name="Login">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1920</width>
+    <height>900</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QLabel" name="lbName">
+   <property name="geometry">
+    <rect>
+     <x>590</x>
+     <y>180</y>
+     <width>67</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>用户名：</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="tName">
+   <property name="geometry">
+    <rect>
+     <x>710</x>
+     <y>170</y>
+     <width>501</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="placeholderText">
+    <string>输入用户名</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lbPassword">
+   <property name="geometry">
+    <rect>
+     <x>600</x>
+     <y>320</y>
+     <width>67</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>密码：</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="tPassword">
+   <property name="geometry">
+    <rect>
+     <x>710</x>
+     <y>310</y>
+     <width>501</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="echoMode">
+    <enum>QLineEdit::Password</enum>
+   </property>
+   <property name="placeholderText">
+    <string>输入密码</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btLogin">
+   <property name="geometry">
+    <rect>
+     <x>890</x>
+     <y>440</y>
+     <width>241</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>登录</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
