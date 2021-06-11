@@ -46,6 +46,9 @@ QString ExGlobal::ctrl_version = "V0.00";
 
 bool ExGlobal::bLogin = false;
 
+int ExGlobal::contentWidth = 1200;
+int ExGlobal::contentHeight = 900;
+
 int ExGlobal::V1WorkX = 9166;
 int ExGlobal::V2WorkX = 8178;
 int ExGlobal::V3WorkX = 5686;

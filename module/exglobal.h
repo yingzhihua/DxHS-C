@@ -218,6 +218,8 @@ public:
             const QObject *receiver = nullptr,
             const char *method = nullptr);
 
+    static int contentWidth;
+    static int contentHeight;
     static int V1WorkX;
     static int V2WorkX;
     static int V3WorkX;

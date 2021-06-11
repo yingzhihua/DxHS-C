@@ -23,7 +23,20 @@
     </rect>
    </property>
    <property name="text">
-    <string>Data Menu</string>
+    <string>Data Menu V</string>
+   </property>
+  </widget>
+  <widget class="QListView" name="listView">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>100</y>
+     <width>256</width>
+     <height>192</height>
+    </rect>
+   </property>
+   <property name="autoScrollMargin">
+    <number>60</number>
    </property>
   </widget>
  </widget>

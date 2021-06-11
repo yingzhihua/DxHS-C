@@ -23,6 +23,7 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    virtual void timerEvent(QTimerEvent *e);
 
 private:
     Ui::MainWindow *ui;

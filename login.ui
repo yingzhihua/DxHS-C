@@ -13,19 +13,9 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QLabel" name="lbName">
-   <property name="geometry">
-    <rect>
-     <x>590</x>
-     <y>180</y>
-     <width>67</width>
-     <height>17</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>用户名：</string>
-   </property>
-  </widget>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(245, 245, 245);</string>
+  </property>
   <widget class="QLineEdit" name="tName">
    <property name="geometry">
     <rect>
@@ -37,19 +27,6 @@
    </property>
    <property name="placeholderText">
     <string>输入用户名</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="lbPassword">
-   <property name="geometry">
-    <rect>
-     <x>600</x>
-     <y>320</y>
-     <width>67</width>
-     <height>17</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>密码：</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="tPassword">
@@ -71,16 +48,64 @@
   <widget class="QPushButton" name="btLogin">
    <property name="geometry">
     <rect>
-     <x>890</x>
-     <y>440</y>
-     <width>241</width>
-     <height>51</height>
+     <x>780</x>
+     <y>530</y>
+     <width>318</width>
+     <height>92</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>20</pointsize>
+    </font>
+   </property>
+   <property name="autoFillBackground">
+    <bool>true</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-image: url(:/images/loginbt.png);</string>
    </property>
    <property name="text">
     <string>登录</string>
    </property>
+   <property name="flat">
+    <bool>true</bool>
+   </property>
   </widget>
+  <widget class="QLabel" name="lbBG">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>150</y>
+     <width>67</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>BG</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lbLogo">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>190</y>
+     <width>67</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background: transparent;</string>
+   </property>
+   <property name="text">
+    <string>logo</string>
+   </property>
+  </widget>
+  <zorder>lbBG</zorder>
+  <zorder>tName</zorder>
+  <zorder>tPassword</zorder>
+  <zorder>btLogin</zorder>
+  <zorder>lbLogo</zorder>
  </widget>
  <resources/>
  <connections/>
