@@ -51,7 +51,28 @@ SOURCES += \
     login.cpp \
     idle.cpp \
     Setup/setupmenu.cpp \
-    Data/datamenu.cpp
+    Data/datamenu.cpp \
+    Setup/systemname.cpp \
+    Setup/backlight.cpp \
+    Setup/languageset.cpp \
+    Setup/adminpassword.cpp \
+    Setup/lockscreenset.cpp \
+    Setup/wifimenu.cpp \
+    Setup/network.cpp \
+    Setup/timeset.cpp \
+    Setup/user.cpp \
+    Setup/machinecalibration.cpp \
+    Setup/camerasetup.cpp \
+    Setup/testsetup.cpp \
+    Setup/testloop.cpp \
+    Setup/systemparam.cpp \
+    Setup/projectparam.cpp \
+    Setup/usbfile.cpp \
+    Setup/light.cpp \
+    Setup/pumpparam.cpp \
+    Setup/logview.cpp \
+    Setup/pidparam.cpp \
+    Setup/version2.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -83,7 +104,28 @@ HEADERS += \
     login.h \
     idle.h \
     Setup/setupmenu.h \
-    Data/datamenu.h
+    Data/datamenu.h \
+    Setup/systemname.h \
+    Setup/backlight.h \
+    Setup/languageset.h \
+    Setup/adminpassword.h \
+    Setup/lockscreenset.h \
+    Setup/wifimenu.h \
+    Setup/network.h \
+    Setup/timeset.h \
+    Setup/user.h \
+    Setup/machinecalibration.h \
+    Setup/camerasetup.h \
+    Setup/testsetup.h \
+    Setup/testloop.h \
+    Setup/systemparam.h \
+    Setup/projectparam.h \
+    Setup/usbfile.h \
+    Setup/light.h \
+    Setup/pumpparam.h \
+    Setup/logview.h \
+    Setup/pidparam.h \
+    Setup/version2.h
 
 FORMS += \
         mainwindow.ui \
@@ -91,7 +133,28 @@ FORMS += \
     login.ui \
     idle.ui \
     Setup/setupmenu.ui \
-    Data/datamenu.ui
+    Data/datamenu.ui \
+    Setup/systemname.ui \
+    Setup/backlight.ui \
+    Setup/languageset.ui \
+    Setup/adminpassword.ui \
+    Setup/lockscreenset.ui \
+    Setup/wifimenu.ui \
+    Setup/network.ui \
+    Setup/timeset.ui \
+    Setup/user.ui \
+    Setup/machinecalibration.ui \
+    Setup/camerasetup.ui \
+    Setup/testsetup.ui \
+    Setup/testloop.ui \
+    Setup/systemparam.ui \
+    Setup/projectparam.ui \
+    Setup/usbfile.ui \
+    Setup/light.ui \
+    Setup/pumpparam.ui \
+    Setup/logview.ui \
+    Setup/pidparam.ui \
+    Setup/version2.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

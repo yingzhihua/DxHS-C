@@ -6,6 +6,28 @@
 #include "login.h"
 #include "idle.h"
 #include "Setup/setupmenu.h"
+#include "Setup/systemname.h"
+#include "Setup/backlight.h"
+#include "Setup/languageset.h"
+#include "Setup/adminpassword.h"
+#include "Setup/lockscreenset.h"
+#include "Setup/wifimenu.h"
+#include "Setup/network.h"
+#include "Setup/timeset.h"
+#include "Setup/user.h"
+#include "Setup/machinecalibration.h"
+#include "Setup/camerasetup.h"
+#include "Setup/testsetup.h"
+#include "Setup/testloop.h"
+#include "Setup/systemparam.h"
+#include "Setup/projectparam.h"
+#include "Setup/usbfile.h"
+#include "Setup/light.h"
+#include "Setup/pumpparam.h"
+#include "Setup/logview.h"
+#include "Setup/pidparam.h"
+#include "Setup/version2.h"
+
 #include "Data/datamenu.h"
 
 #include "module/exglobal.h"
@@ -32,10 +54,32 @@ private:
     Login *main_login;
     Idle *main_idle;
     SetupMenu *setup_menu;
+    SystemName *systemname;
+
     DataMenu *data_menu;
 
     ExGlobal *global;
     Sequence *sequence;
+    BackLight *backlight;
+    LanguageSet *languageset;
+    AdminPassword *adminpassword;
+    LockScreenSet *lockscreenset;
+    WifiMenu *wifimenu;
+    NetWork *network;
+    TimeSet *timeset;
+    User  *user;
+    MachineCalibration *machinecalibration;
+    CameraSetup *camerasetup;
+    TestSetup *testsetup;
+    TestLoop *testloop;
+    SystemParam *systemparam;
+    ProjectParam *projectparam;
+    UsbFile *usbfile;
+    Light  *light;
+    PumpParam *pumpparam;
+    LogView *logview;
+    PIDParam *pidparam;
+    Version2 *version2;
 
 public slots:
     void GoPage(UIHandler::PageId id);
