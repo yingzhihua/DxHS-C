@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1034</width>
+    <width>1548</width>
     <height>807</height>
    </rect>
   </property>
@@ -16,15 +16,15 @@
   <widget class="QLabel" name="label_backlight">
    <property name="geometry">
     <rect>
-     <x>330</x>
-     <y>260</y>
+     <x>440</x>
+     <y>430</y>
      <width>251</width>
      <height>61</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <pointsize>40</pointsize>
+     <pointsize>30</pointsize>
     </font>
    </property>
    <property name="text">
@@ -34,16 +34,25 @@
   <widget class="QSlider" name="horizontalSlider">
    <property name="geometry">
     <rect>
-     <x>590</x>
-     <y>250</y>
+     <x>710</x>
+     <y>430</y>
      <width>741</width>
      <height>71</height>
     </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>741</width>
+     <height>71</height>
+    </size>
    </property>
    <property name="font">
     <font>
      <pointsize>36</pointsize>
     </font>
+   </property>
+   <property name="locale">
+    <locale language="Chinese" country="China"/>
    </property>
    <property name="singleStep">
     <number>5</number>

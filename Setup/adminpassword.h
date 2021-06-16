@@ -15,6 +15,11 @@ public:
     explicit AdminPassword(QWidget *parent = nullptr);
     ~AdminPassword();
 
+private slots:
+    void on_pushButton_OK_clicked();
+
+    void on_pushButton_Cencel_clicked();
+
 private:
     Ui::AdminPassword *ui;
 };

@@ -15,6 +15,13 @@ public:
     explicit LockScreenSet(QWidget *parent = nullptr);
     ~LockScreenSet();
 
+private slots:
+    void on_pushButton_clicked();
+
+    void on_comboBox_currentIndexChanged(int index);
+
+    void on_pushButton_2_clicked();
+
 private:
     Ui::LockScreenSet *ui;
 };

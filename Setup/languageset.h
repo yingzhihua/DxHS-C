@@ -15,6 +15,11 @@ public:
     explicit LanguageSet(QWidget *parent = nullptr);
     ~LanguageSet();
 
+private slots:
+    void on_radioButton_clicked();
+
+    void on_radioButton_2_clicked();
+
 private:
     Ui::LanguageSet *ui;
 };
