@@ -632,6 +632,13 @@ QString ExGlobal::diskSpac(){
 
 void ExGlobal::exInit()
 {
+    ExGlobal::pTestModel = new TestModel();
+    ExGlobal::pLogModel = new LogModel();
+    ExGlobal::pTestResultModel = new TestResultModel();
+    ExGlobal::pUserModel = new UserModel();
+    ExGlobal::pWifiModel = new WifiModel();
+    ExGlobal::pUsbModel = new UsbModel();
+
     CaliParamInit();
     SerialMgr::SerialInit();    
     DataHandler::setAssayItem(AssayItem);    
@@ -667,8 +674,8 @@ void ExGlobal::CaliParamInit()
         ItemName[query.value(1).toString()] = query.value(4).toString();
     }
 
-    //pUserModel->LoadUser();
-    //pWifiModel->LoadData();
+    pUserModel->LoadUser();
+    pWifiModel->LoadData();
     updateLockTime();
 
     Log::Logdb(LOGTYPE_POWERON);

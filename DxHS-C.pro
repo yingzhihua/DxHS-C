@@ -51,7 +51,14 @@ SOURCES += \
     login.cpp \
     idle.cpp \
     Setup/setupmenu.cpp \
-    Data/datamenu.cpp
+    Data/datamenu.cpp \
+    module/dao/wifimodel.cpp \
+    module/dao/logmodel.cpp \
+    module/dao/testmodel.cpp \
+    module/dao/testresultmodel.cpp \
+    module/dao/usbmodel.cpp \
+    module/dao/usermgr.cpp \
+    module/dao/usermodel.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -83,7 +90,14 @@ HEADERS += \
     login.h \
     idle.h \
     Setup/setupmenu.h \
-    Data/datamenu.h
+    Data/datamenu.h \
+    module/dao/wifimodel.h \
+    module/dao/logmodel.h \
+    module/dao/testmodel.h \
+    module/dao/testresultmodel.h \
+    module/dao/usbmodel.h \
+    module/dao/usermgr.h \
+    module/dao/usermodel.h
 
 FORMS += \
         mainwindow.ui \

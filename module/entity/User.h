@@ -1,6 +1,5 @@
 #ifndef User_h
 #define User_h
-#include <QQmlEngine>
 
 class User
 {

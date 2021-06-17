@@ -24,14 +24,4 @@ signals:
 public slots:
 };
 
-
-static UserMgr * usermgrinstance = nullptr;
-
-static QObject *usermgr_provider(QQmlEngine *engine, QJSEngine *scriptEngine)
-{
-    Q_UNUSED(engine);
-    Q_UNUSED(scriptEngine);
-    return usermgrinstance;
-}
-
 #endif // USERMRG_H
