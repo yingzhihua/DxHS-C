@@ -101,6 +101,8 @@ void MainWindow::UISetup()
 {
     const static int HEADER_HEIGHT = 150;
     const static int FOOTER_HEIGHT = 150;
+    const static int BOTTOMBUTTON_HEIGHT = 123;
+    const static int BOTTOM_BUTTON_WIDTH = 338;
     int screenwidth = QGuiApplication::screens().at(0)->geometry().width();
     int screenheight = QGuiApplication::screens().at(0)->geometry().height();
     qDebug()<<"width="<<screenwidth<<"height="<<screenheight;
@@ -109,9 +111,12 @@ void MainWindow::UISetup()
 
     ui->lbHeaderBottom->setGeometry(0,0,screenwidth,HEADER_HEIGHT);
     ui->lbHeaderTop->setGeometry(0,0,screenwidth,HEADER_HEIGHT);
-    ui->btSetup->setGeometry(0,screenheight-FOOTER_HEIGHT,screenwidth/3,FOOTER_HEIGHT);
-    ui->btHome->setGeometry(ui->btSetup->geometry().x()+ui->btSetup->geometry().width(),screenheight-FOOTER_HEIGHT,screenwidth/3,FOOTER_HEIGHT);
-    ui->btData->setGeometry(ui->btHome->geometry().x()+ui->btHome->geometry().width(),screenheight-FOOTER_HEIGHT,screenwidth/3,FOOTER_HEIGHT);
+    //ui->btSetup->setGeometry(0,screenheight-FOOTER_HEIGHT,screenwidth/3,FOOTER_HEIGHT);
+    //ui->btHome->setGeometry(ui->btSetup->geometry().x()+ui->btSetup->geometry().width(),screenheight-FOOTER_HEIGHT,screenwidth/3,FOOTER_HEIGHT);
+    //ui->btData->setGeometry(ui->btHome->geometry().x()+ui->btHome->geometry().width(),screenheight-FOOTER_HEIGHT,screenwidth/3,FOOTER_HEIGHT);
+    ui->btSetup->setGeometry((screenwidth/3-BOTTOM_BUTTON_WIDTH)/2,screenheight-(FOOTER_HEIGHT+BOTTOMBUTTON_HEIGHT)/2,BOTTOM_BUTTON_WIDTH,BOTTOMBUTTON_HEIGHT);
+    ui->btHome->setGeometry(ui->btSetup->geometry().x()+screenwidth/3,ui->btSetup->geometry().y(),BOTTOM_BUTTON_WIDTH,BOTTOMBUTTON_HEIGHT);
+    ui->btData->setGeometry(ui->btHome->geometry().x()+screenwidth/3,ui->btHome->geometry().y(),BOTTOM_BUTTON_WIDTH,BOTTOMBUTTON_HEIGHT);;
     ui->stackedWidget->setGeometry(0,HEADER_HEIGHT,screenwidth,screenheight-HEADER_HEIGHT-FOOTER_HEIGHT);
     ui->lbDate->setGeometry(1540,HEADER_HEIGHT+30,300,60);
     ui->lbUser->setGeometry(100,HEADER_HEIGHT+30,300,60);

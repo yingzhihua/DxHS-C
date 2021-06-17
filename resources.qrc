@@ -92,5 +92,6 @@
         <file>images/wifibg.png</file>
         <file>images/wifiselect.png</file>
         <file>images/xiala.png</file>
+        <file>DxUI.qss</file>
     </qresource>
 </RCC>

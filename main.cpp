@@ -9,6 +9,14 @@ int main(int argc, char *argv[])
         ExGlobal::setDebug(true);
 
     QApplication a(argc, argv);
+
+    QFile file(":/DxUI.qss");
+    if (file.open(QFile::ReadOnly)){
+        QString qss = file.readAll();
+        a.setStyleSheet(qss);
+        file.close();
+    }
+
     MainWindow w;
     w.show();
 
