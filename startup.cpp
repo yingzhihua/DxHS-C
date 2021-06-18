@@ -4,7 +4,6 @@
 #include "module/exglobal.h"
 #include "module/uihandler.h"
 
-static Sequence *sequence = nullptr;
 Startup::Startup(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Startup)
@@ -16,11 +15,10 @@ Startup::Startup(QWidget *parent) :
     ui->Home_Startup_btOpenDoor->setGeometry((1920-500)/2,(900-400)/2,500,400);
     ui->Home_Startup_btOpenDoor->setStyleSheet("QPushButton {font-size:45px;background: url(:/images/opendoor.png) no-repeat transparent top center; padding-top: 300}");
 
-    sequence = Sequence::getPtr();
-    connect(sequence,&Sequence::sequenceFinish,this,&Startup::sequenceFinish);
+    connect(Sequence::getPtr(),&Sequence::sequenceFinish,this,&Startup::sequenceFinish);
 
-    sequence->sequenceInit();
-    sequence->actionDo("Query",3,0,0,0);
+    Sequence::getPtr()->sequenceInit();
+    Sequence::getPtr()->actionDo("Query",3,0,0,0);
 }
 
 Startup::~Startup()
