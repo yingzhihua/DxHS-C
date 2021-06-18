@@ -11,8 +11,11 @@ Startup::Startup(QWidget *parent) :
 {
     ui->setupUi(this);
     QImage image(QString(":/images/startup_logo.png"));
-    ui->label->setGeometry((1920-image.width())/2,(900-image.height())/2,image.width(),image.height());
-    ui->label->setPixmap(QPixmap::fromImage(image));
+    ui->Home_Startup_lbLogo->setGeometry((1920-image.width())/2,(900-image.height())/2,image.width(),image.height());
+    ui->Home_Startup_lbLogo->setPixmap(QPixmap::fromImage(image));
+    ui->Home_Startup_btOpenDoor->setGeometry((1920-500)/2,(900-400)/2,500,400);
+    ui->Home_Startup_btOpenDoor->setStyleSheet("QPushButton {font-size:45px;background: url(:/images/opendoor.png) no-repeat transparent top center; padding-top: 300}");
+
     sequence = Sequence::getPtr();
     connect(sequence,&Sequence::sequenceFinish,this,&Startup::sequenceFinish);
 
@@ -31,52 +34,68 @@ void Startup::sequenceFinish(Sequence::SequenceResult result)
     qDebug()<<"startup,sequenceFinish,result="<<result;
 
     if (result == Sequence::SequenceResult::Result_SelfCheck_ok)
-    {
-        //changeTimer.stop();
-        //pagequit = true;
-        //mainView.pop();
-        //mainView.push("qrc:/HomeUI/Login.qml",StackView.Immediate);
+    {        
         UIHandler::GoPage(UIHandler::PageId::Page_Main_Login);
     }
     else if (result == Sequence::SequenceResult::Result_OpenBox_ok)
     {
-        //openDoor.playing = false
-        //openDoor.enabled = true
+        UIHandler::GoPage(UIHandler::PageId::Msg_Loading_Close);
     }
     else if(result == Sequence::SequenceResult::Result_CloseBox_ok)
     {
-        //openDoor.playing = false
-        //openDoor.enabled = true
-
+        UIHandler::GoPage(UIHandler::PageId::Msg_Loading_Close);
         Sequence::getPtr()->actionDo("Query",3,0,0,0);
     }
     else if (result == Sequence::SequenceResult::Result_Simple_ok){
         if (Sequence::getPtr()->readBoxState()){
             //Sequence.setTitle("startup_error")
-            //boxTips.text = qsTr("请取出试剂盒 然后关闭舱门")
+            ui->Home_Startup_btOpenDoor->setText(tr("请取出试剂盒 然后关闭舱门"));
         }
         else if (Sequence::getPtr()->doorError())
         {
             //Sequence.setTitle("startup_error")
+            ui->Home_Startup_btOpenDoor->setText(tr("请恢复舱门"));
             //boxTips.text = qsTr("请恢复舱门")
         }
         else if (Sequence::getPtr()->readDoorState()){
             //Sequence.setTitle("startup_error")
+            ui->Home_Startup_btOpenDoor->setText(tr("请关闭舱门"));
             //boxTips.text = qsTr("请关闭舱门")
         }
 
-        if (Sequence::getPtr()->doorError() || (ExGlobal::projectMode() != 0 && (Sequence::getPtr()->readBoxState() || Sequence::getPtr()->readDoorState()))){
-            //appicon.visible = false;
-            //openDoor.visible = true;
-            //boxTips.visible = true;
+        if (Sequence::getPtr()->doorError() || (ExGlobal::projectMode() != 0 && (Sequence::getPtr()->readBoxState() || Sequence::getPtr()->readDoorState()))){            
+            ui->Home_Startup_lbLogo->setVisible(false);
+            ui->Home_Startup_btOpenDoor->setVisible(true);
         }
-        else {
-            //appicon.visible = true;
-            //openDoor.visible = false;
-            //boxTips.visible = false;
-            //Sequence.setTitle("startup")
-            Sequence::getPtr()->sequenceDo(Sequence::SequenceId::Sequence_SelfCheck);
-            //changeTimer.start();
+        else {            
+            ui->Home_Startup_lbLogo->setVisible(true);
+            ui->Home_Startup_btOpenDoor->setVisible(false);
+            Sequence::getPtr()->sequenceDo(Sequence::SequenceId::Sequence_SelfCheck);            
+        }
+    }
+}
+
+void Startup::on_Home_Startup_btOpenDoor_clicked()
+{
+    if (Sequence::getPtr()->doorError())
+    {
+        if (Sequence::getPtr()->sequenceDo(Sequence::SequenceId::Sequence_ErrOpenBox))
+        {
+            UIHandler::GoPage(UIHandler::PageId::Msg_Loading_Open);
+        }
+    }
+    else if (Sequence::getPtr()->readDoorState() == false)
+    {
+        if (Sequence::getPtr()->sequenceDo(Sequence::SequenceId::Sequence_OpenBox))
+        {
+            UIHandler::GoPage(UIHandler::PageId::Msg_Loading_Open);
+        }
+    }
+    else
+    {
+        if (Sequence::getPtr()->sequenceDo(Sequence::SequenceId::Sequence_CloseBox))
+        {
+            UIHandler::GoPage(UIHandler::PageId::Msg_Loading_Open);
         }
     }
 }

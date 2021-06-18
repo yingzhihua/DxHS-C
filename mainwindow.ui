@@ -32,14 +32,20 @@
     <property name="focusPolicy">
      <enum>Qt::NoFocus</enum>
     </property>
+    <property name="statusTip">
+     <string/>
+    </property>
     <property name="autoFillBackground">
      <bool>false</bool>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-image: url(:/images/setuprelease.png);</string>
+     <string notr="true"/>
     </property>
     <property name="text">
      <string>设置</string>
+    </property>
+    <property name="default">
+     <bool>false</bool>
     </property>
     <property name="flat">
      <bool>true</bool>
@@ -56,14 +62,14 @@
     </property>
     <property name="font">
      <font>
-      <pointsize>20</pointsize>
+      <pointsize>11</pointsize>
      </font>
     </property>
     <property name="focusPolicy">
      <enum>Qt::NoFocus</enum>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-image: url(:/images/homerelease.png);</string>
+     <string notr="true"/>
     </property>
     <property name="text">
      <string>主页</string>
@@ -85,10 +91,10 @@
      <enum>Qt::NoFocus</enum>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-image: url(:/images/datarelease.png);</string>
+     <string notr="true"/>
     </property>
     <property name="text">
-     <string>历史数据</string>
+     <string>数据</string>
     </property>
     <property name="flat">
      <bool>true</bool>
@@ -103,8 +109,6 @@
       <height>151</height>
      </rect>
     </property>
-    <widget class="QWidget" name="page"/>
-    <widget class="QWidget" name="page_2"/>
    </widget>
    <widget class="QLabel" name="lbHeaderBottom">
     <property name="geometry">
@@ -242,6 +246,51 @@ color: rgb(243, 243, 243);</string>
      <string/>
     </property>
    </widget>
+   <widget class="QLabel" name="lbfooterbg">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>650</y>
+      <width>121</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(49, 49, 49);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbLoading">
+    <property name="geometry">
+     <rect>
+      <x>1050</x>
+      <y>510</y>
+      <width>301</width>
+      <height>261</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background: transparent;</string>
+    </property>
+    <property name="text">
+     <string>Loading</string>
+    </property>
+   </widget>
+   <zorder>lbfooterbg</zorder>
+   <zorder>btSetup</zorder>
+   <zorder>btHome</zorder>
+   <zorder>btData</zorder>
+   <zorder>stackedWidget</zorder>
+   <zorder>lbHeaderBottom</zorder>
+   <zorder>lbHeaderTop</zorder>
+   <zorder>lbDate</zorder>
+   <zorder>lbUser</zorder>
+   <zorder>lbTitleIcon</zorder>
+   <zorder>lbTitle</zorder>
+   <zorder>lbMachineName</zorder>
+   <zorder>lbLoading</zorder>
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>

@@ -8,6 +8,8 @@ class UIHandler : public QObject
     Q_OBJECT
 public:
     enum PageId{
+        Msg_Loading_Open,
+        Msg_Loading_Close,
         Page_Main,
         Page_Main_Startup,
         Page_Main_Login,

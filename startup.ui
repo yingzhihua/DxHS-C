@@ -13,7 +13,7 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QLabel" name="label">
+  <widget class="QLabel" name="Home_Startup_lbLogo">
    <property name="geometry">
     <rect>
      <x>160</x>
@@ -24,6 +24,22 @@
    </property>
    <property name="text">
     <string>TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Home_Startup_btOpenDoor">
+   <property name="geometry">
+    <rect>
+     <x>410</x>
+     <y>330</y>
+     <width>89</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>PushButton</string>
+   </property>
+   <property name="flat">
+    <bool>true</bool>
    </property>
   </widget>
  </widget>

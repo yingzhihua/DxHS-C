@@ -22,6 +22,8 @@ private:
 
 public slots:
     void sequenceFinish(Sequence::SequenceResult result);
+private slots:
+    void on_Home_Startup_btOpenDoor_clicked();
 };
 
 #endif // STARTUP_H

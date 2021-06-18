@@ -1,7 +1,9 @@
-#include "mainwindow.h"
-#include "ui_mainwindow.h"
 #include <QDebug>
 #include <QScreen>
+#include <QMovie>
+
+#include "mainwindow.h"
+#include "ui_mainwindow.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -14,7 +16,7 @@ MainWindow::MainWindow(QWidget *parent) :
     sequence = Sequence::getPtr();
     connect(UIHandler::getPtr(),&UIHandler::Go,this,&MainWindow::GoPage);
 
-    ui->setupUi(this);
+    ui->setupUi(this);    
     UISetup();
 
     start = new Startup(this);    
@@ -102,7 +104,7 @@ void MainWindow::UISetup()
     const static int HEADER_HEIGHT = 150;
     const static int FOOTER_HEIGHT = 150;
     const static int BOTTOMBUTTON_HEIGHT = 123;
-    const static int BOTTOM_BUTTON_WIDTH = 338;
+    const static int BOTTOM_BUTTON_WIDTH = 342;
     int screenwidth = QGuiApplication::screens().at(0)->geometry().width();
     int screenheight = QGuiApplication::screens().at(0)->geometry().height();
     qDebug()<<"width="<<screenwidth<<"height="<<screenheight;
@@ -111,12 +113,15 @@ void MainWindow::UISetup()
 
     ui->lbHeaderBottom->setGeometry(0,0,screenwidth,HEADER_HEIGHT);
     ui->lbHeaderTop->setGeometry(0,0,screenwidth,HEADER_HEIGHT);
-    //ui->btSetup->setGeometry(0,screenheight-FOOTER_HEIGHT,screenwidth/3,FOOTER_HEIGHT);
-    //ui->btHome->setGeometry(ui->btSetup->geometry().x()+ui->btSetup->geometry().width(),screenheight-FOOTER_HEIGHT,screenwidth/3,FOOTER_HEIGHT);
-    //ui->btData->setGeometry(ui->btHome->geometry().x()+ui->btHome->geometry().width(),screenheight-FOOTER_HEIGHT,screenwidth/3,FOOTER_HEIGHT);
-    ui->btSetup->setGeometry((screenwidth/3-BOTTOM_BUTTON_WIDTH)/2,screenheight-(FOOTER_HEIGHT+BOTTOMBUTTON_HEIGHT)/2,BOTTOM_BUTTON_WIDTH,BOTTOMBUTTON_HEIGHT);
-    ui->btHome->setGeometry(ui->btSetup->geometry().x()+screenwidth/3,ui->btSetup->geometry().y(),BOTTOM_BUTTON_WIDTH,BOTTOMBUTTON_HEIGHT);
-    ui->btData->setGeometry(ui->btHome->geometry().x()+screenwidth/3,ui->btHome->geometry().y(),BOTTOM_BUTTON_WIDTH,BOTTOMBUTTON_HEIGHT);;
+    ui->lbfooterbg->setGeometry(0,screenheight-FOOTER_HEIGHT,screenwidth,FOOTER_HEIGHT);
+
+    ui->btSetup->setGeometry(161,screenheight-FOOTER_HEIGHT+14,BOTTOM_BUTTON_WIDTH,BOTTOMBUTTON_HEIGHT);
+    ui->btSetup->setStyleSheet("QPushButton {font-size:60px;padding-left:30;color:#a7a7a7;background: url(:/images/setuprelease.png)}");
+    ui->btHome->setGeometry(801,screenheight-FOOTER_HEIGHT+14,BOTTOM_BUTTON_WIDTH,BOTTOMBUTTON_HEIGHT);
+    ui->btHome->setStyleSheet("QPushButton {font-size:60px;padding-left:30;color:#ffffff;background: url(:/images/homepress.png);background-repeat:no-repeat}");
+    ui->btData->setGeometry(1440,screenheight-FOOTER_HEIGHT+14,BOTTOM_BUTTON_WIDTH,BOTTOMBUTTON_HEIGHT);;
+    ui->btData->setStyleSheet("QPushButton {font-size:60px;padding-left:30;color:#a7a7a7;background: url(:/images/datarelease.png)}");
+
     ui->stackedWidget->setGeometry(0,HEADER_HEIGHT,screenwidth,screenheight-HEADER_HEIGHT-FOOTER_HEIGHT);
     ui->lbDate->setGeometry(1540,HEADER_HEIGHT+30,300,60);
     ui->lbUser->setGeometry(100,HEADER_HEIGHT+30,300,60);
@@ -127,6 +132,13 @@ void MainWindow::UISetup()
     ui->lbMachineName->setAlignment(Qt::AlignRight);
     ui->lbMachineName->setText(ExGlobal::getPtr()->sysName());
 
+    ui->lbLoading->setGeometry(0,0,screenwidth,screenheight);
+    ui->lbLoading->setAlignment(Qt::AlignCenter);
+    movie = new QMovie(":/images/loading.gif");
+    ui->lbLoading->setMovie(movie);
+    ui->lbLoading->setVisible(false);
+
+    //movie->start();
 }
 
 MainWindow::~MainWindow()
@@ -142,7 +154,15 @@ void MainWindow::timerEvent(QTimerEvent *e)
 void MainWindow::GoPage(UIHandler::PageId id)
 {
     qDebug()<<"main GoPage,id="<<id;
-    if (id == UIHandler::PageId::Page_Main_Login){        
+    if (id == UIHandler::PageId::Msg_Loading_Open){
+        ui->lbLoading->setVisible(true);
+        movie->start();
+    }
+    else if (id == UIHandler::PageId::Msg_Loading_Close){
+        movie->stop();
+        ui->lbLoading->setVisible(false);
+    }
+    else if (id == UIHandler::PageId::Page_Main_Login){
         if (ui->stackedWidget->currentWidget() != main_login){
             ui->lbDate->setVisible(true);
             ui->lbUser->setVisible(true);
@@ -168,6 +188,9 @@ void MainWindow::GoPage(UIHandler::PageId id)
             ui->lbTitleIcon->setPixmap(QPixmap::fromImage(QImage(":/images/title_idle.png")));
             ui->lbTitle->setText("待机");
             ui->stackedWidget->setCurrentWidget(main_idle);
+            ui->btSetup->setStyleSheet("QPushButton {font-size:60px;padding-left:30;color:#a7a7a7;background: url(:/images/setuprelease.png);background-repeat:no-repeat}");
+            ui->btHome->setStyleSheet("QPushButton {font-size:60px;padding-left:30;color:#ffffff;background: url(:/images/homepress.png);background-repeat:no-repeat}");
+            ui->btData->setStyleSheet("QPushButton {font-size:60px;padding-left:30;color:#a7a7a7;background: url(:/images/datarelease.png);background-repeat:no-repeat}");
         }
     }
     else if(id == UIHandler::PageId::Page_Setup){
@@ -178,6 +201,9 @@ void MainWindow::GoPage(UIHandler::PageId id)
             ui->lbTitleIcon->setPixmap(QPixmap::fromImage(QImage(":/images/title_setup.png")));
             setup_menu->Init();
             ui->stackedWidget->setCurrentWidget(setup_menu);
+            ui->btSetup->setStyleSheet("QPushButton {font-size:60px;padding-left:30;color:#ffffff;background: url(:/images/setuppress.png);background-repeat:no-repeat}");
+            ui->btHome->setStyleSheet("QPushButton {font-size:60px;padding-left:30;color:#a7a7a7;background: url(:/images/homerelease.png);background-repeat:no-repeat}");
+            ui->btData->setStyleSheet("QPushButton {font-size:60px;padding-left:30;color:#a7a7a7;background: url(:/images/datarelease.png);background-repeat:no-repeat}");
         }
     }
     else if(id == UIHandler::PageId::Page_Data){
@@ -187,6 +213,9 @@ void MainWindow::GoPage(UIHandler::PageId id)
             ui->lbTitleIcon->setPixmap(QPixmap::fromImage(QImage(":/images/title_datamenu.png")));
             ui->lbTitle->setText("历史数据");
             ui->stackedWidget->setCurrentWidget(data_menu);
+            ui->btSetup->setStyleSheet("QPushButton {font-size:60px;padding-left:30;color:#a7a7a7;background: url(:/images/setuprelease.png);background-repeat:no-repeat}");
+            ui->btHome->setStyleSheet("QPushButton {font-size:60px;padding-left:30;color:#a7a7a7;background: url(:/images/homerelease.png);background-repeat:no-repeat}");
+            ui->btData->setStyleSheet("QPushButton {font-size:60px;padding-left:30;color:#ffffff;background: url(:/images/datapress.png);background-repeat:no-repeat}");
         }
     }
     else if(id == UIHandler::PageId::Page_Setup_SystemName){

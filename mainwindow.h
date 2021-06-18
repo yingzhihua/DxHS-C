@@ -81,6 +81,8 @@ private:
     PIDParam *pidparam;
     Version2 *version2;
 
+    QMovie *movie;
+
 public slots:
     void GoPage(UIHandler::PageId id);
 private slots:

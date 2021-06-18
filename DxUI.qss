@@ -1,1 +1,31 @@
-QPushButton { color: red }
+QDialog {background-color: #f5f5f5}
+QPushButton {border:none;background-repeat:no-repeat}
+QPushButton#btOpenDoor { color: blue }
+QPushButton#btOpenDoor:pressed { background-color: yellow; font-size:60px;border:none }
+/* main */
+    /* Startup */
+    QPushButton#Home_Startup_btOpenDoor {
+    border: none;
+    background-color: transparent;
+    background-image: url(:/images/opendoor.png);
+    background-repeat:no-repeat;
+    }
+/*
+QLabel#lbLoading {
+    font-size: 30px;
+    color: #BDC8E2;
+
+    border-style: solid;
+    border-width: 2px;
+    border-color: aqua;
+    border-radius: 20px;
+
+    padding-left: 20px;
+    padding-top: 0px;
+
+    background-color: transparent;
+    background-image: url(:/images/setupmenu_user.png);
+    background-repeat: no-repeat;
+    background-position: center top;
+}
+*/
