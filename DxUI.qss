@@ -1,9 +1,7 @@
 QDialog {background-color: #f5f5f5}
-QLabel {text-align: center}
+QPushButton {border:none;background-color: transparent;background-repeat:no-repeat;outline-style: none;}
 
-QPushButton {border:none;background-repeat:no-repeat;outline-style: none;}
-
-/* main */
+/* Home */
     /* Startup */
     QPushButton#Home_Startup_btOpenDoor {
     font-size:45px;
@@ -16,23 +14,23 @@ QPushButton {border:none;background-repeat:no-repeat;outline-style: none;}
     color: white;
     padding-left: 50px;
     padding-bottom: 10px;
-    background: url(:/images/loginbt.png) no-repeat transparent;
+    background-image: url(:/images/loginbt.png);
     }
     /* Idle */
     QPushButton#Home_Idle_btOpenDoor {
-    background: url(:/images/opendoor.png) no-repeat transparent;
+    background-image: url(:/images/opendoor.png);
     }
     QPushButton#Home_Idle_btQuit {
     font-size: 40px;
     padding-left: 30px;
     padding-bottom: 4px;
-    background: url(:/images/btclose.png) no-repeat transparent;
+    background-image: url(:/images/btclose.png);
     }
     QPushButton#Home_Idle_btLogout {
     font-size: 40px;
     padding-left: 50px;
     padding-bottom: 4px;
-    background: url(:/images/loginquit.png) no-repeat transparent;
+    background-image: url(:/images/loginquit.png);
     }
     QLabel#Home_Idle_lbBoxState {
     font-size: 30px;
