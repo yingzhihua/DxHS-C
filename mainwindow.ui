@@ -183,7 +183,7 @@
      <string notr="true">background: transparent;</string>
     </property>
     <property name="text">
-     <string>User</string>
+     <string/>
     </property>
    </widget>
    <widget class="QLabel" name="lbTitleIcon">

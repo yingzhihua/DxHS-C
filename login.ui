@@ -45,7 +45,7 @@
     <string>输入密码</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="btLogin">
+  <widget class="QPushButton" name="Home_Login_btLogin">
    <property name="geometry">
     <rect>
      <x>780</x>
@@ -63,7 +63,7 @@
     <bool>false</bool>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-image: url(:/images/loginbt.png);</string>
+    <string notr="true"/>
    </property>
    <property name="text">
     <string>登录</string>
@@ -104,7 +104,7 @@
   <zorder>lbBG</zorder>
   <zorder>tName</zorder>
   <zorder>tPassword</zorder>
-  <zorder>btLogin</zorder>
+  <zorder>Home_Login_btLogin</zorder>
   <zorder>lbLogo</zorder>
  </widget>
  <resources/>

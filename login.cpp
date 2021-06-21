@@ -2,6 +2,7 @@
 #include "ui_login.h"
 
 #include "module/uihandler.h"
+#include "module/exglobal.h"
 
 #include <QDebug>
 Login::Login(QWidget *parent) :
@@ -26,12 +27,20 @@ Login::~Login()
     delete ui;
 }
 
-void Login::Init()
-{
-    
+void Login::showEvent(QShowEvent *event){
+    Q_UNUSED(event);
+    qDebug()<<"login showEvent";
 }
 
-void Login::on_btLogin_clicked()
+void Login::hideEvent(QHideEvent *event){
+    Q_UNUSED(event);
+    qDebug()<<"login hideEvent";
+}
+
+void Login::on_Home_Login_btLogin_clicked()
 {
-    UIHandler::GoPage(UIHandler::PageId::Page_Main_Idle);
+    if (ExGlobal::pUserModel->login("admin","123456") == 0){
+        UIHandler::UpdateState(UIHandler::StateId::State_User_Update);
+        UIHandler::GoPage(UIHandler::PageId::Page_Main_Idle);
+    }
 }

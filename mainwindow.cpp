@@ -15,6 +15,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     sequence = Sequence::getPtr();
     connect(UIHandler::getPtr(),&UIHandler::Go,this,&MainWindow::GoPage);
+    connect(UIHandler::getPtr(),&UIHandler::State,this,&MainWindow::StateUpdate);
 
     ui->setupUi(this);    
     UISetup();
@@ -148,27 +149,20 @@ MainWindow::~MainWindow()
 
 void MainWindow::timerEvent(QTimerEvent *e)
 {
+    Q_UNUSED(e);
     ui->lbDate->setText(QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm:ss"));
 }
 
 void MainWindow::GoPage(UIHandler::PageId id)
 {
-    qDebug()<<"main GoPage,id="<<id;
-    if (id == UIHandler::PageId::Msg_Loading_Open){
-        ui->lbLoading->setVisible(true);
-        movie->start();
-    }
-    else if (id == UIHandler::PageId::Msg_Loading_Close){
-        movie->stop();
-        ui->lbLoading->setVisible(false);
-    }
-    else if (id == UIHandler::PageId::Page_Main_Login){
+    qDebug()<<"main GoPage,id="<<id<<ui->stackedWidget->currentWidget()->objectName();
+
+    if (id == UIHandler::PageId::Page_Main_Login){
         if (ui->stackedWidget->currentWidget() != main_login){
             ui->lbDate->setVisible(true);
             ui->lbUser->setVisible(true);
             ui->lbTitleIcon->setPixmap(QPixmap::fromImage(QImage(":/images/title_login.png")));
-            ui->lbTitle->setText("登录");
-            main_login->Init();
+            ui->lbTitle->setText("登录");            
             ui->stackedWidget->setCurrentWidget(main_login);
         }
     }
@@ -421,6 +415,21 @@ void MainWindow::GoPage(UIHandler::PageId id)
                 }
 
 
+}
+
+void MainWindow::StateUpdate(UIHandler::StateId id)
+{
+    if (id == UIHandler::StateId::State_Loading_Open){
+        ui->lbLoading->setVisible(true);
+        movie->start();
+    }
+    else if (id == UIHandler::StateId::State_Loading_Close){
+        movie->stop();
+        ui->lbLoading->setVisible(false);
+    }
+    else if (id == UIHandler::StateId::State_User_Update){
+        ui->lbUser->setText(ExGlobal::DisplayUser);
+    }
 }
 
 void MainWindow::on_btSetup_clicked()

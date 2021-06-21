@@ -18,3 +18,8 @@ void UIHandler::GoPage(PageId id)
 {
     emit uihandler->Go(id);
 }
+
+void UIHandler::UpdateState(StateId id)
+{
+    emit uihandler->State(id);
+}

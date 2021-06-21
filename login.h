@@ -13,12 +13,14 @@ class Login : public QDialog
 
 public:
     explicit Login(QWidget *parent = nullptr);
-    ~Login();
-    
-    void Init();
+    ~Login();    
+
+protected:
+    void showEvent(QShowEvent *event);
+    void hideEvent(QHideEvent *event);
 
 private slots:
-    void on_btLogin_clicked();
+    void on_Home_Login_btLogin_clicked();
 
 private:
     Ui::Login *ui;

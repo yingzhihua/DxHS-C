@@ -7,9 +7,7 @@ class UIHandler : public QObject
 {
     Q_OBJECT
 public:
-    enum PageId{
-        Msg_Loading_Open,
-        Msg_Loading_Close,
+    enum PageId{        
         Page_Main,
         Page_Main_Startup,
         Page_Main_Login,
@@ -46,12 +44,22 @@ public:
         Page_Empty
     };
 
+    enum StateId{
+        State_Loading_Open,
+        State_Loading_Close,
+        State_User_Update,
+        State_BoxState_Upate,
+        State_Empty
+    };
+
     explicit UIHandler(QObject *parent = nullptr);
     static UIHandler *getPtr();
     static void GoPage(PageId id);
+    static void UpdateState(StateId id);
 
 signals:
     void Go(PageId id);
+    void State(StateId id);
 
 public slots:
 };

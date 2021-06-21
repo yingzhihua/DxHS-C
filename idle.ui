@@ -13,17 +13,56 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QPushButton" name="btOpenDoor">
+  <widget class="QPushButton" name="Home_Idle_btOpenDoor">
    <property name="geometry">
     <rect>
-     <x>550</x>
-     <y>210</y>
+     <x>620</x>
+     <y>140</y>
      <width>291</width>
      <height>111</height>
     </rect>
    </property>
    <property name="text">
-    <string>打开舱门</string>
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Home_Idle_lbBoxState">
+   <property name="geometry">
+    <rect>
+     <x>680</x>
+     <y>320</y>
+     <width>67</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Home_Idle_btLogout">
+   <property name="geometry">
+    <rect>
+     <x>920</x>
+     <y>330</y>
+     <width>89</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>PushButton</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Home_Idle_btQuit">
+   <property name="geometry">
+    <rect>
+     <x>920</x>
+     <y>380</y>
+     <width>89</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>PushButton</string>
    </property>
   </widget>
  </widget>

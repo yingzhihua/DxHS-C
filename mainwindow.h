@@ -85,6 +85,8 @@ private:
 
 public slots:
     void GoPage(UIHandler::PageId id);
+    void StateUpdate(UIHandler::StateId id);
+
 private slots:
     void on_btSetup_clicked();
     void on_btHome_clicked();

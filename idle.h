@@ -17,8 +17,12 @@ public:
     explicit Idle(QWidget *parent = nullptr);
     ~Idle();
 
+protected:
+    void showEvent(QShowEvent *event);
+    void hideEvent(QHideEvent *event);
+
 private slots:
-    void on_btOpenDoor_clicked();
+    void on_Home_Idle_btOpenDoor_clicked();
 
 private:
     Ui::Idle *ui;    
