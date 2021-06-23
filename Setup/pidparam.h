@@ -14,6 +14,10 @@ class PIDParam : public QDialog
 public:
     explicit PIDParam(QWidget *parent = nullptr);
     ~PIDParam();
+    void show_data(void);
+
+private slots:
+    void on_PIDParam_accepted();
 
 private:
     Ui::PIDParam *ui;

@@ -158,7 +158,7 @@ public:
     Q_INVOKABLE int boxParam(){return boxparam;}    
     Q_INVOKABLE int onePointPanelIndex(){return OnePointPanelIndex;}
     Q_INVOKABLE void setOnePointPanelIndex(int index);
-    Q_INVOKABLE void checkParam(bool update);
+     void checkParam(bool update);
     Q_INVOKABLE bool doorError(){return bDoorState!=bDoorState2;}
     Q_INVOKABLE void clear_data(int value);
 

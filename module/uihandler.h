@@ -41,6 +41,8 @@ public:
         Page_Data_InvalidView,
         Page_Data_Line,
         Page_Data_OneDataLine,
+        Page_User_AddUser,
+        Page_User_UpdateUser,
         Page_Empty
     };
 

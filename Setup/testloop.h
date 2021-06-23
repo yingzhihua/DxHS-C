@@ -14,6 +14,12 @@ class TestLoop : public QDialog
 public:
     explicit TestLoop(QWidget *parent = nullptr);
     ~TestLoop();
+    void load_data(void);
+
+private slots:
+    void on_pButton_machine_back_clicked();
+
+    void on_pButton_enter_test_clicked();
 
 private:
     Ui::TestLoop *ui;

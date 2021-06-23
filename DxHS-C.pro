@@ -80,7 +80,9 @@ SOURCES += \
     Setup/logview.cpp \
     Setup/pidparam.cpp \
     Setup/version2.cpp \
-    boxready.cpp
+    boxready.cpp \
+    Setup/adduser.cpp \
+    Setup/updateuser.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -141,7 +143,9 @@ HEADERS += \
     Setup/logview.h \
     Setup/pidparam.h \
     Setup/version2.h \
-    boxready.h
+    boxready.h \
+    Setup/adduser.h \
+    Setup/updateuser.h
 
 FORMS += \
         mainwindow.ui \
@@ -171,7 +175,9 @@ FORMS += \
     Setup/logview.ui \
     Setup/pidparam.ui \
     Setup/version2.ui \
-    boxready.ui
+    boxready.ui \
+    Setup/adduser.ui \
+    Setup/updateuser.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

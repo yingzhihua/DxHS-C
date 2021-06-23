@@ -15,6 +15,13 @@ public:
     explicit NetWork(QWidget *parent = nullptr);
     ~NetWork();
 
+private slots:
+    void on_pushButton_clicked();
+
+    void on_pushButton_ok_clicked();
+
+    void on_pushButton_cencel_clicked();
+
 private:
     Ui::NetWork *ui;
 };

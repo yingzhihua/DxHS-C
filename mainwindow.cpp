@@ -92,8 +92,18 @@ MainWindow::MainWindow(QWidget *parent) :
     pidparam = new PIDParam(this);
     ui->stackedWidget->addWidget(pidparam);
 
+    pumpparam = new PumpParam(this);
+    ui->stackedWidget->addWidget(pumpparam);
+
     version2 = new Version2(this);
     ui->stackedWidget->addWidget(version2);
+
+    adduser = new AddUser(this);
+    ui->stackedWidget->addWidget(adduser);
+
+    updateuser = new UpdateUser(this);
+    ui->stackedWidget->addWidget(updateuser);
+
 
 
     if (ExGlobal::isDebug())
@@ -304,6 +314,7 @@ void MainWindow::GoPage(UIHandler::PageId id)
 
     else if(id == UIHandler::PageId::Page_Setup_User){
                       if (ui->stackedWidget->currentWidget() != user){
+                          user->load_data();
                           ui->lbDate->setVisible(false);
                           ui->lbUser->setVisible(false);
                           ui->lbTitleIcon->setPixmap(QPixmap::fromImage(QImage(":/images/setupmenu_about.png")));
@@ -324,6 +335,7 @@ void MainWindow::GoPage(UIHandler::PageId id)
 
     else if(id == UIHandler::PageId::Page_Setup_Camera){
                       if (ui->stackedWidget->currentWidget() != camerasetup){
+                          camerasetup->load_data();
                           ui->lbDate->setVisible(false);
                           ui->lbUser->setVisible(false);
                           ui->lbTitleIcon->setPixmap(QPixmap::fromImage(QImage(":/images/setupmenu_about.png")));
@@ -334,6 +346,7 @@ void MainWindow::GoPage(UIHandler::PageId id)
 
      else if(id == UIHandler::PageId::Page_Setup_TestSetup){
                       if (ui->stackedWidget->currentWidget() != testsetup){
+                          testsetup->load_data();
                           ui->lbDate->setVisible(false);
                           ui->lbUser->setVisible(false);
                           ui->lbTitleIcon->setPixmap(QPixmap::fromImage(QImage(":/images/setupmenu_about.png")));
@@ -344,6 +357,7 @@ void MainWindow::GoPage(UIHandler::PageId id)
 
     else if(id == UIHandler::PageId::Page_Setup_TestLoop){
                      if (ui->stackedWidget->currentWidget() != testloop){
+                         testloop->load_data();
                          ui->lbDate->setVisible(false);
                          ui->lbUser->setVisible(false);
                          ui->lbTitleIcon->setPixmap(QPixmap::fromImage(QImage(":/images/setupmenu_about.png")));
@@ -362,6 +376,7 @@ void MainWindow::GoPage(UIHandler::PageId id)
                  }
     else if(id == UIHandler::PageId::Page_Setup_ProjectParam){
                      if (ui->stackedWidget->currentWidget() != projectparam){
+                         projectparam->load_data();
                          ui->lbDate->setVisible(false);
                          ui->lbUser->setVisible(false);
                          ui->lbTitleIcon->setPixmap(QPixmap::fromImage(QImage(":/images/setupmenu_about.png")));
@@ -382,6 +397,7 @@ void MainWindow::GoPage(UIHandler::PageId id)
 
      else if(id == UIHandler::PageId::Page_Setup_Light){
                      if (ui->stackedWidget->currentWidget() != light){
+                         light->load_data();
                          ui->lbDate->setVisible(false);
                          ui->lbUser->setVisible(false);
                          ui->lbTitleIcon->setPixmap(QPixmap::fromImage(QImage(":/images/setupmenu_about.png")));
@@ -401,6 +417,7 @@ void MainWindow::GoPage(UIHandler::PageId id)
                 }
     else if(id == UIHandler::PageId::Page_Setup_Log){
                     if (ui->stackedWidget->currentWidget() != logview){
+                        logview->display_data();
                         ui->lbDate->setVisible(false);
                         ui->lbUser->setVisible(false);
                         ui->lbTitleIcon->setPixmap(QPixmap::fromImage(QImage(":/images/setupmenu_about.png")));
@@ -426,7 +443,24 @@ void MainWindow::GoPage(UIHandler::PageId id)
                         ui->stackedWidget->setCurrentWidget(version2);
                     }
                 }
-
+  else if(id == UIHandler::PageId::Page_User_AddUser){
+                    if (ui->stackedWidget->currentWidget() != adduser){
+                        ui->lbDate->setVisible(false);
+                        ui->lbUser->setVisible(false);
+                        ui->lbTitleIcon->setPixmap(QPixmap::fromImage(QImage(":/images/setupmenu_about.png")));
+                        ui->lbTitle->setText("增加用户");
+                        ui->stackedWidget->setCurrentWidget(adduser);
+                    }
+                }
+    else if(id == UIHandler::PageId::Page_User_UpdateUser){
+                    if (ui->stackedWidget->currentWidget() != updateuser){
+                        updateuser->show_data();
+                        ui->lbDate->setVisible(false);
+                        ui->lbUser->setVisible(false);
+                        ui->lbTitleIcon->setPixmap(QPixmap::fromImage(QImage(":/images/setupmenu_about.png")));
+                        ui->lbTitle->setText("修改用户");
+                        ui->stackedWidget->setCurrentWidget(updateuser);
+                    }
 
 }
 
