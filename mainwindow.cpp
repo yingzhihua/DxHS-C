@@ -462,8 +462,8 @@ void MainWindow::GoPage(UIHandler::PageId id)
                         ui->stackedWidget->setCurrentWidget(updateuser);
                     }
 
+  }
 }
-
 void MainWindow::StateUpdate(UIHandler::StateId id)
 {
     if (id == UIHandler::StateId::State_Loading_Open){
