@@ -17,18 +17,6 @@ SystemName::~SystemName()
     delete ui;
 }
 
-
-void SystemName::on_commandLinkButton_clicked()
-{
-   // ExGlobal::HospitalName =lineEdit_hospital     ;//lineEdit_hospital.text;
-   // ExGlobal::SysName = lineEdit_device.text;
-    //ExGlobal::PrintType = comboBox_print.currentIndex;
-    ExGlobal::getPtr()->setHospitalName(ui->lineEdit_hospital->text());
-    ExGlobal::getPtr()->setSysName(ui->lineEdit_device->text());
-    //ui->lineEdit_hospital->setText(ExGlobal::getPtr()->hospitalName());
-
-}
-
 void SystemName::on_pushButton_clicked()
 {
     ExGlobal::getPtr()->setHospitalName(ui->lineEdit_hospital->text());

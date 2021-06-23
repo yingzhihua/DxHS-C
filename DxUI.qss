@@ -1,5 +1,14 @@
 QDialog {background-color: #f5f5f5}
 QPushButton {border:none;background-color: transparent;background-repeat:no-repeat;outline-style: none;}
+QLineEdit {border: 1px solid gray;font-size:30px;}
+QComboBox {border: 1px solid gray;font-size:30px;border-top-right-radius: 7px;border-bottom-right-radius: 5px;selection-background-color:black}
+QComboBox QAbstractItemView::item {min-height: 50px}
+QComboBox::drop-down {
+    width: 51px;
+    border: none;
+}
+QComboBox::down-arrow {width:51px;height:71; padding: 0px 0px 0px 0px;image:url(:/images/xiala.png);}
+
 
 /* Home */
     /* Startup */
@@ -9,6 +18,12 @@ QPushButton {border:none;background-color: transparent;background-repeat:no-repe
     padding-top: 300;
     }
     /* Login */
+    QLabel#Home_Login_lbBG {
+    background-image: url(:/images/loginbk.png);
+    }
+    QLabel#Home_Login_lbLogo {
+    background-image: url(:/images/loginlogo.png);
+    }
     QPushButton#Home_Login_btLogin {
     font-size: 40px;
     color: white;
@@ -35,6 +50,43 @@ QPushButton {border:none;background-color: transparent;background-repeat:no-repe
     QLabel#Home_Idle_lbBoxState {
     font-size: 30px;
     }
+    /* BoxReady */
+    QPushButton#Home_BoxReady_btStart {
+    background-image: url(:/images/StartTest.png);
+    }
+    QPushButton#Home_BoxReady_btCancelTest {
+    background-image: url(:/images/CancelTest.png);
+    }
+    QPushButton#Home_BoxReady_btPen {
+    background-image: url(:/images/Pen.png);
+    }
+    QLabel#Home_BoxReady_lbBK1 {
+    background-image: url(:/images/ThreeMessageBG.png);
+    }
+    QLabel#Home_BoxReady_lbBK2 {
+    background-image: url(:/images/ThreeMessageBG.png);
+    }
+    QLabel#Home_BoxReady_lbTestName {
+    font-size: 30px;
+    }
+    QLabel#Home_BoxReady_lbTestSerial {
+    font-size: 30px;
+    }
+    QLabel#Home_BoxReady_cbTestType {
+    font-size: 30px;
+    }
+    QLabel#Home_BoxReady_lbSampleCode {
+    font-size: 30px;
+    }
+    QLabel#Home_BoxReady_lbSampleInfo {
+    font-size: 30px;
+    }
+    QLabel#Home_BoxReady_lbSampleRemark {
+    font-size: 30px;
+    }
+/* Setup */
+
+
 /*
 {
     font-size: 30px;
@@ -51,5 +103,17 @@ QPushButton {border:none;background-color: transparent;background-repeat:no-repe
     background-image: url(:/images/setupmenu_user.png);
     background-repeat: no-repeat;
     background-position: center top;
+
+padding-right: 0px;
+subcontrol-origin: padding;
+subcontrol-position: top right;
+width: 71px;
+height: 71px;
+border-left-width: 1px;
+border-left-color: lightgray;
+border-left-style: solid;
+border-top-right-radius: 3px;
+border-bottom-right-radius: 3px;
+QComboBox QAbstractItemView::item:select {color: #000000; background-color: lightgreen;}
 }
 */

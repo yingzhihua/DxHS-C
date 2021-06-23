@@ -5,6 +5,7 @@
 #include "startup.h"
 #include "login.h"
 #include "idle.h"
+#include "boxready.h"
 #include "Setup/setupmenu.h"
 #include "Setup/systemname.h"
 #include "Setup/backlight.h"
@@ -53,6 +54,7 @@ private:
     Startup *start;
     Login *main_login;
     Idle *main_idle;
+    BoxReady *main_boxready;
     SetupMenu *setup_menu;
     SystemName *systemname;
 
@@ -86,6 +88,7 @@ private:
 public slots:
     void GoPage(UIHandler::PageId id);
     void StateUpdate(UIHandler::StateId id);
+    void FooterNotify(bool setup,bool home,bool data);
 
 private slots:
     void on_btSetup_clicked();

@@ -12,12 +12,9 @@ Startup::Startup(QWidget *parent) :
     QImage image(QString(":/images/startup_logo.png"));
     ui->Home_Startup_lbLogo->setGeometry((1920-image.width())/2,(900-image.height())/2,image.width(),image.height());
     ui->Home_Startup_lbLogo->setPixmap(QPixmap::fromImage(image));
-    ui->Home_Startup_btOpenDoor->setGeometry((1920-500)/2,(900-400)/2,500,400);    
+    ui->Home_Startup_btOpenDoor->setGeometry((1920-800)/2,(900-400)/2,800,400);
 
-    connect(Sequence::getPtr(),&Sequence::sequenceFinish,this,&Startup::sequenceFinish);
-
-    Sequence::getPtr()->sequenceInit();
-    Sequence::getPtr()->actionDo("Query",3,0,0,0);
+    Sequence::getPtr()->sequenceInit();    
 }
 
 Startup::~Startup()
@@ -28,6 +25,7 @@ Startup::~Startup()
 void Startup::showEvent(QShowEvent *event){
     Q_UNUSED(event);
     connect(Sequence::getPtr(),&Sequence::sequenceFinish,this,&Startup::sequenceFinish);
+    Sequence::getPtr()->actionDo("Query",3,0,0,0);
 }
 
 void Startup::hideEvent(QHideEvent *event){
@@ -53,23 +51,19 @@ void Startup::sequenceFinish(Sequence::SequenceResult result)
         Sequence::getPtr()->actionDo("Query",3,0,0,0);
     }
     else if (result == Sequence::SequenceResult::Result_Simple_ok){
-        if (Sequence::getPtr()->readBoxState()){
-            //Sequence.setTitle("startup_error")
+        if (Sequence::getPtr()->readBoxState()){            
             ui->Home_Startup_btOpenDoor->setText(tr("请取出试剂盒 然后关闭舱门"));
         }
         else if (Sequence::getPtr()->doorError())
         {
-            //Sequence.setTitle("startup_error")
             ui->Home_Startup_btOpenDoor->setText(tr("请恢复舱门"));
-            //boxTips.text = qsTr("请恢复舱门")
         }
         else if (Sequence::getPtr()->readDoorState()){
-            //Sequence.setTitle("startup_error")
             ui->Home_Startup_btOpenDoor->setText(tr("请关闭舱门"));
-            //boxTips.text = qsTr("请关闭舱门")
         }
 
-        if (Sequence::getPtr()->doorError() || (ExGlobal::projectMode() != 0 && (Sequence::getPtr()->readBoxState() || Sequence::getPtr()->readDoorState()))){            
+        qDebug()<<"projectMode="<<ExGlobal::projectMode()<<"BoxState="<<Sequence::getPtr()->readBoxState()<<Sequence::getPtr()->readDoorState();
+        if (Sequence::getPtr()->doorError() || (ExGlobal::projectMode() != 0 && (Sequence::getPtr()->readBoxState() || Sequence::getPtr()->readDoorState()))){
             ui->Home_Startup_lbLogo->setVisible(false);
             ui->Home_Startup_btOpenDoor->setVisible(true);
         }

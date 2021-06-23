@@ -14,6 +14,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ExGlobal::exInit();
 
     sequence = Sequence::getPtr();
+    connect(sequence,&Sequence::footerNotify,this,&MainWindow::FooterNotify);
     connect(UIHandler::getPtr(),&UIHandler::Go,this,&MainWindow::GoPage);
     connect(UIHandler::getPtr(),&UIHandler::State,this,&MainWindow::StateUpdate);
 
@@ -26,6 +27,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->stackedWidget->addWidget(main_login);
     main_idle = new Idle(this);
     ui->stackedWidget->addWidget(main_idle);
+    main_boxready = new BoxReady(this);
+    ui->stackedWidget->addWidget(main_boxready);
 
     setup_menu = new SetupMenu(this);
     ui->stackedWidget->addWidget(setup_menu);
@@ -94,7 +97,8 @@ MainWindow::MainWindow(QWidget *parent) :
 
 
     if (ExGlobal::isDebug())
-        ui->stackedWidget->setCurrentWidget(main_login);
+        //ui->stackedWidget->setCurrentWidget(main_login);
+        ui->stackedWidget->setCurrentWidget(main_boxready);
     else
         ui->stackedWidget->setCurrentWidget(start);
     this->startTimer(1000);
@@ -139,7 +143,7 @@ void MainWindow::UISetup()
     ui->lbLoading->setMovie(movie);
     ui->lbLoading->setVisible(false);
 
-    //movie->start();
+    FooterNotify(false,false,false);
 }
 
 MainWindow::~MainWindow()
@@ -173,6 +177,15 @@ void MainWindow::GoPage(UIHandler::PageId id)
             ui->lbTitleIcon->setPixmap(QPixmap::fromImage(QImage(":/images/title_idle.png")));
             ui->lbTitle->setText("待机");
             ui->stackedWidget->setCurrentWidget(main_idle);
+        }
+    }
+    else if(id == UIHandler::PageId::Page_Main_BoxReady){
+        if (ui->stackedWidget->currentWidget() != main_boxready){
+            ui->lbDate->setVisible(true);
+            ui->lbUser->setVisible(true);
+            ui->lbTitleIcon->setPixmap(QPixmap::fromImage(QImage(":/images/title_boxready.png")));
+            ui->lbTitle->setText(tr("试剂盒就绪"));
+            ui->stackedWidget->setCurrentWidget(main_boxready);
         }
     }
     else if(id == UIHandler::PageId::Page_Main){
@@ -445,4 +458,11 @@ void MainWindow::on_btHome_clicked()
 void MainWindow::on_btData_clicked()
 {
     UIHandler::GoPage(UIHandler::PageId::Page_Data);
+}
+
+void MainWindow::FooterNotify(bool setup,bool home,bool data)
+{
+    ui->btSetup->setEnabled(setup);
+    ui->btHome->setEnabled(home);
+    ui->btData->setEnabled(data);
 }

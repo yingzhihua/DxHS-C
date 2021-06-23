@@ -79,7 +79,8 @@ SOURCES += \
     Setup/pumpparam.cpp \
     Setup/logview.cpp \
     Setup/pidparam.cpp \
-    Setup/version2.cpp
+    Setup/version2.cpp \
+    boxready.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -139,7 +140,8 @@ HEADERS += \
     Setup/pumpparam.h \
     Setup/logview.h \
     Setup/pidparam.h \
-    Setup/version2.h
+    Setup/version2.h \
+    boxready.h
 
 FORMS += \
         mainwindow.ui \
@@ -168,7 +170,8 @@ FORMS += \
     Setup/pumpparam.ui \
     Setup/logview.ui \
     Setup/pidparam.ui \
-    Setup/version2.ui
+    Setup/version2.ui \
+    boxready.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

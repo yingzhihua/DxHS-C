@@ -4,6 +4,8 @@
 #include <QDialog>
 
 #include "module/sequence.h"
+#include "module/exglobal.h"
+#include "module/uihandler.h"
 
 namespace Ui {
 class Idle;
@@ -16,6 +18,7 @@ class Idle : public QDialog
 public:
     explicit Idle(QWidget *parent = nullptr);
     ~Idle();
+    virtual void timerEvent(QTimerEvent *e);
 
 protected:
     void showEvent(QShowEvent *event);
@@ -23,6 +26,13 @@ protected:
 
 private slots:
     void on_Home_Idle_btOpenDoor_clicked();
+
+    void on_Home_Idle_btLogout_clicked();
+
+    void on_Home_Idle_btQuit_clicked();
+
+    void StateUpdate();
+    void sequenceFinish(Sequence::SequenceResult result);
 
 private:
     Ui::Idle *ui;    

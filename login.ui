@@ -14,22 +14,9 @@
    <string>Dialog</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(245, 245, 245);</string>
+   <string notr="true"/>
   </property>
-  <widget class="QLineEdit" name="tName">
-   <property name="geometry">
-    <rect>
-     <x>710</x>
-     <y>170</y>
-     <width>501</width>
-     <height>61</height>
-    </rect>
-   </property>
-   <property name="placeholderText">
-    <string>输入用户名</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="tPassword">
+  <widget class="QLineEdit" name="Home_Login_lePassword">
    <property name="geometry">
     <rect>
      <x>710</x>
@@ -48,7 +35,7 @@
   <widget class="QPushButton" name="Home_Login_btLogin">
    <property name="geometry">
     <rect>
-     <x>780</x>
+     <x>580</x>
      <y>530</y>
      <width>318</width>
      <height>92</height>
@@ -69,10 +56,10 @@
     <string>登录</string>
    </property>
    <property name="flat">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
-  <widget class="QLabel" name="lbBG">
+  <widget class="QLabel" name="Home_Login_lbBG">
    <property name="geometry">
     <rect>
      <x>310</x>
@@ -82,10 +69,10 @@
     </rect>
    </property>
    <property name="text">
-    <string>BG</string>
+    <string/>
    </property>
   </widget>
-  <widget class="QLabel" name="lbLogo">
+  <widget class="QLabel" name="Home_Login_lbLogo">
    <property name="geometry">
     <rect>
      <x>310</x>
@@ -95,17 +82,30 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background: transparent;</string>
+    <string notr="true"/>
    </property>
    <property name="text">
-    <string>logo</string>
+    <string/>
    </property>
   </widget>
-  <zorder>lbBG</zorder>
-  <zorder>tName</zorder>
-  <zorder>tPassword</zorder>
+  <widget class="QComboBox" name="Home_Login_cbName">
+   <property name="geometry">
+    <rect>
+     <x>710</x>
+     <y>210</y>
+     <width>86</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="editable">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <zorder>Home_Login_lbBG</zorder>
+  <zorder>Home_Login_lePassword</zorder>
   <zorder>Home_Login_btLogin</zorder>
-  <zorder>lbLogo</zorder>
+  <zorder>Home_Login_lbLogo</zorder>
+  <zorder>Home_Login_cbName</zorder>
  </widget>
  <resources/>
  <connections/>

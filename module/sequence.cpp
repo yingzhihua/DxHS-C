@@ -862,6 +862,7 @@ void Sequence::TestDataHandleFinish(int result){
 
 void Sequence::FinishSequence()
 {
+    bool doorChanged = false;
     SequenceResult out = SequenceResult::Result_NULL;
     qDebug()<<"FinishSequence:"<<currSequenceId;
 
@@ -871,12 +872,20 @@ void Sequence::FinishSequence()
     }
     else if(currSequenceId == SequenceId::Sequence_CloseBox)
     {
-        bDoorState = false;
+        if (bDoorState){
+            bDoorState = false;
+            bDoorState2 = false;
+            doorChanged = true;
+        }
         out = SequenceResult::Result_CloseBox_ok;
     }
     else if(currSequenceId == SequenceId::Sequence_OpenBox || currSequenceId == SequenceId::Sequence_ErrOpenBox)
     {
-        bDoorState = true;
+        if (!bDoorState){
+            bDoorState = true;
+            bDoorState2 = true;
+            doorChanged = true;
+        }
         out = SequenceResult::Result_OpenBox_ok;
     }
     else if(currSequenceId == SequenceId::Sequence_DoorToWork)
@@ -939,6 +948,8 @@ void Sequence::FinishSequence()
     qDebug()<<"Lamp4";
     if (out != SequenceResult::Result_NULL)
         emit sequenceFinish(out);
+    if (doorChanged)
+        emit doorStateChanged();
 }
 
 bool Sequence::ReadTestProcess(QString panel)
@@ -1350,7 +1361,7 @@ void Sequence::setSenorState(char char1, char char2)
         bDoorState2 = false;
 
     FirstCheckSensor = false;
-    //qDebug()<<"bDoorState:"<<bDoorState<<"bBoxState:"<<bBoxState;
+    qDebug()<<"bBoxState:"<<bBoxState<<"bDoorState:"<<bDoorState;
 }
 
 double Sequence::getDefinition(){

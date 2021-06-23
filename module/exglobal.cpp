@@ -681,6 +681,7 @@ void ExGlobal::CaliParamInit()
     Log::Logdb(LOGTYPE_POWERON);
     qDebug()<<"CaliParamInit end";
     set_backlight(BlackLightPWM);
+    Translator(LanguageCode);
 }
 
 uchar* ExGlobal::getReagentBox(QString boxCode){
