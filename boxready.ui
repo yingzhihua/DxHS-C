@@ -16,8 +16,8 @@
   <widget class="QPushButton" name="Home_BoxReady_btStart">
    <property name="geometry">
     <rect>
-     <x>370</x>
-     <y>260</y>
+     <x>210</x>
+     <y>230</y>
      <width>89</width>
      <height>25</height>
     </rect>
@@ -145,6 +145,19 @@
     <rect>
      <x>310</x>
      <y>200</y>
+     <width>67</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Home_BoxReady_lbTips">
+   <property name="geometry">
+    <rect>
+     <x>220</x>
+     <y>280</y>
      <width>67</width>
      <height>17</height>
     </rect>

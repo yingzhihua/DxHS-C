@@ -6,7 +6,7 @@
 #include "module/sequence.h"
 #include "module/exglobal.h"
 #include "module/uihandler.h"
-
+#include "components/threequery.h"
 namespace Ui {
 class Idle;
 }
@@ -35,7 +35,7 @@ private slots:
     void sequenceFinish(Sequence::SequenceResult result);
 
 private:
-    Ui::Idle *ui;    
+    Ui::Idle *ui;        
 };
 
 #endif // IDLE_H

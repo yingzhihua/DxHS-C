@@ -29,7 +29,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->stackedWidget->addWidget(main_idle);
     main_boxready = new BoxReady(this);
     ui->stackedWidget->addWidget(main_boxready);
-
+    main_testprocess = new TestProcess(this);
+    ui->stackedWidget->addWidget(main_testprocess);
     setup_menu = new SetupMenu(this);
     ui->stackedWidget->addWidget(setup_menu);
     data_menu = new DataMenu(this);
@@ -188,16 +189,24 @@ void MainWindow::GoPage(UIHandler::PageId id)
             ui->stackedWidget->setCurrentWidget(main_boxready);
         }
     }
-    else if(id == UIHandler::PageId::Page_Main){
-        if (ui->stackedWidget->currentWidget() != main_idle){
+    else if(id == UIHandler::PageId::Page_Main_Test){
+        if (ui->stackedWidget->currentWidget() != main_testprocess){
             ui->lbDate->setVisible(true);
             ui->lbUser->setVisible(true);
-            ui->lbTitleIcon->setPixmap(QPixmap::fromImage(QImage(":/images/title_idle.png")));
-            ui->lbTitle->setText("待机");
-            ui->stackedWidget->setCurrentWidget(main_idle);
+            ui->lbTitleIcon->setPixmap(QPixmap::fromImage(QImage(":/images/title_test.png")));
+            ui->lbTitle->setText(tr("测试中"));
+            ui->stackedWidget->setCurrentWidget(main_testprocess);
+        }
+    }
+    else if(id == UIHandler::PageId::Page_Main){
+        if (ui->stackedWidget->currentWidget() != main_idle && ui->stackedWidget->currentWidget() != main_boxready){
             ui->btSetup->setStyleSheet("QPushButton {font-size:60px;padding-left:30;color:#a7a7a7;background: url(:/images/setuprelease.png);background-repeat:no-repeat}");
             ui->btHome->setStyleSheet("QPushButton {font-size:60px;padding-left:30;color:#ffffff;background: url(:/images/homepress.png);background-repeat:no-repeat}");
             ui->btData->setStyleSheet("QPushButton {font-size:60px;padding-left:30;color:#a7a7a7;background: url(:/images/datarelease.png);background-repeat:no-repeat}");
+            if (Sequence::getPtr()->readStage() == Sequence::StageState::Stage_idle)
+                UIHandler::GoPage(UIHandler::PageId::Page_Main_Idle);
+            else
+                UIHandler::GoPage(UIHandler::PageId::Page_Main_BoxReady);
         }
     }
     else if(id == UIHandler::PageId::Page_Setup){

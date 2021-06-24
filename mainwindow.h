@@ -6,6 +6,7 @@
 #include "login.h"
 #include "idle.h"
 #include "boxready.h"
+#include "testprocess.h"
 #include "Setup/setupmenu.h"
 #include "Setup/systemname.h"
 #include "Setup/backlight.h"
@@ -55,6 +56,7 @@ private:
     Login *main_login;
     Idle *main_idle;
     BoxReady *main_boxready;
+    TestProcess *main_testprocess;
     SetupMenu *setup_menu;
     SystemName *systemname;
 

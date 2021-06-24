@@ -22,10 +22,15 @@ protected:
     void showEvent(QShowEvent *event);
 
 private slots:
-    void on_Home_BoxReady_Start_clicked();
+    void on_Home_BoxReady_btPen_clicked();
+    void on_Sample_Changed(QString res1, QString res2, QString res3);
+    void on_Home_BoxReady_btStart_clicked();
+
+    void on_Home_BoxReady_btCancelTest_clicked();
 
 private:
-    Ui::BoxReady *ui;    
+    Ui::BoxReady *ui;
+    void ChangedTips();
 };
 
 #endif // BOXREADY_H

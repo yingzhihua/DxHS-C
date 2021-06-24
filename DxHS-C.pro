@@ -80,7 +80,9 @@ SOURCES += \
     Setup/logview.cpp \
     Setup/pidparam.cpp \
     Setup/version2.cpp \
-    boxready.cpp
+    boxready.cpp \
+    components/threequery.cpp \
+    testprocess.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -141,7 +143,9 @@ HEADERS += \
     Setup/logview.h \
     Setup/pidparam.h \
     Setup/version2.h \
-    boxready.h
+    boxready.h \
+    components/threequery.h \
+    testprocess.h
 
 FORMS += \
         mainwindow.ui \
@@ -171,7 +175,9 @@ FORMS += \
     Setup/logview.ui \
     Setup/pidparam.ui \
     Setup/version2.ui \
-    boxready.ui
+    boxready.ui \
+    components/threequery.ui \
+    testprocess.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

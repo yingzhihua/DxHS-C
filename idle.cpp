@@ -13,7 +13,7 @@ Idle::Idle(QWidget *parent) :
     ui->Home_Idle_btQuit->setGeometry(ExGlobal::contentWidth-299-50,ExGlobal::contentHeight-106-50,299,106);
     ui->Home_Idle_btQuit->setText(tr("关机"));
     ui->Home_Idle_btLogout->setGeometry(ui->Home_Idle_btQuit->x(),ui->Home_Idle_btQuit->y()-106-30,299,106);
-    ui->Home_Idle_btLogout->setText(tr("退出登录"));
+    ui->Home_Idle_btLogout->setText(tr("退出登录"));    
 }
 
 Idle::~Idle()
@@ -29,6 +29,7 @@ void Idle::showEvent(QShowEvent *event){
     StateUpdate();
     Sequence::getPtr()->actionDo("Query",3,0,0,0);
     Sequence::getPtr()->footerNotify(true,true,true);
+    Sequence::getPtr()->setStage(Sequence::StageState::Stage_idle);
 }
 
 void Idle::hideEvent(QHideEvent *event){
@@ -50,7 +51,7 @@ void Idle::on_Home_Idle_btOpenDoor_clicked()
 }
 
 void Idle::on_Home_Idle_btLogout_clicked()
-{
+{    
     UIHandler::GoPage(UIHandler::PageId::Page_Main_Login);
 }
 

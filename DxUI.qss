@@ -9,7 +9,40 @@ QComboBox::drop-down {
 }
 QComboBox::down-arrow {width:51px;height:71; padding: 0px 0px 0px 0px;image:url(:/images/xiala.png);}
 
-
+/* components */
+    /* ThreeQuery */
+    QWidget#ThreeQuery {background: url(:/images/ThrMessIBG.png) #ffffff no-repeat;}
+    QLabel#Com_ThreeQuery_lbTitle {
+    font-size: 45px;
+    font-weight: bold;
+    color: #4c4c4c;
+    }
+    QLabel#Com_ThreeQuery_lbL1 {
+    font-size: 40px;
+    color: #a7a7a7;
+    }
+    QLabel#Com_ThreeQuery_lbL2 {
+    font-size: 40px;
+    color: #a7a7a7;
+    }
+    QLabel#Com_ThreeQuery_lbL3 {
+    font-size: 40px;
+    color: #a7a7a7;
+    }
+    QPushButton#Com_ThreeQuery_btConfirm {
+    background: url(:/images/confirm.png);
+    color:#ffffff;
+    font-size:40px;
+    padding-left: 30px;
+    padding-bottom: 3px;
+    }
+    QPushButton#Com_ThreeQuery_btCancel {
+    background: url(:/images/cancel.png);
+    color:#464646;
+    font-size:40px;
+    padding-left: 30px;
+    padding-bottom: 3px;
+    }
 /* Home */
     /* Startup */
     QPushButton#Home_Startup_btOpenDoor {
@@ -52,10 +85,19 @@ QComboBox::down-arrow {width:51px;height:71; padding: 0px 0px 0px 0px;image:url(
     }
     /* BoxReady */
     QPushButton#Home_BoxReady_btStart {
-    background-image: url(:/images/StartTest.png);
+    background-image: url(:/images/StartTest.png);    
+    }
+    QLabel#Home_BoxReady_lbTips {
+    font-size: 45px;
+    font-weight: bold;
+    color: #4c4c4c;
     }
     QPushButton#Home_BoxReady_btCancelTest {
     background-image: url(:/images/CancelTest.png);
+    color: #323232;
+    padding-left: 20px;
+    padding-bottom: 4px;
+    font-size: 40px;
     }
     QPushButton#Home_BoxReady_btPen {
     background-image: url(:/images/Pen.png);
@@ -77,6 +119,7 @@ QComboBox::down-arrow {width:51px;height:71; padding: 0px 0px 0px 0px;image:url(
     }
     QLabel#Home_BoxReady_lbSampleCode {
     font-size: 30px;
+    color: #667788;
     }
     QLabel#Home_BoxReady_lbSampleInfo {
     font-size: 30px;
