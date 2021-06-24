@@ -1,17 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>LogView</class>
- <widget name="LogView" class="QDialog">
+ <widget class="QDialog" name="LogView">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>1865</width>
+    <height>816</height>
    </rect>
+  </property>
+  <property name="font">
+   <font>
+    <pointsize>30</pointsize>
+   </font>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
+  <widget class="QListWidget" name="ltWidget_log">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>194</y>
+     <width>1781</width>
+     <height>611</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+   <property name="autoFillBackground">
+    <bool>true</bool>
+   </property>
+   <property name="currentRow">
+    <number>-1</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_log_title">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>130</y>
+     <width>1501</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Logid   类型    结果     登录用户                     信息                                               时间  </string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="cBox_log_selest">
+   <property name="geometry">
+    <rect>
+     <x>350</x>
+     <y>30</y>
+     <width>341</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+   <item>
+    <property name="text">
+     <string>全部</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>开机</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>关机</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>登录</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>错误</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>打印</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>审核</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>取消审核</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>40</y>
+     <width>191</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>查询条件：</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>

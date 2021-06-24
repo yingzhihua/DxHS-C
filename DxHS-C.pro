@@ -82,7 +82,9 @@ SOURCES += \
     Setup/version2.cpp \
     boxready.cpp \
     components/threequery.cpp \
-    testprocess.cpp
+    testprocess.cpp \
+    Setup/adduser.cpp \
+    Setup/updateuser.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -145,7 +147,9 @@ HEADERS += \
     Setup/version2.h \
     boxready.h \
     components/threequery.h \
-    testprocess.h
+    testprocess.h \
+    Setup/adduser.h \
+    Setup/updateuser.h
 
 FORMS += \
         mainwindow.ui \
@@ -177,7 +181,9 @@ FORMS += \
     Setup/version2.ui \
     boxready.ui \
     components/threequery.ui \
-    testprocess.ui
+    testprocess.ui \
+    Setup/adduser.ui \
+    Setup/updateuser.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

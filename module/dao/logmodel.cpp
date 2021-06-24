@@ -89,10 +89,12 @@ void LogModel::InitLog(){
         logd.LogIpara2 = query.value(3).toString();
         logd.LogTpara2 = query.value(5).toString();
         logd.LogTime = query.value(6).toString();
-
+       // qDebug()<<"logd.count:"<<logd.Logid;
         m_display_list<<logd;
     }
     resetDisplayId();
+    qDebug()<<"InitLogP_m_display_list.count:"<<m_display_list.count();
+     qDebug()<<"InitLog_m_display_list.size:"<<m_display_list.size();
 }
 
 void LogModel::refresh(int para){
@@ -134,7 +136,7 @@ void LogModel::refresh(int para){
         logd.LogIpara2 = query.value(3).toString();
         logd.LogTpara2 = query.value(5).toString();
         logd.LogTime = query.value(6).toString();
-
+       //qDebug()<<"logd.count:"<<logd.Logid;
         m_display_list<<logd;
       }
     else
@@ -172,10 +174,12 @@ void LogModel::refresh(int para){
           logd.LogIpara2 = query.value(3).toString();
           logd.LogTpara2 = query.value(5).toString();
           logd.LogTime = query.value(6).toString();
-
+         // qDebug()<<"logd.count:"<<logd.Logid;
           m_display_list<<logd;
           }
         }
+    qDebug()<<"m_display_list.count:"<<m_display_list.count();
+     qDebug()<<"m_display_list.size:"<<m_display_list.size();
     resetDisplayId();
     endResetModel();
 }
@@ -206,4 +210,22 @@ void LogModel::resetDisplayId(){
         i->Logid = logCount;
         logCount--;
     }
+}
+
+void LogModel::setLogIndex(int index)
+{
+  currTestIndex=index;
+
+}
+
+int LogModel::getLogIndex(void)
+{
+    return  currTestIndex;
+
+}
+
+int LogModel::getLogNum(void)
+{
+    return  m_display_list.size();
+
 }

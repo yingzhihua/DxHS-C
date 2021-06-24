@@ -14,6 +14,13 @@ class LogView : public QDialog
 public:
     explicit LogView(QWidget *parent = nullptr);
     ~LogView();
+    void display_data(void);
+    void refresh_data(void);
+
+private slots:
+    void on_comboBox_currentIndexChanged(int index);
+
+    void on_cBox_log_selest_currentIndexChanged(int index);
 
 private:
     Ui::LogView *ui;

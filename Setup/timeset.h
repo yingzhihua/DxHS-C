@@ -15,6 +15,9 @@ public:
     explicit TimeSet(QWidget *parent = nullptr);
     ~TimeSet();
 
+private slots:
+    void on_calendarWidget_clicked(const QDate &date);
+
 private:
     Ui::TimeSet *ui;
 };

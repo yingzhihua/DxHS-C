@@ -3,6 +3,9 @@
 
 #include <QDialog>
 
+
+#include "../module/dao/usermodel.h"
+
 namespace Ui {
 class AdminPassword;
 }
@@ -22,6 +25,7 @@ private slots:
 
 private:
     Ui::AdminPassword *ui;
+    UserModel *userModel;
 };
 
 #endif // ADMINPASSWORD_H

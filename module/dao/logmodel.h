@@ -47,17 +47,20 @@ public:
     QVariant data(const QModelIndex & index, int role = Qt::DisplayRole) const;
     bool ExistLog(int Logid);
     void InitLog();
-    Q_INVOKABLE void refresh(int para);
+    /*Q_INVOKABLE*/ void refresh(int para);
 
     int getCurrLodID(){return m_display_list[currTestIndex].Logid;}
-    Q_INVOKABLE QString getCurrLogType(){return m_display_list[currTestIndex].LogType;}
-    Q_INVOKABLE QString getCurrLogResult(){return m_display_list[currTestIndex].Result;}
-    Q_INVOKABLE QString getCurrLogMsg(){return m_display_list[currTestIndex].LogMsg;}
-    Q_INVOKABLE QString getCurrLogIpara2(){return m_display_list[currTestIndex].LogIpara2;}
-    Q_INVOKABLE QString getCurrLogTpara2(){return m_display_list[currTestIndex].LogTpara2;}
-    Q_INVOKABLE QString getCurrValidDateTime(){return m_display_list[currTestIndex].LogTime;}
+    /*Q_INVOKABLE*/ QString getCurrLogType(){return m_display_list[currTestIndex].LogType;}
+    /*Q_INVOKABLE*/ QString getCurrLogResult(){return m_display_list[currTestIndex].Result;}
+    /*Q_INVOKABLE*/ QString getCurrLogMsg(){return m_display_list[currTestIndex].LogMsg;}
+    /*Q_INVOKABLE*/ QString getCurrLogIpara2(){return m_display_list[currTestIndex].LogIpara2;}
+    /*Q_INVOKABLE*/ QString getCurrLogTpara2(){return m_display_list[currTestIndex].LogTpara2;}
+    /*Q_INVOKABLE*/ QString getCurrValidDateTime(){return m_display_list[currTestIndex].LogTime;}
 
-    Q_INVOKABLE void setCurrLog(int TestIndex);
+    /*Q_INVOKABLE*/ void setCurrLog(int TestIndex);
+    void setLogIndex(int index);
+    int getLogIndex(void);
+    int getLogNum(void);
 
 protected:
     QHash<int, QByteArray> roleNames() const;

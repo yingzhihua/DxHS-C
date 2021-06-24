@@ -29,6 +29,8 @@
 #include "Setup/logview.h"
 #include "Setup/pidparam.h"
 #include "Setup/version2.h"
+#include "Setup/adduser.h"
+#include "Setup/updateuser.h"
 
 #include "Data/datamenu.h"
 
@@ -84,7 +86,8 @@ private:
     LogView *logview;
     PIDParam *pidparam;
     Version2 *version2;
-
+    AddUser *adduser;
+    UpdateUser *updateuser;
     QMovie *movie;
 
 public slots:

@@ -1,17 +1,1151 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>PumpParam</class>
- <widget name="PumpParam" class="QDialog">
+ <widget class="QDialog" name="PumpParam">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>1730</width>
+    <height>885</height>
    </rect>
+  </property>
+  <property name="font">
+   <font>
+    <pointsize>30</pointsize>
+   </font>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
+  <widget class="QLabel" name="label_pump2_data">
+   <property name="geometry">
+    <rect>
+     <x>254</x>
+     <y>167</y>
+     <width>121</width>
+     <height>45</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(32, 32, 220);</string>
+   </property>
+   <property name="text">
+    <string>TextLa</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_pump2_A">
+   <property name="geometry">
+    <rect>
+     <x>444</x>
+     <y>157</y>
+     <width>160</width>
+     <height>60</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>调整为：</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_pump2">
+   <property name="geometry">
+    <rect>
+     <x>27</x>
+     <y>160</y>
+     <width>223</width>
+     <height>60</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>流体参数2：</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEdit_pump2">
+   <property name="geometry">
+    <rect>
+     <x>610</x>
+     <y>160</y>
+     <width>161</width>
+     <height>53</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_pump3_data">
+   <property name="geometry">
+    <rect>
+     <x>254</x>
+     <y>247</y>
+     <width>121</width>
+     <height>45</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(32, 32, 220);</string>
+   </property>
+   <property name="text">
+    <string>TextLa</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_pump3_A">
+   <property name="geometry">
+    <rect>
+     <x>444</x>
+     <y>237</y>
+     <width>160</width>
+     <height>60</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>调整为：</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_pump3">
+   <property name="geometry">
+    <rect>
+     <x>27</x>
+     <y>240</y>
+     <width>223</width>
+     <height>60</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>流体参数3：</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEdit_pump3">
+   <property name="geometry">
+    <rect>
+     <x>610</x>
+     <y>240</y>
+     <width>161</width>
+     <height>53</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_pump4_data">
+   <property name="geometry">
+    <rect>
+     <x>254</x>
+     <y>327</y>
+     <width>121</width>
+     <height>45</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(32, 32, 220);</string>
+   </property>
+   <property name="text">
+    <string>TextLa</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_pump4_A">
+   <property name="geometry">
+    <rect>
+     <x>444</x>
+     <y>317</y>
+     <width>160</width>
+     <height>60</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>调整为：</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_pump4">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>320</y>
+     <width>223</width>
+     <height>60</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>流体参数4：</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEdit_pump4">
+   <property name="geometry">
+    <rect>
+     <x>610</x>
+     <y>320</y>
+     <width>161</width>
+     <height>53</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_pump5_data">
+   <property name="geometry">
+    <rect>
+     <x>254</x>
+     <y>407</y>
+     <width>121</width>
+     <height>45</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(32, 32, 220);</string>
+   </property>
+   <property name="text">
+    <string>TextLa</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_pump5_A">
+   <property name="geometry">
+    <rect>
+     <x>444</x>
+     <y>397</y>
+     <width>160</width>
+     <height>60</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>调整为：</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_pump5">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>390</y>
+     <width>223</width>
+     <height>60</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>流体参数5：</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEdit_pump5">
+   <property name="geometry">
+    <rect>
+     <x>610</x>
+     <y>400</y>
+     <width>161</width>
+     <height>53</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEdit_pump8">
+   <property name="geometry">
+    <rect>
+     <x>616</x>
+     <y>633</y>
+     <width>161</width>
+     <height>53</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEdit_pump7">
+   <property name="geometry">
+    <rect>
+     <x>616</x>
+     <y>553</y>
+     <width>161</width>
+     <height>53</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_pump6_A">
+   <property name="geometry">
+    <rect>
+     <x>446</x>
+     <y>473</y>
+     <width>160</width>
+     <height>60</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>调整为：</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_pump9_data">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>720</y>
+     <width>121</width>
+     <height>45</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(32, 32, 220);</string>
+   </property>
+   <property name="text">
+    <string>TextLa</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_pump8">
+   <property name="geometry">
+    <rect>
+     <x>33</x>
+     <y>633</y>
+     <width>223</width>
+     <height>60</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>流体参数8：</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_pump8_A">
+   <property name="geometry">
+    <rect>
+     <x>450</x>
+     <y>630</y>
+     <width>160</width>
+     <height>60</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>调整为：</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEdit_pump10">
+   <property name="geometry">
+    <rect>
+     <x>616</x>
+     <y>793</y>
+     <width>161</width>
+     <height>53</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_pump7">
+   <property name="geometry">
+    <rect>
+     <x>33</x>
+     <y>553</y>
+     <width>223</width>
+     <height>60</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>流体参数7：</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEdit_pump6">
+   <property name="geometry">
+    <rect>
+     <x>612</x>
+     <y>476</y>
+     <width>161</width>
+     <height>53</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_pump7_A">
+   <property name="geometry">
+    <rect>
+     <x>450</x>
+     <y>550</y>
+     <width>160</width>
+     <height>60</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>调整为：</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_pump10_A">
+   <property name="geometry">
+    <rect>
+     <x>450</x>
+     <y>790</y>
+     <width>160</width>
+     <height>60</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>调整为：</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_pump6">
+   <property name="geometry">
+    <rect>
+     <x>29</x>
+     <y>476</y>
+     <width>223</width>
+     <height>60</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>流体参数6：</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_pump10">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>790</y>
+     <width>231</width>
+     <height>60</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>流体参数10：</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_pump6_data">
+   <property name="geometry">
+    <rect>
+     <x>256</x>
+     <y>483</y>
+     <width>121</width>
+     <height>45</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(32, 32, 220);</string>
+   </property>
+   <property name="text">
+    <string>TextLa</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEdit_pump9">
+   <property name="geometry">
+    <rect>
+     <x>616</x>
+     <y>713</y>
+     <width>161</width>
+     <height>53</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_pump7_data">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>560</y>
+     <width>121</width>
+     <height>45</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(32, 32, 220);</string>
+   </property>
+   <property name="text">
+    <string>TextLa</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_pump10_data">
+   <property name="geometry">
+    <rect>
+     <x>270</x>
+     <y>800</y>
+     <width>121</width>
+     <height>45</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(32, 32, 220);</string>
+   </property>
+   <property name="text">
+    <string>TextLa</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_pump9_A">
+   <property name="geometry">
+    <rect>
+     <x>450</x>
+     <y>710</y>
+     <width>160</width>
+     <height>60</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>调整为：</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_pump9">
+   <property name="geometry">
+    <rect>
+     <x>36</x>
+     <y>713</y>
+     <width>223</width>
+     <height>60</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>流体参数9：</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_pump8_data">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>640</y>
+     <width>121</width>
+     <height>45</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(32, 32, 220);</string>
+   </property>
+   <property name="text">
+    <string>TextLa</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEdit_pump13">
+   <property name="geometry">
+    <rect>
+     <x>1497</x>
+     <y>227</y>
+     <width>161</width>
+     <height>53</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEdit_pump12">
+   <property name="geometry">
+    <rect>
+     <x>1497</x>
+     <y>147</y>
+     <width>161</width>
+     <height>53</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_pump11_A">
+   <property name="geometry">
+    <rect>
+     <x>1327</x>
+     <y>67</y>
+     <width>160</width>
+     <height>60</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>调整为：</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_pump14_data">
+   <property name="geometry">
+    <rect>
+     <x>1190</x>
+     <y>320</y>
+     <width>121</width>
+     <height>45</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(32, 32, 220);</string>
+   </property>
+   <property name="text">
+    <string>TextLa</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_pump13">
+   <property name="geometry">
+    <rect>
+     <x>960</x>
+     <y>230</y>
+     <width>223</width>
+     <height>60</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>裂解温度3：</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_pump13_A">
+   <property name="geometry">
+    <rect>
+     <x>1331</x>
+     <y>224</y>
+     <width>160</width>
+     <height>60</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>调整为：</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEdit_pump15">
+   <property name="geometry">
+    <rect>
+     <x>1497</x>
+     <y>387</y>
+     <width>161</width>
+     <height>53</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_pump12">
+   <property name="geometry">
+    <rect>
+     <x>960</x>
+     <y>150</y>
+     <width>223</width>
+     <height>60</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>裂解温度2：</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEdit_pump11">
+   <property name="geometry">
+    <rect>
+     <x>1493</x>
+     <y>70</y>
+     <width>161</width>
+     <height>53</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_pump12_A">
+   <property name="geometry">
+    <rect>
+     <x>1331</x>
+     <y>144</y>
+     <width>160</width>
+     <height>60</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>调整为：</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_pump15_A">
+   <property name="geometry">
+    <rect>
+     <x>1331</x>
+     <y>384</y>
+     <width>160</width>
+     <height>60</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>调整为：</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_pump11">
+   <property name="geometry">
+    <rect>
+     <x>961</x>
+     <y>71</y>
+     <width>223</width>
+     <height>60</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>裂解温度1：</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_pump15">
+   <property name="geometry">
+    <rect>
+     <x>960</x>
+     <y>390</y>
+     <width>223</width>
+     <height>60</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>裂解温度5：</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_pump11_data">
+   <property name="geometry">
+    <rect>
+     <x>1187</x>
+     <y>77</y>
+     <width>121</width>
+     <height>45</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(32, 32, 220);</string>
+   </property>
+   <property name="text">
+    <string>TextLa</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEdit_pump14">
+   <property name="geometry">
+    <rect>
+     <x>1497</x>
+     <y>307</y>
+     <width>161</width>
+     <height>53</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_pump12_data">
+   <property name="geometry">
+    <rect>
+     <x>1191</x>
+     <y>154</y>
+     <width>121</width>
+     <height>45</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(32, 32, 220);</string>
+   </property>
+   <property name="text">
+    <string>TextLa</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_pump15_data">
+   <property name="geometry">
+    <rect>
+     <x>1191</x>
+     <y>394</y>
+     <width>121</width>
+     <height>45</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(32, 32, 220);</string>
+   </property>
+   <property name="text">
+    <string>TextLa</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_pump14_A">
+   <property name="geometry">
+    <rect>
+     <x>1331</x>
+     <y>304</y>
+     <width>160</width>
+     <height>60</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>调整为：</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_pump14">
+   <property name="geometry">
+    <rect>
+     <x>960</x>
+     <y>310</y>
+     <width>223</width>
+     <height>60</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>裂解温度4：</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_pump13_data">
+   <property name="geometry">
+    <rect>
+     <x>1191</x>
+     <y>234</y>
+     <width>121</width>
+     <height>45</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(32, 32, 220);</string>
+   </property>
+   <property name="text">
+    <string>TextLa</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>970</x>
+     <y>740</y>
+     <width>301</width>
+     <height>111</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-image: url(:/images/confirmbt.png);</string>
+   </property>
+   <property name="text">
+    <string>  保存</string>
+   </property>
+   <property name="flat">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_2">
+   <property name="geometry">
+    <rect>
+     <x>1370</x>
+     <y>740</y>
+     <width>301</width>
+     <height>111</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-image: url(:/images/back.png);</string>
+   </property>
+   <property name="text">
+    <string>  返回</string>
+   </property>
+   <property name="flat">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_pump1_data">
+   <property name="geometry">
+    <rect>
+     <x>250</x>
+     <y>90</y>
+     <width>121</width>
+     <height>45</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(32, 32, 220);</string>
+   </property>
+   <property name="text">
+    <string>TextLa</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_pump1_A">
+   <property name="geometry">
+    <rect>
+     <x>440</x>
+     <y>80</y>
+     <width>160</width>
+     <height>60</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>调整为：</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_pump1">
+   <property name="geometry">
+    <rect>
+     <x>23</x>
+     <y>83</y>
+     <width>223</width>
+     <height>60</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>流体参数1：</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lEdit_pump1">
+   <property name="geometry">
+    <rect>
+     <x>606</x>
+     <y>83</y>
+     <width>161</width>
+     <height>53</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>
