@@ -26,7 +26,7 @@ void Idle::showEvent(QShowEvent *event){
     connect(Sequence::getPtr(),&Sequence::boxStateChanged,this,&Idle::StateUpdate);
     connect(Sequence::getPtr(),&Sequence::doorStateChanged,this,&Idle::StateUpdate);
     connect(Sequence::getPtr(),&Sequence::sequenceFinish,this,&Idle::sequenceFinish);
-    StateUpdate();
+    StateUpdate();    
     Sequence::getPtr()->actionDo("Query",3,0,0,0);
     Sequence::getPtr()->footerNotify(true,true,true);
     Sequence::getPtr()->setStage(Sequence::StageState::Stage_idle);

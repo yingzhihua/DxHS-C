@@ -110,7 +110,7 @@
      </rect>
     </property>
    </widget>
-   <widget class="QLabel" name="lbHeaderBottom">
+   <widget class="QLabel" name="Home_Main_lbUnfinish">
     <property name="geometry">
      <rect>
       <x>550</x>
@@ -278,13 +278,13 @@ color: rgb(243, 243, 243);</string>
      <string>Loading</string>
     </property>
    </widget>
+   <zorder>lbHeaderTop</zorder>
+   <zorder>Home_Main_lbUnfinish</zorder>
    <zorder>lbfooterbg</zorder>
    <zorder>btSetup</zorder>
    <zorder>btHome</zorder>
    <zorder>btData</zorder>
    <zorder>stackedWidget</zorder>
-   <zorder>lbHeaderBottom</zorder>
-   <zorder>lbHeaderTop</zorder>
    <zorder>lbDate</zorder>
    <zorder>lbUser</zorder>
    <zorder>lbTitleIcon</zorder>

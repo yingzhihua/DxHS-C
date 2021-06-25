@@ -94,6 +94,7 @@ public slots:
     void GoPage(UIHandler::PageId id);
     void StateUpdate(UIHandler::StateId id);
     void FooterNotify(bool setup,bool home,bool data);
+    void TitleNotify(int titleparam, QString title);
 
 private slots:
     void on_btSetup_clicked();

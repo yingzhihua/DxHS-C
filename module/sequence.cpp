@@ -75,7 +75,7 @@ Sequence::Sequence(QObject *parent) : QObject(parent)
     connect(camera,&TCamera::finishCapture,this,&Sequence::ActionFinish);
     connect(camera,&TCamera::reView,this,&Sequence::CameraView);
 
-    //testMgr = new TestMgr();
+    testMgr = new TestMgr();
 
     qr = new QRcoder();
     connect(qr,&QRcoder::finishQRcode,this,&Sequence::ActionFinish);
@@ -103,8 +103,8 @@ Sequence::Sequence(QObject *parent) : QObject(parent)
 bool Sequence::sequenceInit(){
     if (!ReadTestProcess(QCoreApplication::applicationDirPath()+"/FLASHDXcn"))
         return false;
-    //ExGlobal::pTestModel->InitTest();
-    //ExGlobal::pLogModel->InitLog();
+    ExGlobal::pTestModel->InitTest();
+    ExGlobal::pLogModel->InitLog();
     if (camera->cameraType == CAMERA_EMPTY)
     {
         errReceive(ERROR_CODE_CAM_CONNECT);
@@ -842,8 +842,8 @@ static int TestFinish(){
         DataHandler::SaveOnePointData(useTestId,Log::getDir());
     else
         DataHandler::SaveData(useTestId,Log::getDir());
-    //ExGlobal::pTestModel->AddTest(useTestId);
-    //ExGlobal::pTestResultModel->setTestid(useTestId,ExGlobal::panelCode());
+    ExGlobal::pTestModel->AddTest(useTestId);
+    ExGlobal::pTestResultModel->setTestid(useTestId,ExGlobal::panelCode());
     sequence->printPDFResult();    
     return 0;
 }
@@ -2114,7 +2114,7 @@ void Sequence::checkParam(bool update){
     if (ExGlobal::isDebug())
     {
         ReadTestProcess(QCoreApplication::applicationDirPath()+"/FLASHDXcn");
-        //ExGlobal::pTestModel->InitTest();
+        ExGlobal::pTestModel->InitTest();
     }
     qDebug()<<"checkParam version="<<ExGlobal::tempversion();
     if (QString::compare("V2.21",ExGlobal::tempversion())>0) return;

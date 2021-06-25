@@ -113,18 +113,46 @@ QComboBox::down-arrow {width:51px;height:71; padding: 0px 0px 0px 0px;image:url(
     }
     QLabel#Home_BoxReady_lbTestSerial {
     font-size: 30px;
-    }
-    QLabel#Home_BoxReady_cbTestType {
-    font-size: 30px;
-    }
+    }    
     QLabel#Home_BoxReady_lbSampleCode {
-    font-size: 30px;
-    color: #667788;
+    font-size: 30px;    
     }
     QLabel#Home_BoxReady_lbSampleInfo {
     font-size: 30px;
     }
     QLabel#Home_BoxReady_lbSampleRemark {
+    font-size: 30px;
+    }
+    /* TestProcess */
+    QPushButton#Home_TestProcess_btCancelTest {
+    background-image: url(:/images/CancelTest.png);
+    color: #323232;
+    padding-left: 20px;
+    padding-bottom: 4px;
+    font-size: 40px;
+    }
+    QLabel#Home_TestProcess_lbBK1 {
+    background-image: url(:/images/ThreeMessageBG.png);
+    }
+    QLabel#Home_TestProcess_lbBK2 {
+    background-image: url(:/images/ThreeMessageBG.png);
+    }
+    QLabel#Home_TestProcess_lbTestName {
+    font-size: 30px;
+    }
+    QLabel#Home_TestProcess_lbTestSerial {
+    font-size: 30px;
+    }
+    QLabel#Home_TestProcess_lbTestType {
+    font-size: 30px;
+    }
+    QLabel#Home_TestProcess_lbSampleCode {
+    font-size: 30px;
+    }
+    QLabel#Home_TestProcess_lbSampleInfo {
+    font-size: 30px;
+    }
+    QLabel#Home_TestProcess_lbSampleRemark {
     font-size: 30px;
     }
 /* Setup */

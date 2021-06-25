@@ -15,6 +15,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     sequence = Sequence::getPtr();
     connect(sequence,&Sequence::footerNotify,this,&MainWindow::FooterNotify);
+    connect(sequence,&Sequence::titleNotify,this,&MainWindow::TitleNotify);
     connect(UIHandler::getPtr(),&UIHandler::Go,this,&MainWindow::GoPage);
     connect(UIHandler::getPtr(),&UIHandler::State,this,&MainWindow::StateUpdate);
 
@@ -108,26 +109,26 @@ MainWindow::MainWindow(QWidget *parent) :
 
 
     if (ExGlobal::isDebug())
-        //ui->stackedWidget->setCurrentWidget(main_login);
-        ui->stackedWidget->setCurrentWidget(main_boxready);
+        ui->stackedWidget->setCurrentWidget(main_login);
+        //ui->stackedWidget->setCurrentWidget(main_testprocess);
     else
         ui->stackedWidget->setCurrentWidget(start);
     this->startTimer(1000);
 }
 
+const static int HEADER_HEIGHT = 150;
+const static int FOOTER_HEIGHT = 150;
+const static int BOTTOMBUTTON_HEIGHT = 123;
+const static int BOTTOM_BUTTON_WIDTH = 342;
 void MainWindow::UISetup()
 {
-    const static int HEADER_HEIGHT = 150;
-    const static int FOOTER_HEIGHT = 150;
-    const static int BOTTOMBUTTON_HEIGHT = 123;
-    const static int BOTTOM_BUTTON_WIDTH = 342;
     int screenwidth = QGuiApplication::screens().at(0)->geometry().width();
     int screenheight = QGuiApplication::screens().at(0)->geometry().height();
     qDebug()<<"width="<<screenwidth<<"height="<<screenheight;
     ExGlobal::contentWidth = screenwidth;
     ExGlobal::contentHeight = screenheight-HEADER_HEIGHT-FOOTER_HEIGHT;
 
-    ui->lbHeaderBottom->setGeometry(0,0,screenwidth,HEADER_HEIGHT);
+    ui->Home_Main_lbUnfinish->setGeometry(0,0,0,HEADER_HEIGHT);
     ui->lbHeaderTop->setGeometry(0,0,screenwidth,HEADER_HEIGHT);
     ui->lbfooterbg->setGeometry(0,screenheight-FOOTER_HEIGHT,screenwidth,FOOTER_HEIGHT);
 
@@ -147,6 +148,7 @@ void MainWindow::UISetup()
     ui->lbMachineName->setGeometry(1300,50,500,50);
     ui->lbMachineName->setAlignment(Qt::AlignRight);
     ui->lbMachineName->setText(ExGlobal::getPtr()->sysName());
+    qDebug()<<"sysName"<<ExGlobal::getPtr()->sysName();
 
     ui->lbLoading->setGeometry(0,0,screenwidth,screenheight);
     ui->lbLoading->setAlignment(Qt::AlignCenter);
@@ -508,4 +510,20 @@ void MainWindow::FooterNotify(bool setup,bool home,bool data)
     ui->btSetup->setEnabled(setup);
     ui->btHome->setEnabled(home);
     ui->btData->setEnabled(data);
+}
+
+void MainWindow::TitleNotify(int titleparam, QString title)
+{
+    qDebug()<<"TitleNotify,"<<titleparam<<title;
+    if (titleparam == 0)
+        ui->lbTitle->setText(title);
+    else if (titleparam == 1)
+        ui->lbDate->setVisible(false);
+    else if (titleparam == 2)
+        ui->lbDate->setVisible(true);
+    else if (titleparam >= 100){        
+        int x = (titleparam - 100)*ExGlobal::contentWidth/1000;
+        ui->Home_Main_lbUnfinish->setGeometry(x,0,ExGlobal::contentWidth-x,HEADER_HEIGHT);
+        ui->lbTitle->setText(title);
+    }
 }

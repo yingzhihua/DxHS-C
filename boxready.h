@@ -20,6 +20,7 @@ public:
 
 protected:
     void showEvent(QShowEvent *event);
+    void hideEvent(QHideEvent *event);
 
 private slots:
     void on_Home_BoxReady_btPen_clicked();

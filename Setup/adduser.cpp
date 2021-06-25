@@ -9,7 +9,7 @@ AddUser::AddUser(QWidget *parent) :
     ui(new Ui::AddUser)
 {
     ui->setupUi(this);
-    show_data();
+    //show_data();
 
 }
 

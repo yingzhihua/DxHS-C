@@ -53,6 +53,11 @@ void BoxReady::showEvent(QShowEvent *event){
     connect(ThreeQuery::getPtr(),&ThreeQuery::queryAck,this,&BoxReady::on_Sample_Changed);
 }
 
+void BoxReady::hideEvent(QHideEvent *event){
+    Q_UNUSED(event);
+    ThreeQuery::getPtr()->disconnect(this);
+}
+
 void BoxReady::ChangedTips()
 {
     if (ExGlobal::sampleCode().isEmpty()){
@@ -69,7 +74,8 @@ void BoxReady::ChangedTips()
 
 void BoxReady::on_Home_BoxReady_btPen_clicked()
 {
-    ThreeQuery::display(tr("样本信息录入"),tr("样本号"),tr("样本信息"),tr("样本备注"));
+    ThreeQuery::display(tr("样本信息录入"),tr("样本号"),tr("样本信息"),tr("样本备注"),
+                        ExGlobal::sampleCode(),ExGlobal::sampleInfo(),ExGlobal::sampleRemark());
 }
 
 void BoxReady::on_Sample_Changed(QString res1, QString res2, QString res3)

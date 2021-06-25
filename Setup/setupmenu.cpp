@@ -4,6 +4,7 @@
 #include <QDebug>
 #include <QListWidgetItem>
 #include <QScrollBar>
+#include <QScroller>
 
 #include "../module/exglobal.h"
 #include "../module/uihandler.h"
@@ -58,6 +59,9 @@ SetupMenu::SetupMenu(QWidget *parent) :
         list->setText(item[i].name);
         ui->listWidget->addItem(list);
     }
+
+    ui->listWidget->setVerticalScrollMode(QListWidget::ScrollMode::ScrollPerPixel);
+    QScroller::grabGesture(ui->listWidget,QScroller::LeftMouseButtonGesture);
 }
 
 SetupMenu::~SetupMenu()
