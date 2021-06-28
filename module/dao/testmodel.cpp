@@ -28,7 +28,11 @@ int TestModel::rowCount(const QModelIndex &parent) const
     Q_UNUSED(parent);
     return m_display_list.count();
 }
-
+int TestModel::columnCount(const QModelIndex &parent) const
+{
+    Q_UNUSED(parent);
+    return 6;
+}
 QVariant TestModel::data(const QModelIndex &index, int role) const
 {
     if (index.row()<0 || index.row()>=m_display_list.count())
@@ -36,7 +40,21 @@ QVariant TestModel::data(const QModelIndex &index, int role) const
 
     const Test &test = m_display_list[index.row()];
 
-    if (role == RolesTestid)
+    if (role == Qt::DisplayRole){
+        if (index.column() == 0)
+            return test.Testid;
+        if (index.column() == 1)
+            return Sequence::getPanelName(test.PanelCode);
+        if (index.column() == 2)
+            return test.SampleId;
+        if (index.column() == 3)
+            return test.User;
+        if (index.column() == 4)
+            return test.Checker;
+        if (index.column() == 5)
+            return test.TestTime;
+    }
+    else if (role == RolesTestid)
         return test.Testid;
     else if(role == RolesDisplayid)
         return test.Displayid;

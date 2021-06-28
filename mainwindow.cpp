@@ -13,6 +13,10 @@ MainWindow::MainWindow(QWidget *parent) :
     SqliteMgr::conn(Log::getDir()+"/data.db","sa","123456");
     ExGlobal::exInit();
 
+    if (ExGlobal::isDebug())
+    {
+        ExGlobal::pTestModel->InitTest();
+    }
     sequence = Sequence::getPtr();
     connect(sequence,&Sequence::footerNotify,this,&MainWindow::FooterNotify);
     connect(sequence,&Sequence::titleNotify,this,&MainWindow::TitleNotify);

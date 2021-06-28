@@ -15,6 +15,10 @@ public:
     explicit DataMenu(QWidget *parent = nullptr);
     ~DataMenu();
 
+protected:
+    void showEvent(QShowEvent *event);
+    void hideEvent(QHideEvent *event);
+
 private:
     Ui::DataMenu *ui;
 };
