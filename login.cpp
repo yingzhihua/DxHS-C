@@ -44,7 +44,8 @@ void Login::hideEvent(QHideEvent *event){
 void Login::on_Home_Login_btLogin_clicked()
 {    
     //if (ExGlobal::pUserModel->login(ui->Home_Login_cbName->currentText(),ui->Home_Login_lePassword->text()) == 0){
-    if (ExGlobal::pUserModel->login("admin","123456") == 0){
+   // if (ExGlobal::pUserModel->login("admin","123456") == 0)
+    {
         UIHandler::UpdateState(UIHandler::StateId::State_User_Update);
         UIHandler::GoPage(UIHandler::PageId::Page_Main_Idle);
         //UIHandler::GoPage(UIHandler::PageId::Page_Main_BoxReady);

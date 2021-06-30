@@ -59,6 +59,13 @@ public:
     Q_INVOKABLE void restart();
     Q_INVOKABLE void switchSelect(int index);
 
+       QString getCurName(){return m_display_list[currIndex].Name;}
+       bool getCurDir(){return m_display_list[currIndex].bDir;}
+       bool getCurSelect(){return m_display_list[currIndex].bSelect;}
+       void setCurrIndex(int index){currIndex = index;}
+       int getCurrIndex(){return currIndex;}
+       int getCount(){return m_display_list.count();}
+
 protected:
     QHash<int, QByteArray> roleNames() const;
 
@@ -67,6 +74,7 @@ private:
     QHash<int, QByteArray> roles;
     Worker *worker;
     void startCpy();
+    int currIndex;
 
 public slots:
     void Progress(int val);

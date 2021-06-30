@@ -84,7 +84,8 @@ SOURCES += \
     components/threequery.cpp \
     testprocess.cpp \
     Setup/adduser.cpp \
-    Setup/updateuser.cpp
+    Setup/updateuser.cpp \
+    components/twobutton.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -149,7 +150,8 @@ HEADERS += \
     components/threequery.h \
     testprocess.h \
     Setup/adduser.h \
-    Setup/updateuser.h
+    Setup/updateuser.h \
+    components/twobutton.h
 
 FORMS += \
         mainwindow.ui \
@@ -183,7 +185,8 @@ FORMS += \
     components/threequery.ui \
     testprocess.ui \
     Setup/adduser.ui \
-    Setup/updateuser.ui
+    Setup/updateuser.ui \
+    components/twobutton.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

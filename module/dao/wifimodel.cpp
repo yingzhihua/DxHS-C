@@ -203,6 +203,8 @@ bool WifiModel::isConnected(){
 
 void WifiModel::connect(QString ssid, QString password){
 
+    qDebug()<<"wifi_name_1:"<<ssid<<"++++++++++++++++++++++++wifi_password:"<<password;
+
     if (connector != nullptr)
         return;
     connector = new WifiConnect;
@@ -217,7 +219,7 @@ void WifiModel::connect(QString ssid, QString password){
     connector->setMode(0);
     ssid_ok_name=ssid;
     password_ok=password;
-    qDebug()<<"wifi_name:"<<ssid<<"++++++++++++++++++++++++wifi_password:"<<password;
+    qDebug()<<"wifi_name_2:"<<ssid<<"++++++++++++++++++++++++wifi_password:"<<password;
     thread->start();
 }
 

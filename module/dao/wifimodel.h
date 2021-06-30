@@ -65,6 +65,17 @@ public:
     Q_INVOKABLE void updatewifi(const QString &wifi_n, const QString &passwd);
     Q_INVOKABLE QString getwifi_passwd(const QString &wifi_n);
 
+
+    QString getCurSSID(){return m_display_list[currIndex].SSID;}
+    int getCurSignal(){return m_display_list[currIndex].Signal;}
+    int getCurMode(){return m_display_list[currIndex].Mode;}
+    bool getCurConnect(){return m_display_list[currIndex].isConnected;}
+    QString getCurPassword(){return m_display_list[currIndex].Security;}
+
+    int getCurrIndex(void){ return  currIndex;}
+    void setCurrIndex(int index){currIndex = index;}
+    int getCount(){return m_display_list.count();}
+
 protected:
     QHash<int, QByteArray> roleNames() const;
 
@@ -82,6 +93,7 @@ private:
     WifiConnect *connector;
     QString ssid_ok_name;
     QString password_ok;
+    int currIndex;
 };
 
 #endif // WIFIMODEL_H

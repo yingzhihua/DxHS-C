@@ -1,17 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>UsbFile</class>
- <widget name="UsbFile" class="QDialog">
+ <widget class="QDialog" name="UsbFile">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>1854</width>
+    <height>999</height>
    </rect>
+  </property>
+  <property name="font">
+   <font>
+    <pointsize>30</pointsize>
+   </font>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>770</y>
+     <width>301</width>
+     <height>111</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-image: url(:/images/cancelbt.png);</string>
+   </property>
+   <property name="text">
+    <string>  删除</string>
+   </property>
+   <property name="flat">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_2">
+   <property name="geometry">
+    <rect>
+     <x>400</x>
+     <y>770</y>
+     <width>301</width>
+     <height>111</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-image: url(:/images/confirmbt2.png);</string>
+   </property>
+   <property name="text">
+    <string>    拷出</string>
+   </property>
+   <property name="flat">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_3">
+   <property name="geometry">
+    <rect>
+     <x>790</x>
+     <y>770</y>
+     <width>301</width>
+     <height>111</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-image: url(:/images/confirmbt2.png);</string>
+   </property>
+   <property name="text">
+    <string>    升级</string>
+   </property>
+   <property name="flat">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_4">
+   <property name="geometry">
+    <rect>
+     <x>1150</x>
+     <y>770</y>
+     <width>301</width>
+     <height>111</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-image: url(:/images/confirmbt2.png);</string>
+   </property>
+   <property name="text">
+    <string>    重启</string>
+   </property>
+   <property name="flat">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_5">
+   <property name="geometry">
+    <rect>
+     <x>1510</x>
+     <y>770</y>
+     <width>301</width>
+     <height>111</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-image: url(:/images/back.png);</string>
+   </property>
+   <property name="text">
+    <string>    返回</string>
+   </property>
+   <property name="flat">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QWidget" name="gridLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>20</y>
+     <width>1791</width>
+     <height>671</height>
+    </rect>
+   </property>
+   <layout class="QGridLayout" name="gridLayout">
+    <property name="spacing">
+     <number>2</number>
+    </property>
+   </layout>
+  </widget>
  </widget>
  <resources/>
  <connections/>

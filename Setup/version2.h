@@ -11,6 +11,11 @@ class Version2 : public QDialog
 {
     Q_OBJECT
 
+protected:
+    void showEvent(QShowEvent *event);
+    void hideEvent(QHideEvent *event);
+
+
 public:
     explicit Version2(QWidget *parent = nullptr);
     ~Version2();
