@@ -202,6 +202,7 @@ void WifiMenu::showEvent(QShowEvent *event){
 void WifiMenu::hideEvent(QHideEvent *event){
     Q_UNUSED(event);
    TwoButton::getPtr()->disconnect(this);
+   TwoButton::getPtr_no_edit()->disconnect(this);
 }
 
 void WifiMenu::on_pButton_return_clicked()
