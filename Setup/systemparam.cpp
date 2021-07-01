@@ -64,3 +64,8 @@ void SystemParam::on_rButton_test_clicked()
 {
      ExGlobal::getPtr()->updateCaliParam("ProjectMode",4);
 }
+
+void SystemParam::on_pButton_machine_back_clicked()
+{
+     UIHandler::GoPage(UIHandler::PageId::Page_Setup);
+}

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1190</width>
-    <height>750</height>
+    <width>1524</width>
+    <height>922</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -129,6 +129,30 @@
      <string>送检测软件</string>
     </property>
    </widget>
+  </widget>
+  <widget class="QPushButton" name="pButton_machine_back">
+   <property name="geometry">
+    <rect>
+     <x>1140</x>
+     <y>750</y>
+     <width>301</width>
+     <height>111</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-image: url(:/images/back.png);</string>
+   </property>
+   <property name="text">
+    <string>返回</string>
+   </property>
+   <property name="flat">
+    <bool>true</bool>
+   </property>
   </widget>
  </widget>
  <resources/>

@@ -31,6 +31,8 @@ private slots:
 
     void on_rButton_test_clicked();
 
+    void on_pButton_machine_back_clicked();
+
 private:
     Ui::SystemParam *ui;
 };

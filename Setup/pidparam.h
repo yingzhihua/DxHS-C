@@ -19,6 +19,8 @@ public:
 private slots:
     void on_PIDParam_accepted();
 
+    void on_pButton_machine_back_clicked();
+
 private:
     Ui::PIDParam *ui;
 };

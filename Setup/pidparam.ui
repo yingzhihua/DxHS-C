@@ -1134,7 +1134,7 @@
     </item>
    </layout>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>21</x>
@@ -1227,7 +1227,7 @@
     </item>
    </layout>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>21</x>
@@ -1320,7 +1320,7 @@
     </item>
    </layout>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>21</x>
@@ -1412,6 +1412,30 @@
      </widget>
     </item>
    </layout>
+  </widget>
+  <widget class="QPushButton" name="pButton_machine_back">
+   <property name="geometry">
+    <rect>
+     <x>1380</x>
+     <y>710</y>
+     <width>301</width>
+     <height>111</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-image: url(:/images/back.png);</string>
+   </property>
+   <property name="text">
+    <string>返回</string>
+   </property>
+   <property name="flat">
+    <bool>true</bool>
+   </property>
   </widget>
  </widget>
  <resources/>
