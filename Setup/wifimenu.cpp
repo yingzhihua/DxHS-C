@@ -16,8 +16,6 @@ WifiMenu::WifiMenu(QWidget *parent) :
     ui->setupUi(this);
 
 
-
-
     int init_x = (ExGlobal::contentWidth-810)/2;
     int init_y = (ExGlobal::contentHeight-565)/2+150;
     setGeometry(init_x,init_y,810,565);

@@ -6,6 +6,7 @@
 
 static TwoButton *twobutton = nullptr;
 static TwoButton *twobutton_no_edit = nullptr;
+static TwoButton *onebutton = nullptr;
 
 TwoButton::TwoButton(QWidget *parent) :
     QDialog(parent),
@@ -46,6 +47,12 @@ TwoButton *TwoButton::getPtr_no_edit(){
     if (twobutton_no_edit == nullptr)
         twobutton_no_edit = new TwoButton();
     return twobutton_no_edit;
+}
+
+TwoButton *TwoButton::getPtr_one_bt(){
+    if (onebutton == nullptr)
+        onebutton = new TwoButton();
+    return onebutton;
 }
 
 void TwoButton::paintEvent(QPaintEvent *event)
@@ -98,12 +105,43 @@ void TwoButton::display_two_bt_noedit(QString title, QString l1,QString b1, QStr
 
 }
 
+  void TwoButton::display_one_bt(QString title, QString l1,QString b1)
+{
+
+
+      if (onebutton == nullptr)
+          onebutton = new TwoButton;
+       qDebug()<<"title:"<<title<<"+l1:"<<l1<<"+b1:"<<b1;
+
+       int init_x = (ExGlobal::contentWidth-810)/2;
+       int init_y = (ExGlobal::contentHeight-565)/2+150;
+
+       onebutton->setGeometry(init_x,init_y,810,465);
+      onebutton->ui->label_twobt_title->setText(title);
+      onebutton->ui->pButton_twobt_return->setText(b1);
+      onebutton->ui->label_twobt_lb1->setText(l1);
+      onebutton->ui->label_twobt_lb2->setText("");
+      onebutton->ui->lEdit_twobt_edit1->setText("");
+      onebutton->ui->lEdit_twobt_edit1->hide();
+      onebutton->ui->label_twobt_lb2->hide();
+      onebutton->ui->pButton_twobt_return->hide();
+
+      onebutton->ui->label_twobt_lb1->setGeometry(220,180,450,60);
+      onebutton->ui->pButton_twobt_ok->setGeometry(280,334,250,85);
+      onebutton->ui->pButton_twobt_ok->setText(tr("返回"));
+
+      onebutton->show();
+
+  }
+
 void TwoButton::on_pButton_twobt_ok_clicked()
 {
      if (twobutton != nullptr)
        twobutton->close();
      if (twobutton_no_edit != nullptr)
        twobutton_no_edit->close();
+     if (onebutton != nullptr)
+       onebutton->close();
 
 }
 

@@ -27,8 +27,6 @@ public:
 
     QList<QCheckBox *> boxList;
     QList<QLabel *> labelList;
-   //QCheckBox * CheckboxFile[20];
-    //QLabel * LabelFile[20];
 
 
 private slots:
@@ -41,7 +39,9 @@ private slots:
     void on_pushButton_4_clicked();
 
     void on_pushButton_5_clicked();
-    //void Checkbox_clicked(int index);
+
+    void copyFinish(int val);
+
 private:
     Ui::UsbFile *ui;
 };

@@ -16,8 +16,10 @@ public:
     ~TwoButton();
     static TwoButton *getPtr();
     static TwoButton *getPtr_no_edit();
+    static TwoButton *getPtr_one_bt();
     static void display_two_bt(QString title, QString l1, QString l2, QString b1, QString b2,QString v1 );
     static void display_two_bt_noedit(QString title, QString l1,QString b1, QString b2);
+    static void display_one_bt(QString title, QString l1,QString b1);
 protected:
     void paintEvent(QPaintEvent *event);
 

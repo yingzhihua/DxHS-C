@@ -45,6 +45,9 @@
      <pointsize>30</pointsize>
     </font>
    </property>
+   <property name="text">
+    <string>192</string>
+   </property>
   </widget>
   <widget class="QLineEdit" name="lineEdit_ip2">
    <property name="geometry">
@@ -59,6 +62,9 @@
     <font>
      <pointsize>30</pointsize>
     </font>
+   </property>
+   <property name="text">
+    <string>168</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="lineEdit_ip3">
@@ -75,6 +81,9 @@
      <pointsize>30</pointsize>
     </font>
    </property>
+   <property name="text">
+    <string/>
+   </property>
   </widget>
   <widget class="QLineEdit" name="lineEdit_ip4">
    <property name="geometry">
@@ -89,6 +98,9 @@
     <font>
      <pointsize>30</pointsize>
     </font>
+   </property>
+   <property name="text">
+    <string/>
    </property>
   </widget>
   <widget class="QLabel" name="label_2">
@@ -123,6 +135,9 @@
      <pointsize>30</pointsize>
     </font>
    </property>
+   <property name="text">
+    <string>0</string>
+   </property>
   </widget>
   <widget class="QLineEdit" name="lineEdit_mask4">
    <property name="geometry">
@@ -137,6 +152,9 @@
     <font>
      <pointsize>30</pointsize>
     </font>
+   </property>
+   <property name="text">
+    <string>1</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="lineEdit_mask2">
@@ -153,6 +171,9 @@
      <pointsize>30</pointsize>
     </font>
    </property>
+   <property name="text">
+    <string>168</string>
+   </property>
   </widget>
   <widget class="QLineEdit" name="lineEdit_mask1">
    <property name="geometry">
@@ -167,6 +188,9 @@
     <font>
      <pointsize>30</pointsize>
     </font>
+   </property>
+   <property name="text">
+    <string>192</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_3">
@@ -201,6 +225,9 @@
      <pointsize>30</pointsize>
     </font>
    </property>
+   <property name="text">
+    <string>255</string>
+   </property>
   </widget>
   <widget class="QLineEdit" name="lineEdit_gate4">
    <property name="geometry">
@@ -215,6 +242,9 @@
     <font>
      <pointsize>30</pointsize>
     </font>
+   </property>
+   <property name="text">
+    <string>1</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="lineEdit_gate2">
@@ -231,6 +261,9 @@
      <pointsize>30</pointsize>
     </font>
    </property>
+   <property name="text">
+    <string>255</string>
+   </property>
   </widget>
   <widget class="QLineEdit" name="lineEdit_gate1">
    <property name="geometry">
@@ -245,6 +278,9 @@
     <font>
      <pointsize>30</pointsize>
     </font>
+   </property>
+   <property name="text">
+    <string>255</string>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButton_ok">
