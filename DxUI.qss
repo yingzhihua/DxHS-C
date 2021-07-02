@@ -1,5 +1,5 @@
-QDialog {background-color: #f5f5f5}
-QPushButton {border:none;background-color: transparent;background-repeat:no-repeat;outline-style: none;}
+QDialog {background-color: #f5f5f5;}
+QPushButton {font-size: 40px;border:none;background-color: transparent;background-repeat:no-repeat;outline-style: none;}
 QLineEdit {border: 1px solid gray;font-size:30px;}
 QComboBox {border: 1px solid gray;font-size:30px;border-top-right-radius: 7px;border-bottom-right-radius: 5px;selection-background-color:black}
 QComboBox QAbstractItemView::item {min-height: 50px}
@@ -7,8 +7,21 @@ QComboBox::drop-down {
     width: 51px;
     border: none;
 }
+QTableView {
+border: none;
+alternate-background-color: rgb(200,200,200);
+selection-color: rgb(0,0,0);
+}
+QTableView::item {border:none}
+QTableView::selected {border:none}
 QComboBox::down-arrow {width:51px;height:71; padding: 0px 0px 0px 0px;image:url(:/images/xiala.png);}
 
+QPushButton#btBack {
+font-size: 40px;
+padding-left: 20px;
+padding-bottom: 4px;
+background: url(:/images/back.png);
+}
 /* components */
     /* ThreeQuery */
     QWidget#ThreeQuery {background: url(:/images/ThrMessIBG.png) #ffffff no-repeat;}
@@ -155,6 +168,29 @@ QComboBox::down-arrow {width:51px;height:71; padding: 0px 0px 0px 0px;image:url(
     QLabel#Home_TestProcess_lbSampleRemark {
     font-size: 30px;
     }
+/* Data */
+    /* DataMenu */
+    QLabel#Data_Menu_lbHeader1,#Data_Menu_lbHeader2,#Data_Menu_lbHeader3,#Data_Menu_lbHeader4,#Data_Menu_lbHeader5,#Data_Menu_lbHeader6,#Data_Menu_lbHeader7
+    {font-size: 36px; color:#888888}
+    /* DataView */
+    QPushButton#Data_View_btBack {
+    font-size: 40px;
+    padding-left: 20px;
+    padding-bottom: 4px;
+    background: url(:/images/back.png);
+    }
+    QPushButton#Data_View_btCheck {
+    font-size: 40px;
+    color: #ffffff;
+    padding-left: 30px;
+    padding-bottom: 4px;
+    background: url(:/images/confirmbt.png);
+    }
+    QLabel#Data_View_lbPanelName {font-size: 40px;}
+    QLabel#Data_View_lbBoxSerial {font-size: 40px;}
+    QPushButton#Data_View_btPrint {background: url(:/images/Print.png) transparent no-repeat;}
+    QLabel#Data_View_lbReference {font-size: 40px;color:#898989;}
+    QPushButton#Data_View_btRef {font-size: 40px;color:#898989;}
 /* Setup */
 
 
@@ -186,5 +222,7 @@ border-left-style: solid;
 border-top-right-radius: 3px;
 border-bottom-right-radius: 3px;
 QComboBox QAbstractItemView::item:select {color: #000000; background-color: lightgreen;}
+gridline-color: #C07010;
+selection-background-color: rgb(130,190,100);
 }
 */

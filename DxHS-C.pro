@@ -6,7 +6,6 @@
 
 QT       += core gui
 QT += charts network serialport sql xml printsupport
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = DxHS
 TEMPLATE = app
@@ -84,7 +83,9 @@ SOURCES += \
     components/threequery.cpp \
     testprocess.cpp \
     Setup/adduser.cpp \
-    Setup/updateuser.cpp
+    Setup/updateuser.cpp \
+    Data/dataview.cpp \
+    Data/dataline.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -149,7 +150,9 @@ HEADERS += \
     components/threequery.h \
     testprocess.h \
     Setup/adduser.h \
-    Setup/updateuser.h
+    Setup/updateuser.h \
+    Data/dataview.h \
+    Data/dataline.h
 
 FORMS += \
         mainwindow.ui \
@@ -183,7 +186,9 @@ FORMS += \
     components/threequery.ui \
     testprocess.ui \
     Setup/adduser.ui \
-    Setup/updateuser.ui
+    Setup/updateuser.ui \
+    Data/dataview.ui \
+    Data/dataline.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

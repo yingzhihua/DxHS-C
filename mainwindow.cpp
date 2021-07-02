@@ -22,6 +22,7 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(sequence,&Sequence::titleNotify,this,&MainWindow::TitleNotify);
     connect(UIHandler::getPtr(),&UIHandler::Go,this,&MainWindow::GoPage);
     connect(UIHandler::getPtr(),&UIHandler::State,this,&MainWindow::StateUpdate);
+    connect(QApplication::inputMethod(),&QInputMethod::visibleChanged,this,&MainWindow::on_keyboardRectangleChanged);
 
     ui->setupUi(this);    
     UISetup();
@@ -40,7 +41,11 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->stackedWidget->addWidget(setup_menu);
     data_menu = new DataMenu(this);
     ui->stackedWidget->addWidget(data_menu);
-    
+    data_view = new DataView(this);
+    ui->stackedWidget->addWidget(data_view);
+    data_line = new DataLine(this);
+    ui->stackedWidget->addWidget(data_line);
+
     systemname = new SystemName(this);
     ui->stackedWidget->addWidget(systemname);
 
@@ -248,6 +253,24 @@ void MainWindow::GoPage(UIHandler::PageId id)
             ui->btSetup->setStyleSheet("QPushButton {font-size:60px;padding-left:30;color:#a7a7a7;background: url(:/images/setuprelease.png);background-repeat:no-repeat}");
             ui->btHome->setStyleSheet("QPushButton {font-size:60px;padding-left:30;color:#a7a7a7;background: url(:/images/homerelease.png);background-repeat:no-repeat}");
             ui->btData->setStyleSheet("QPushButton {font-size:60px;padding-left:30;color:#ffffff;background: url(:/images/datapress.png);background-repeat:no-repeat}");
+        }
+    }
+    else if(id == UIHandler::PageId::Page_Data_View){
+        if (ui->stackedWidget->currentWidget() != data_view){
+            ui->lbDate->setVisible(true);
+            ui->lbUser->setVisible(true);
+            ui->lbTitleIcon->setPixmap(QPixmap::fromImage(QImage(":/images/title_datamenu.png")));
+            ui->lbTitle->setText("历史数据");
+            ui->stackedWidget->setCurrentWidget(data_view);
+        }
+    }
+    else if(id == UIHandler::PageId::Page_Data_Line){
+        if (ui->stackedWidget->currentWidget() != data_line){
+            ui->lbDate->setVisible(true);
+            ui->lbUser->setVisible(true);
+            ui->lbTitleIcon->setPixmap(QPixmap::fromImage(QImage(":/images/title_datamenu.png")));
+            ui->lbTitle->setText("历史数据");
+            ui->stackedWidget->setCurrentWidget(data_line);
         }
     }
     else if(id == UIHandler::PageId::Page_Setup_SystemName){
@@ -530,4 +553,11 @@ void MainWindow::TitleNotify(int titleparam, QString title)
         ui->Home_Main_lbUnfinish->setGeometry(x,0,ExGlobal::contentWidth-x,HEADER_HEIGHT);
         ui->lbTitle->setText(title);
     }
+}
+
+void MainWindow::on_keyboardRectangleChanged()
+{
+    qDebug()<<"on_KEY"<<QApplication::inputMethod()->keyboardRectangle();
+    qDebug()<<QApplication::inputMethod()->inputItemRectangle();
+    qDebug()<<QApplication::inputMethod()->isWidgetType()<<QApplication::inputMethod()<<QApplication::inputMethod()<<this;
 }

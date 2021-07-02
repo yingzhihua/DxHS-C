@@ -4,6 +4,9 @@
 #include "../sequence.h"
 
 #include<QDebug>
+#include<QFont>
+#include<QIcon>
+
 TestModel::TestModel(QObject *parent):QAbstractListModel (parent)
 {
     roles[RolesTestid] = "Testid";
@@ -21,6 +24,14 @@ TestModel::TestModel(QObject *parent):QAbstractListModel (parent)
     roles[RoleSampleId] = "SampleId";
     roles[RolesPanelCode] = "PanelCode";
     roles[RolesPanelName] = "PanelName";
+    this->setHeaderData(0,Qt::Horizontal,"lengxing");
+    this->setHeaderData(1,Qt::Horizontal,"lengxing");
+    this->setHeaderData(2,Qt::Horizontal,"lengxing");
+    this->setHeaderData(3,Qt::Horizontal,"lengxing");
+    this->setHeaderData(4,Qt::Horizontal,"lengxing");
+    this->setHeaderData(5,Qt::Horizontal,"lengxing");
+    this->setHeaderData(6,Qt::Horizontal,"lengxing");
+
 }
 
 int TestModel::rowCount(const QModelIndex &parent) const
@@ -31,7 +42,7 @@ int TestModel::rowCount(const QModelIndex &parent) const
 int TestModel::columnCount(const QModelIndex &parent) const
 {
     Q_UNUSED(parent);
-    return 6;
+    return 7;
 }
 QVariant TestModel::data(const QModelIndex &index, int role) const
 {
@@ -43,17 +54,23 @@ QVariant TestModel::data(const QModelIndex &index, int role) const
     if (role == Qt::DisplayRole){
         if (index.column() == 0)
             return test.Testid;
-        if (index.column() == 1)
+        else if (index.column() == 1 && test.ResultType<2)
+            return QIcon(":/images/thrAlarmSmall.png");
+        else if (index.column() == 2)
             return Sequence::getPanelName(test.PanelCode);
-        if (index.column() == 2)
+        else if (index.column() == 3)
             return test.SampleId;
-        if (index.column() == 3)
+        else if (index.column() == 4)
             return test.User;
-        if (index.column() == 4)
+        else if (index.column() == 5)
             return test.Checker;
-        if (index.column() == 5)
+        else if (index.column() == 6)
             return test.TestTime;
     }
+    else if(role == Qt::TextAlignmentRole)
+        return Qt::AlignCenter;
+    else if(role == Qt::FontRole)
+        return QFont("Times",20);
     else if (role == RolesTestid)
         return test.Testid;
     else if(role == RolesDisplayid)

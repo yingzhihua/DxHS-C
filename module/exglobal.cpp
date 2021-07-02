@@ -73,7 +73,7 @@ int ExGlobal::V2ToolHomeX = 8178;
 int ExGlobal::V3ToolHomeX = 5686;
 int ExGlobal::VPToolHomeX = 9043;
 
-int ExGlobal::CamAbs = 800;
+int ExGlobal::CamAbs = 220;
 int ExGlobal::CamGain = 10;
 int ExGlobal::CamFocus = 0;
 int ExGlobal::CamWhiteBlance = 0;

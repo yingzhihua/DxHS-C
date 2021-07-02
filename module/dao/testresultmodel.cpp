@@ -235,10 +235,10 @@ QString TestResultModel::getItemImgByName(int testid, QString name){
     //if (name == "呼吸道合胞病毒A" || name == "RSV-A")
     //    return "qrc:/images/Positive.png";
     if (result == 1)
-        return "qrc:/images/Positive.png";
+        return ":/images/Positive.png";
     else if(result == 2)
-        return "qrc:/images/ud.png";
-    return "qrc:/images/Negative.png";
+        return ":/images/ud.png";
+    return ":/images/Negative.png";
 }
 
 static int getCt(vector<Point2d> &posArr)

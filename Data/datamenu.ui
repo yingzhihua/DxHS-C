@@ -13,17 +13,105 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QListView" name="listView">
+  <widget class="QTableView" name="tableView">
    <property name="geometry">
     <rect>
-     <x>110</x>
-     <y>120</y>
-     <width>491</width>
-     <height>281</height>
+     <x>710</x>
+     <y>80</y>
+     <width>256</width>
+     <height>192</height>
     </rect>
    </property>
-   <property name="autoScrollMargin">
-    <number>60</number>
+  </widget>
+  <widget class="QLabel" name="Data_Menu_lbHeader1">
+   <property name="geometry">
+    <rect>
+     <x>510</x>
+     <y>30</y>
+     <width>67</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Data_Menu_lbHeader3">
+   <property name="geometry">
+    <rect>
+     <x>760</x>
+     <y>30</y>
+     <width>67</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Data_Menu_lbHeader4">
+   <property name="geometry">
+    <rect>
+     <x>860</x>
+     <y>30</y>
+     <width>67</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Data_Menu_lbHeader5">
+   <property name="geometry">
+    <rect>
+     <x>960</x>
+     <y>30</y>
+     <width>67</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Data_Menu_lbHeader6">
+   <property name="geometry">
+    <rect>
+     <x>1050</x>
+     <y>30</y>
+     <width>67</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Data_Menu_lbHeader2">
+   <property name="geometry">
+    <rect>
+     <x>640</x>
+     <y>30</y>
+     <width>67</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Data_Menu_lbHeader7">
+   <property name="geometry">
+    <rect>
+     <x>1070</x>
+     <y>50</y>
+     <width>67</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>TextLabel</string>
    </property>
   </widget>
  </widget>

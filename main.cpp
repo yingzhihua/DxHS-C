@@ -1,5 +1,7 @@
 #include "mainwindow.h"
 #include <QApplication>
+#include <QInputMethod>
+#include <QDebug>
 
 int main(int argc, char *argv[])
 {
@@ -15,10 +17,9 @@ int main(int argc, char *argv[])
         QString qss = file.readAll();
         a.setStyleSheet(qss);
         file.close();
-    }
+    }    
 
     MainWindow w;
-    w.show();
-
+    w.show();    
     return a.exec();
 }

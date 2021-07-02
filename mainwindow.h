@@ -33,6 +33,8 @@
 #include "Setup/updateuser.h"
 
 #include "Data/datamenu.h"
+#include "Data/dataview.h"
+#include "Data/dataline.h"
 
 #include "module/exglobal.h"
 #include "module/sequence.h"
@@ -63,6 +65,8 @@ private:
     SystemName *systemname;
 
     DataMenu *data_menu;
+    DataView *data_view;
+    DataLine *data_line;
 
     ExGlobal *global;
     Sequence *sequence;
@@ -100,6 +104,7 @@ private slots:
     void on_btSetup_clicked();
     void on_btHome_clicked();
     void on_btData_clicked();
+    void on_keyboardRectangleChanged();
 };
 
 #endif // MAINWINDOW_H
