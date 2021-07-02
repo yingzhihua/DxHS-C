@@ -499,6 +499,7 @@ static int hwSetTimer(){
 }
 
 bool ExGlobal::setTime(QString time){
+    qDebug()<<"setTime======="<<time;
     QString order = "date -s '"+time+"'";
     int result = system(order.toLatin1().data());
     qDebug()<<"setTime,result="<<result;

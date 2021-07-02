@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1307</width>
-    <height>980</height>
+    <width>1845</width>
+    <height>1054</height>
    </rect>
   </property>
   <property name="font">
@@ -18,21 +18,11 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QListWidget" name="listWidget">
+  <widget class="QPushButton" name="pButton_brock">
    <property name="geometry">
     <rect>
-     <x>60</x>
-     <y>30</y>
-     <width>631</width>
-     <height>631</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton">
-   <property name="geometry">
-    <rect>
-     <x>790</x>
-     <y>160</y>
+     <x>1370</x>
+     <y>230</y>
      <width>301</width>
      <height>111</height>
     </rect>
@@ -52,11 +42,11 @@
     <bool>true</bool>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_2">
+  <widget class="QPushButton" name="pButton_refresh">
    <property name="geometry">
     <rect>
-     <x>800</x>
-     <y>350</y>
+     <x>1380</x>
+     <y>420</y>
      <width>301</width>
      <height>111</height>
     </rect>
@@ -76,14 +66,19 @@
     <bool>true</bool>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_3">
+  <widget class="QPushButton" name="pButton_return">
    <property name="geometry">
     <rect>
-     <x>800</x>
-     <y>540</y>
+     <x>1380</x>
+     <y>610</y>
      <width>301</width>
      <height>111</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>30</pointsize>
+    </font>
    </property>
    <property name="styleSheet">
     <string notr="true">background-image: url(:/images/back.png);</string>
@@ -93,6 +88,39 @@
    </property>
    <property name="flat">
     <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>760</x>
+     <y>80</y>
+     <width>291</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>可用wifi列表</string>
+   </property>
+  </widget>
+  <widget class="QTableWidget" name="tableWidget_wifi">
+   <property name="geometry">
+    <rect>
+     <x>450</x>
+     <y>170</y>
+     <width>821</width>
+     <height>651</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>30</pointsize>
+    </font>
    </property>
   </widget>
  </widget>

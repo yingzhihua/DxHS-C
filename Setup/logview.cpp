@@ -40,12 +40,14 @@ void LogView::display_data(void)
        record=record+ExGlobal::pLogModel->getCurrLogResult();
         record.resize(22,' ');
       // qDebug()<<"LogView--getCurrLogResult=="<<ExGlobal::pLogModel->getCurrLogResult();
+       record=record+ExGlobal::pLogModel->getCurrValidDateTime();
+       record.resize(42,' ');
+        // qDebug()<<"LogView--getCurrValidDateTime=="<<ExGlobal::pLogModel->getCurrValidDateTime();
+
        record=record+ExGlobal::pLogModel->getCurrLogMsg();
        record.resize(70,' ');
        // qDebug()<<"LogView--getCurrLogMsg=="<<ExGlobal::pLogModel->getCurrLogMsg();
-       record=record+ExGlobal::pLogModel->getCurrValidDateTime();
-       record.resize(100,' ');
-       // qDebug()<<"LogView--getCurrValidDateTime=="<<ExGlobal::pLogModel->getCurrValidDateTime();
+         // qDebug()<<"LogView--getCurrValidDateTime=="<<ExGlobal::pLogModel->getCurrValidDateTime();
        ui->ltWidget_log->addItem(record);
     }
      ui->ltWidget_log->setCurrentRow(0);
@@ -73,14 +75,15 @@ void LogView::refresh_data(void)
        record=record+ExGlobal::pLogModel->getCurrLogResult();
         record.resize(22,' ');
      //  qDebug()<<"LogView--getCurrLogResult=="<<ExGlobal::pLogModel->getCurrLogResult();
-       record=record+ExGlobal::pLogModel->getCurrLogMsg();
-       record.resize(82,' ');
-       record=record.mid(0,82);
-     //   qDebug()<<"LogView--getCurrLogMsg=="<<ExGlobal::pLogModel->getCurrLogMsg();
-       record=record+ExGlobal::pLogModel->getCurrValidDateTime();
-       record.resize(102,' ');
-      //  qDebug()<<"LogView--getCurrValidDateTime=="<<ExGlobal::pLogModel->getCurrValidDateTime();
-       ui->ltWidget_log->addItem(record);
+        record=record+ExGlobal::pLogModel->getCurrValidDateTime();
+        record.resize(42,' ');
+        // qDebug()<<"LogView--getCurrValidDateTime=="<<ExGlobal::pLogModel->getCurrValidDateTime();
+
+        record=record+ExGlobal::pLogModel->getCurrLogMsg();
+       record.resize(70,' ');
+       record=record.mid(0,70);
+        qDebug()<<"LogView--getCurrLogMsg=="<<ExGlobal::pLogModel->getCurrLogMsg();
+          ui->ltWidget_log->addItem(record);
        }
     ui->ltWidget_log->setCurrentRow(0);
 }

@@ -42,8 +42,8 @@
   <widget class="QLabel" name="label_log_title">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>130</y>
+     <x>10</x>
+     <y>140</y>
      <width>1501</width>
      <height>51</height>
     </rect>
@@ -54,7 +54,7 @@
     </font>
    </property>
    <property name="text">
-    <string>Logid   类型    结果     登录用户                     信息                                               时间  </string>
+    <string>Logid   类型    结果    时间                         登录用户                                             信息  </string>
    </property>
   </widget>
   <widget class="QComboBox" name="cBox_log_selest">

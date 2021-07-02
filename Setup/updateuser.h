@@ -16,6 +16,9 @@ public:
     void show_data(void);
     ~UpdateUser();
 
+protected:
+    void showEvent(QShowEvent *event);
+    void hideEvent(QHideEvent *event);
 
 private slots:
     void on_pButton_edituser_back_clicked();

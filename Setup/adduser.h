@@ -16,6 +16,10 @@ public:
     void show_data(void);
     ~AddUser();
 
+protected:
+    void showEvent(QShowEvent *event);
+    void hideEvent(QHideEvent *event);
+
 private slots:
     void on_pushButton_clicked();
 

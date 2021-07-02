@@ -15,6 +15,10 @@ public:
     explicit SystemName(QWidget *parent = nullptr);
     ~SystemName();
 
+protected:
+    void showEvent(QShowEvent *event);
+    void hideEvent(QHideEvent *event);
+
 
 private slots:
     void on_pushButton_clicked();

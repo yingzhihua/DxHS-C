@@ -140,6 +140,9 @@
      <pointsize>30</pointsize>
     </font>
    </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(186, 189, 182);</string>
+   </property>
    <property name="text">
     <string>硬件复位</string>
    </property>
@@ -158,6 +161,9 @@
      <pointsize>30</pointsize>
     </font>
    </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(186, 189, 182);</string>
+   </property>
    <property name="text">
     <string>软件复位</string>
    </property>
@@ -175,6 +181,9 @@
     <font>
      <pointsize>30</pointsize>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(186, 189, 182);</string>
    </property>
    <property name="text">
     <string>工装位</string>
@@ -227,6 +236,9 @@
      <pointsize>30</pointsize>
     </font>
    </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(186, 189, 182);</string>
+   </property>
    <property name="text">
     <string>设置</string>
    </property>
@@ -244,6 +256,9 @@
     <font>
      <pointsize>30</pointsize>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(186, 189, 182);</string>
    </property>
    <property name="text">
     <string>保存</string>
@@ -263,6 +278,9 @@
      <pointsize>30</pointsize>
     </font>
    </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(186, 189, 182);</string>
+   </property>
    <property name="text">
     <string>硬件复位</string>
    </property>
@@ -281,6 +299,9 @@
      <pointsize>30</pointsize>
     </font>
    </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(186, 189, 182);</string>
+   </property>
    <property name="text">
     <string>软件复位</string>
    </property>
@@ -298,6 +319,9 @@
     <font>
      <pointsize>30</pointsize>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(186, 189, 182);</string>
    </property>
    <property name="text">
     <string>工装位</string>
@@ -350,6 +374,9 @@
      <pointsize>30</pointsize>
     </font>
    </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(186, 189, 182);</string>
+   </property>
    <property name="text">
     <string>设置</string>
    </property>
@@ -367,6 +394,9 @@
     <font>
      <pointsize>30</pointsize>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(186, 189, 182);</string>
    </property>
    <property name="text">
     <string>保存</string>
@@ -386,6 +416,9 @@
      <pointsize>30</pointsize>
     </font>
    </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(186, 189, 182);</string>
+   </property>
    <property name="text">
     <string>软件复位</string>
    </property>
@@ -403,6 +436,9 @@
     <font>
      <pointsize>30</pointsize>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(186, 189, 182);</string>
    </property>
    <property name="text">
     <string>保存</string>
@@ -440,6 +476,9 @@
      <pointsize>30</pointsize>
     </font>
    </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(186, 189, 182);</string>
+   </property>
    <property name="text">
     <string>工装位</string>
    </property>
@@ -457,6 +496,9 @@
     <font>
      <pointsize>30</pointsize>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(186, 189, 182);</string>
    </property>
    <property name="text">
     <string>设置</string>
@@ -491,6 +533,9 @@
      <pointsize>30</pointsize>
     </font>
    </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(186, 189, 182);</string>
+   </property>
    <property name="text">
     <string>硬件复位</string>
    </property>
@@ -509,6 +554,9 @@
      <pointsize>30</pointsize>
     </font>
    </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(186, 189, 182);</string>
+   </property>
    <property name="text">
     <string>软件复位</string>
    </property>
@@ -526,6 +574,9 @@
     <font>
      <pointsize>30</pointsize>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(186, 189, 182);</string>
    </property>
    <property name="text">
     <string>保存</string>
@@ -563,6 +614,9 @@
      <pointsize>30</pointsize>
     </font>
    </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(186, 189, 182);</string>
+   </property>
    <property name="text">
     <string>工装位</string>
    </property>
@@ -580,6 +634,9 @@
     <font>
      <pointsize>30</pointsize>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(186, 189, 182);</string>
    </property>
    <property name="text">
     <string>设置</string>
@@ -614,6 +671,9 @@
      <pointsize>30</pointsize>
     </font>
    </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(186, 189, 182);</string>
+   </property>
    <property name="text">
     <string>硬件复位</string>
    </property>
@@ -632,6 +692,9 @@
      <pointsize>30</pointsize>
     </font>
    </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(186, 189, 182);</string>
+   </property>
    <property name="text">
     <string>软件复位</string>
    </property>
@@ -649,6 +712,9 @@
     <font>
      <pointsize>30</pointsize>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(186, 189, 182);</string>
    </property>
    <property name="text">
     <string>保存</string>
@@ -686,6 +752,9 @@
      <pointsize>30</pointsize>
     </font>
    </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(186, 189, 182);</string>
+   </property>
    <property name="text">
     <string>工装位</string>
    </property>
@@ -703,6 +772,9 @@
     <font>
      <pointsize>30</pointsize>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(186, 189, 182);</string>
    </property>
    <property name="text">
     <string>设置</string>
@@ -737,6 +809,9 @@
      <pointsize>30</pointsize>
     </font>
    </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(186, 189, 182);</string>
+   </property>
    <property name="text">
     <string>硬件复位</string>
    </property>
@@ -755,6 +830,9 @@
      <pointsize>30</pointsize>
     </font>
    </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(186, 189, 182);</string>
+   </property>
    <property name="text">
     <string>软件复位</string>
    </property>
@@ -772,6 +850,9 @@
     <font>
      <pointsize>30</pointsize>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(186, 189, 182);</string>
    </property>
    <property name="text">
     <string>保存</string>
@@ -809,6 +890,9 @@
      <pointsize>30</pointsize>
     </font>
    </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(186, 189, 182);</string>
+   </property>
    <property name="text">
     <string>工装位</string>
    </property>
@@ -826,6 +910,9 @@
     <font>
      <pointsize>30</pointsize>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(186, 189, 182);</string>
    </property>
    <property name="text">
     <string>设置</string>
@@ -859,6 +946,9 @@
     <font>
      <pointsize>30</pointsize>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(186, 189, 182);</string>
    </property>
    <property name="text">
     <string>硬件复位</string>
@@ -950,6 +1040,9 @@
      <pointsize>30</pointsize>
     </font>
    </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(186, 189, 182);</string>
+   </property>
    <property name="text">
     <string>向内</string>
    </property>
@@ -969,7 +1062,8 @@
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">border-color: rgb(0, 0, 0);</string>
+    <string notr="true">border-color: rgb(0, 0, 0);
+background-color: rgb(186, 189, 182);</string>
    </property>
    <property name="text">
     <string>向外</string>

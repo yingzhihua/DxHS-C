@@ -203,6 +203,8 @@ bool WifiModel::isConnected(){
 
 void WifiModel::connect(QString ssid, QString password){
 
+    qDebug()<<"wifi_name_1:"<<ssid<<"++++++++++++++++++++++++wifi_password:"<<password;
+
     if (connector != nullptr)
         return;
     connector = new WifiConnect;
@@ -217,7 +219,7 @@ void WifiModel::connect(QString ssid, QString password){
     connector->setMode(0);
     ssid_ok_name=ssid;
     password_ok=password;
-    qDebug()<<"wifi_name:"<<ssid<<"++++++++++++++++++++++++wifi_password:"<<password;
+    qDebug()<<"wifi_name_2:"<<ssid<<"++++++++++++++++++++++++wifi_password:"<<password;
     thread->start();
 }
 
@@ -290,7 +292,7 @@ void WifiModel::set_wifi_on_off(bool of)
 
 void WifiModel::updatewifi(const QString &wifi_n, const QString &passwd)
 {
-    QString sql = "SELECT * FROM Wifi WHERE wifi_name = '"+wifi_n+"'";
+    QString sql = "SELECT * FROM Wifi WHERE WifiName = '"+wifi_n+"'";
     QSqlQuery query = SqliteMgr::select(sql);
     if (query.next())
         sql = "UPDATE Wifi SET WifiPassword = "+ passwd+" WHERE WifiName = '"+ wifi_n +"'";

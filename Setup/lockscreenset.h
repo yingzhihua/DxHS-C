@@ -14,6 +14,9 @@ class LockScreenSet : public QDialog
 public:
     explicit LockScreenSet(QWidget *parent = nullptr);
     ~LockScreenSet();
+protected:
+    void showEvent(QShowEvent *event);
+    void hideEvent(QHideEvent *event);
 
 private slots:
     void on_pushButton_clicked();
@@ -21,6 +24,12 @@ private slots:
     void on_comboBox_currentIndexChanged(int index);
 
     void on_pushButton_2_clicked();
+
+    void on_pushButton_switch_clicked();
+
+    void on_comboBox_time_currentIndexChanged(int index);
+
+    void on_pushButton_return_clicked();
 
 private:
     Ui::LockScreenSet *ui;

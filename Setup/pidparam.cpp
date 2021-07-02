@@ -1,6 +1,10 @@
 #include "pidparam.h"
 #include "ui_pidparam.h"
+
+#include "../module/uihandler.h"
+#include "../module/sequence.h"
 #include "../module/exglobal.h"
+
 
 PIDParam::PIDParam(QWidget *parent) :
     QDialog(parent),
@@ -85,4 +89,9 @@ void PIDParam::show_data(void)
 void PIDParam::on_PIDParam_accepted()
 {
 
+}
+
+void PIDParam::on_pButton_machine_back_clicked()
+{
+    UIHandler::GoPage(UIHandler::PageId::Page_Setup);
 }

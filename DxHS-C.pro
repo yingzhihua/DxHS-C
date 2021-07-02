@@ -85,7 +85,8 @@ SOURCES += \
     Setup/adduser.cpp \
     Setup/updateuser.cpp \
     Data/dataview.cpp \
-    Data/dataline.cpp
+    Data/dataline.cpp \
+    components/twobutton.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -152,7 +153,8 @@ HEADERS += \
     Setup/adduser.h \
     Setup/updateuser.h \
     Data/dataview.h \
-    Data/dataline.h
+    Data/dataline.h \
+    components/twobutton.h
 
 FORMS += \
         mainwindow.ui \
@@ -188,7 +190,8 @@ FORMS += \
     Setup/adduser.ui \
     Setup/updateuser.ui \
     Data/dataview.ui \
-    Data/dataline.ui
+    Data/dataline.ui \
+    components/twobutton.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

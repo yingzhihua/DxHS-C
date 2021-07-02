@@ -20,6 +20,8 @@ private slots:
 
     void on_radioButton_2_clicked();
 
+    void on_pushButton_clicked();
+
 private:
     Ui::LanguageSet *ui;
 };

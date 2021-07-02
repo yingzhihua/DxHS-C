@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>719</width>
-    <height>485</height>
+    <width>1244</width>
+    <height>984</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -50,6 +50,30 @@
    </property>
    <property name="text">
     <string>English</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>780</x>
+     <y>710</y>
+     <width>301</width>
+     <height>111</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-image: url(:/images/btexit.png);</string>
+   </property>
+   <property name="text">
+    <string>   返回</string>
+   </property>
+   <property name="flat">
+    <bool>true</bool>
    </property>
   </widget>
  </widget>

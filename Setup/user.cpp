@@ -4,16 +4,23 @@
 #include "../module/uihandler.h"
 #include "updateuser.h"
 #include "QMessageBox"
-
+#include "components/twobutton.h"
 
 User::User(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::User)
 {
     ui->setupUi(this);
-    load_data();
+    //load_data();
 
-   // User::pUpdateUser = new UpdateUser();
+
+    ui->label->setGeometry(500,150,800,60);
+    ui->listWidget_2->setGeometry(500,211,800,400);
+    ui->pButton_user_add->setGeometry(1500,350,250,80);
+    ui->pButton_user_edit->setGeometry(1500,480,250,80);
+    ui->pButton_user_del->setGeometry(1500,610,250,80);
+    ui->pButton_user_return->setGeometry(1500,740,250,80);
+
 
 }
 
@@ -56,16 +63,24 @@ User::~User()
     delete ui;
 }
 
+void User::showEvent(QShowEvent *event){
+    Q_UNUSED(event);
+   load_data();
+   connect(TwoButton::getPtr_no_edit(),&TwoButton::queryAck_twobt_no_edit,this,&User::deleteUserBack);
+}
+
+void User::hideEvent(QHideEvent *event){
+    Q_UNUSED(event);
+
+}
+
+
 void User::on_pButton_user_del_clicked()
 {
-     QMessageBox msgBox;
 
-     msgBox.setText("删除用户");
-     msgBox.setInformativeText("真的删除用户吗？");
-     msgBox.setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
-     msgBox.setDefaultButton(QMessageBox::Cancel);
-     int ret = msgBox.exec();
-
+     TwoButton::display_two_bt_noedit(tr("删除用户"),tr("真的删除用户吗？"),
+                         tr("确定"),tr("取消"));
+/*
      switch (ret) {
         case QMessageBox::Ok:
             ExGlobal::pUserModel->deleteUser(ui->listWidget_2->currentRow());// listView.currentIndex);
@@ -78,12 +93,16 @@ void User::on_pButton_user_del_clicked()
 
             break;
       }
-
+*/
    //  ExGlobal::pUserModel->deleteUser(ui->listWidget_2->currentRow());// listView.currentIndex);
    //  load_data();
 }
 
-
+void User::deleteUserBack()
+{
+    ExGlobal::pUserModel->deleteUser(ui->listWidget_2->currentRow());// listView.currentIndex);
+    load_data();
+}
 
 void User::on_pButton_user_add_clicked()
 {
@@ -95,19 +114,28 @@ void User::on_pButton_user_add_clicked()
 
 void User::on_listWidget_2_currentRowChanged(int currentRow)
 {
-    qDebug()<<"currentRowChanged----currentRow=="<<currentRow;
+   // qDebug()<<"currentRowChanged----currentRow=="<<currentRow;
 
      ExGlobal::pUserModel->setCurrIndex(currentRow);
-     qDebug()<<"currentRowChanged----pUserModel->getCurrIndex=="<<ExGlobal::pUserModel->getCurrIndex();
+    // qDebug()<<"currentRowChanged----pUserModel->getCurrIndex=="<<ExGlobal::pUserModel->getCurrIndex();
 }
 
 void User::on_pButton_user_edit_clicked()
 {
-
-   // ExGlobal::pUserModel->setCurrIndex(ui->listWidget_2->currentRow());
-   // qDebug()<<"on_pButton_user_edit_clicked--pUserModel->getCurrIndex=="<<ExGlobal::pUserModel->getCurrIndex();
-   //pUpdateUser->show_data();
-    // pUpdateUser = new UpdateUser();
     UIHandler::GoPage(UIHandler::PageId::Page_User_UpdateUser);
-   // pUpdateUser->show_data();
+}
+
+void User::on_pushButton_canel_clicked()
+{
+
+}
+
+void User::on_pushButton_user_return_clicked()
+{
+
+}
+
+void User::on_pButton_user_return_clicked()
+{
+    UIHandler::GoPage(UIHandler::PageId::Page_Setup);
 }
