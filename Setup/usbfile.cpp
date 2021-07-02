@@ -17,6 +17,16 @@ UsbFile::UsbFile(QWidget *parent) :
     ui(new Ui::UsbFile)
 {
     ui->setupUi(this);
+
+
+    ui->pushButton->setGeometry(100,740,300,115);
+    ui->pushButton_2->setGeometry(470,740,300,115);
+    ui->pushButton_3->setGeometry(840,740,300,115);
+    ui->pushButton_4->setGeometry(1210,740,300,115);
+    ui->pushButton_5->setGeometry(1580,740,300,115);
+
+  //  ui->gridLayoutWidget->setGeometry(10,50,1900,900);
+
 }
 
 UsbFile::~UsbFile()

@@ -2,7 +2,7 @@
 #include "ui_adduser.h"
 #include "../module/uihandler.h"
 #include "../module/exglobal.h"
-
+#include "components/twobutton.h"
 
 AddUser::AddUser(QWidget *parent) :
     QDialog(parent),
@@ -10,6 +10,19 @@ AddUser::AddUser(QWidget *parent) :
 {
     ui->setupUi(this);
     //show_data();
+
+    ui->label_adduser_user->setGeometry(550,150,200,60);
+    ui->lEdit_adduser_user->setGeometry(700,150,400,60);
+    ui->label_adduser_disp_name->setGeometry(460,250,200,60);
+    ui->lEdit_adduser_disp_name->setGeometry(700,250,400,60);
+    ui->label_adduser_pwd->setGeometry(540,350,170,60);
+    ui->lEdit_adduser_pwd->setGeometry(700,350,400,60);
+    ui->label_adduser_pwd_2->setGeometry(460,450,200,60);
+    ui->lEdit_adduser_pwd_2->setGeometry(700,450,400,60);
+    ui->cBox_adduser_type->setGeometry(730,550,250,60);
+
+    ui->pushButton->setGeometry(1180,740,300,115);
+    ui->pushButton_2->setGeometry(1580,740,300,115);
 
 }
 
@@ -29,9 +42,38 @@ AddUser::~AddUser()
     delete ui;
 }
 
+void AddUser::showEvent(QShowEvent *event){
+    Q_UNUSED(event);
+   show_data();
+
+   ui->cBox_adduser_type->setIconSize(QSize(40,40));
+   ui->cBox_adduser_type->setStyleSheet("QCheckBox::indicator{width:35px;height:35px;bord-radius:7px}");
+
+}
+
+void AddUser::hideEvent(QHideEvent *event){
+    Q_UNUSED(event);
+
+}
+
 void AddUser::on_pushButton_clicked()
 {
-  //   UIHandler::GoPage(UIHandler::PageId::Page_Setup_User);
+    if (ui->lEdit_adduser_user->text()=="")
+     {
+        TwoButton::display_one_bt(tr("增加用户"),tr("用户名不能为空！"),tr("返回"));
+        return;
+      }
+    if (ui->lEdit_adduser_pwd->text()=="")
+     {
+        TwoButton::display_one_bt(tr("增加用户"),tr("密码不能为空！"),tr("返回"));
+        return;
+      }
+
+    if (ui->lEdit_adduser_pwd->text()!=ui->lEdit_adduser_pwd_2->text())
+     {
+        TwoButton::display_one_bt(tr("增加用户"),tr("密码和确认密码不相同！"),tr("返回"));
+        return;
+      }
     ExGlobal::pUserModel->addUser( ui->lEdit_adduser_user->text(),ui->lEdit_adduser_pwd_2->text(),ui->lEdit_adduser_disp_name->text(),ui->cBox_adduser_type->checkState()?3:1);
      UIHandler::GoPage(UIHandler::PageId::Page_Setup_User);
 }
