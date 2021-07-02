@@ -292,7 +292,7 @@ void WifiModel::set_wifi_on_off(bool of)
 
 void WifiModel::updatewifi(const QString &wifi_n, const QString &passwd)
 {
-    QString sql = "SELECT * FROM Wifi WHERE wifi_name = '"+wifi_n+"'";
+    QString sql = "SELECT * FROM Wifi WHERE WifiName = '"+wifi_n+"'";
     QSqlQuery query = SqliteMgr::select(sql);
     if (query.next())
         sql = "UPDATE Wifi SET WifiPassword = "+ passwd+" WHERE WifiName = '"+ wifi_n +"'";

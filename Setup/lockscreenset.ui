@@ -13,60 +13,7 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QWidget" name="widget" native="true">
-   <property name="geometry">
-    <rect>
-     <x>610</x>
-     <y>350</y>
-     <width>591</width>
-     <height>101</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-image: url(:/images/lockscreenbg.png);</string>
-   </property>
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>130</x>
-      <y>10</y>
-      <width>211</width>
-      <height>81</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>30</pointsize>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true"/>
-    </property>
-    <property name="text">
-     <string>锁屏开关：</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton">
-    <property name="geometry">
-     <rect>
-      <x>390</x>
-      <y>20</y>
-      <width>91</width>
-      <height>61</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-image: url(:/images/lockcreenOFF.png);</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="flat">
-     <bool>true</bool>
-    </property>
-   </widget>
-  </widget>
-  <widget class="QComboBox" name="comboBox">
+  <widget class="QComboBox" name="comboBox_time">
    <property name="geometry">
     <rect>
      <x>850</x>
@@ -77,11 +24,11 @@
    </property>
    <property name="font">
     <font>
-     <pointsize>30</pointsize>
+     <pointsize>35</pointsize>
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true"/>
+    <string notr="true">selection-color: rgb(46, 52, 54);</string>
    </property>
    <item>
     <property name="text">
@@ -114,7 +61,7 @@
     </property>
    </item>
   </widget>
-  <widget class="QLabel" name="label_2">
+  <widget class="QLabel" name="label_time">
    <property name="geometry">
     <rect>
      <x>640</x>
@@ -135,7 +82,7 @@
     <string>锁屏时间：</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_2">
+  <widget class="QPushButton" name="pushButton_return">
    <property name="geometry">
     <rect>
      <x>1190</x>
@@ -154,6 +101,47 @@
    </property>
    <property name="text">
     <string>   返回</string>
+   </property>
+   <property name="flat">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_switch">
+   <property name="geometry">
+    <rect>
+     <x>640</x>
+     <y>390</y>
+     <width>211</width>
+     <height>81</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string>锁屏开关：</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_switch">
+   <property name="geometry">
+    <rect>
+     <x>870</x>
+     <y>400</y>
+     <width>91</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-image: url(:/images/lockcreenOFF.png);
+background-color: rgb(186, 189, 182);</string>
+   </property>
+   <property name="text">
+    <string/>
    </property>
    <property name="flat">
     <bool>true</bool>
