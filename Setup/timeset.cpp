@@ -11,6 +11,9 @@ TimeSet::TimeSet(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    ui->pushButton_3->setGeometry(1180,740,300,115);
+    ui->pushButton_2->setGeometry(1580,740,300,115);
+
 }
 
 TimeSet::~TimeSet()
