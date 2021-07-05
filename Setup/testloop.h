@@ -21,6 +21,8 @@ private slots:
 
     void on_pButton_enter_test_clicked();
 
+    void on_pButton_exit_test_clicked();
+
 private:
     Ui::TestLoop *ui;
 };

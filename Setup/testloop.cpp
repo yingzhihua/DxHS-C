@@ -22,6 +22,7 @@ void TestLoop::load_data(void)
     //Sequence::getPtr()->LoopTestList;
  // ui->comboBox_panel
    ui->comboBox_panel->addItems(Sequence::getPtr()->getLoopTestList());
+    ui->pButton_machine_back->setGeometry(1580,740,300,115);
 }
 
 void TestLoop::on_pButton_machine_back_clicked()
@@ -35,4 +36,9 @@ void TestLoop::on_pButton_enter_test_clicked()
     ui->spinBox_test_count->setEnabled(false);
     Sequence::getPtr()->loopTest(ui->comboBox_panel->currentText(),ui->spinBox_test_count->value());
 
+}
+
+void TestLoop::on_pButton_exit_test_clicked()
+{
+     Sequence::getPtr()->sequenceCancel();
 }
