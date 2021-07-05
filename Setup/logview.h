@@ -22,6 +22,8 @@ private slots:
 
     void on_cBox_log_selest_currentIndexChanged(int index);
 
+    void on_pButton_machine_back_clicked();
+
 private:
     Ui::LogView *ui;
 };
