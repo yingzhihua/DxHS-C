@@ -9,6 +9,8 @@ MachineCalibration::MachineCalibration(QWidget *parent) :
     ui(new Ui::MachineCalibration)
 {
     ui->setupUi(this);
+    ui->pButton_machine_back->setGeometry(1580,740,300,115);
+
     load_data();
 }
 

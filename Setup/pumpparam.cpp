@@ -5,12 +5,17 @@
 #include "../module/sequence.h"
 #include <QMessageBox>
 
+#include "components/twobutton.h"
+
 PumpParam::PumpParam(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::PumpParam)
 {
     ui->setupUi(this);
     load_data();
+
+    ui->pushButton->setGeometry(1180,740,300,115);
+    ui->pushButton_2->setGeometry(1580,740,300,115);
 }
 
 PumpParam::~PumpParam()
@@ -92,15 +97,8 @@ void PumpParam::on_pushButton_clicked()
 */
    // sequence->checkParam(true);
     Sequence::getPtr()->checkParam(true);
-     //Sequence::checkParam(true);
-  //  okDlg.show(qsTr("数据保存完成!"));
 
-    QMessageBox msgBox;
-    msgBox.resize(500,100);
-   // msgBox.res
-    msgBox.setInformativeText("数据保存完成！");
-    msgBox.setStandardButtons(QMessageBox::Cancel);
-    msgBox.exec();
+    TwoButton::display_one_bt(tr("流体参数"),tr("数据保存完成！"),tr("返回"));
 }
 
 void PumpParam::on_pushButton_2_clicked()

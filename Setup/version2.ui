@@ -51,7 +51,7 @@
     </font>
    </property>
    <property name="text">
-    <string>软件发布版本：</string>
+    <string>软件完整版本：</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_machine_type">
@@ -195,7 +195,7 @@
     </font>
    </property>
    <property name="text">
-    <string>    </string>
+    <string/>
    </property>
   </widget>
   <widget class="QLabel" name="label_soft_v_all_2">
@@ -268,6 +268,30 @@
    </property>
    <property name="text">
     <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>1060</x>
+     <y>680</y>
+     <width>301</width>
+     <height>111</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-image: url(:/images/btexit.png);</string>
+   </property>
+   <property name="text">
+    <string>   返回</string>
+   </property>
+   <property name="flat">
+    <bool>true</bool>
    </property>
   </widget>
  </widget>

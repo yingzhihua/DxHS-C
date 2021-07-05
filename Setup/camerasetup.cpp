@@ -11,6 +11,7 @@ CameraSetup::CameraSetup(QWidget *parent) :
     ui(new Ui::CameraSetup)
 {
     ui->setupUi(this);
+     ui->pButton_backl->setGeometry(1580,740,300,115);
 }
 
 CameraSetup::~CameraSetup()
