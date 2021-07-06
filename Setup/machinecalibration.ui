@@ -207,21 +207,6 @@
     <string>TextLa</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lEdit_V1_data">
-   <property name="geometry">
-    <rect>
-     <x>1070</x>
-     <y>90</y>
-     <width>181</width>
-     <height>61</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>30</pointsize>
-    </font>
-   </property>
-  </widget>
   <widget class="QPushButton" name="pButton_v1_set">
    <property name="geometry">
     <rect>
@@ -343,21 +328,6 @@
    </property>
    <property name="text">
     <string>TextLa</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="lEdit_V2_data">
-   <property name="geometry">
-    <rect>
-     <x>1070</x>
-     <y>180</y>
-     <width>181</width>
-     <height>61</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>30</pointsize>
-    </font>
    </property>
   </widget>
   <widget class="QPushButton" name="pButton_v2_set">
@@ -504,21 +474,6 @@
     <string>设置</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lEdit_V3_data">
-   <property name="geometry">
-    <rect>
-     <x>1070</x>
-     <y>270</y>
-     <width>181</width>
-     <height>61</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>30</pointsize>
-    </font>
-   </property>
-  </widget>
   <widget class="QPushButton" name="pButton_v3_hard">
    <property name="geometry">
     <rect>
@@ -640,21 +595,6 @@
    </property>
    <property name="text">
     <string>设置</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="lEdit_V4_data">
-   <property name="geometry">
-    <rect>
-     <x>1070</x>
-     <y>360</y>
-     <width>181</width>
-     <height>61</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>30</pointsize>
-    </font>
    </property>
   </widget>
   <widget class="QPushButton" name="pButton_v4_hard">
@@ -780,21 +720,6 @@
     <string>设置</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lEdit_door_data">
-   <property name="geometry">
-    <rect>
-     <x>1070</x>
-     <y>450</y>
-     <width>181</width>
-     <height>61</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>30</pointsize>
-    </font>
-   </property>
-  </widget>
   <widget class="QPushButton" name="pButton_door_hard">
    <property name="geometry">
     <rect>
@@ -918,21 +843,6 @@
     <string>设置</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lEdit_push_data">
-   <property name="geometry">
-    <rect>
-     <x>1070</x>
-     <y>540</y>
-     <width>181</width>
-     <height>61</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>30</pointsize>
-    </font>
-   </property>
-  </widget>
   <widget class="QPushButton" name="pButton_push_hard">
    <property name="geometry">
     <rect>
@@ -969,25 +879,7 @@
     </font>
    </property>
    <property name="text">
-    <string>仓门电机：  步数：</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="lEdit_door_step">
-   <property name="geometry">
-    <rect>
-     <x>410</x>
-     <y>630</y>
-     <width>191</width>
-     <height>61</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>30</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>0</string>
+    <string>仓门电机：步数：</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_gear">
@@ -1006,24 +898,6 @@
    </property>
    <property name="text">
     <string>档位：</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="lEdit_gear">
-   <property name="geometry">
-    <rect>
-     <x>760</x>
-     <y>630</y>
-     <width>181</width>
-     <height>61</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>30</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>6</string>
    </property>
   </widget>
   <widget class="QPushButton" name="pButton_door_in">
@@ -1091,6 +965,177 @@ background-color: rgb(186, 189, 182);</string>
    </property>
    <property name="flat">
     <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="spinBox_V1">
+   <property name="geometry">
+    <rect>
+     <x>1070</x>
+     <y>80</y>
+     <width>181</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>35</pointsize>
+    </font>
+   </property>
+   <property name="maximum">
+    <number>100000</number>
+   </property>
+   <property name="singleStep">
+    <number>100</number>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="spinBox_V2">
+   <property name="geometry">
+    <rect>
+     <x>1070</x>
+     <y>170</y>
+     <width>181</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>35</pointsize>
+    </font>
+   </property>
+   <property name="maximum">
+    <number>100000</number>
+   </property>
+   <property name="singleStep">
+    <number>100</number>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="spinBox_V3">
+   <property name="geometry">
+    <rect>
+     <x>1070</x>
+     <y>260</y>
+     <width>181</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>35</pointsize>
+    </font>
+   </property>
+   <property name="maximum">
+    <number>100000</number>
+   </property>
+   <property name="singleStep">
+    <number>100</number>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="spinBox_V4">
+   <property name="geometry">
+    <rect>
+     <x>1070</x>
+     <y>350</y>
+     <width>181</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>35</pointsize>
+    </font>
+   </property>
+   <property name="maximum">
+    <number>100000</number>
+   </property>
+   <property name="singleStep">
+    <number>100</number>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="spinBox_Door">
+   <property name="geometry">
+    <rect>
+     <x>1070</x>
+     <y>440</y>
+     <width>181</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>35</pointsize>
+    </font>
+   </property>
+   <property name="maximum">
+    <number>100000</number>
+   </property>
+   <property name="singleStep">
+    <number>100</number>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="spinBox_Pump">
+   <property name="geometry">
+    <rect>
+     <x>1070</x>
+     <y>530</y>
+     <width>181</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>35</pointsize>
+    </font>
+   </property>
+   <property name="maximum">
+    <number>100000</number>
+   </property>
+   <property name="singleStep">
+    <number>100</number>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="spinBox_door_step">
+   <property name="geometry">
+    <rect>
+     <x>380</x>
+     <y>630</y>
+     <width>221</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>35</pointsize>
+    </font>
+   </property>
+   <property name="minimum">
+    <number>-30000</number>
+   </property>
+   <property name="maximum">
+    <number>30000</number>
+   </property>
+   <property name="singleStep">
+    <number>100</number>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="spinBox_speed">
+   <property name="geometry">
+    <rect>
+     <x>750</x>
+     <y>630</y>
+     <width>181</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>35</pointsize>
+    </font>
+   </property>
+   <property name="maximum">
+    <number>15</number>
+   </property>
+   <property name="value">
+    <number>6</number>
    </property>
   </widget>
  </widget>

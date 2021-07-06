@@ -83,6 +83,9 @@
      <pointsize>30</pointsize>
     </font>
    </property>
+   <property name="minimum">
+    <number>1</number>
+   </property>
    <property name="maximum">
     <number>2000</number>
    </property>
