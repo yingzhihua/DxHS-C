@@ -18,8 +18,8 @@
     <rect>
      <x>710</x>
      <y>200</y>
-     <width>341</width>
-     <height>481</height>
+     <width>431</width>
+     <height>541</height>
     </rect>
    </property>
    <property name="font">
@@ -30,104 +30,86 @@
    <property name="title">
     <string>软件版本</string>
    </property>
-   <widget class="QRadioButton" name="rButton_normal">
+   <widget class="QWidget" name="">
     <property name="geometry">
      <rect>
       <x>71</x>
-      <y>101</y>
-      <width>185</width>
-      <height>66</height>
+      <y>91</y>
+      <width>301</width>
+      <height>411</height>
      </rect>
     </property>
-    <property name="font">
-     <font>
-      <pointsize>30</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>正式软件</string>
-    </property>
-   </widget>
-   <widget class="QRadioButton" name="rButton_project">
-    <property name="geometry">
-     <rect>
-      <x>71</x>
-      <y>173</y>
-      <width>241</width>
-      <height>66</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>30</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>工程软件</string>
-    </property>
-    <property name="iconSize">
-     <size>
-      <width>30</width>
-      <height>30</height>
-     </size>
-    </property>
-    <property name="checked">
-     <bool>true</bool>
-    </property>
-   </widget>
-   <widget class="QRadioButton" name="rButton_check">
-    <property name="geometry">
-     <rect>
-      <x>71</x>
-      <y>245</y>
-      <width>185</width>
-      <height>66</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>30</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>送检软件</string>
-    </property>
-   </widget>
-   <widget class="QRadioButton" name="rButton_play">
-    <property name="geometry">
-     <rect>
-      <x>71</x>
-      <y>317</y>
-      <width>185</width>
-      <height>66</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>30</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>演示软件</string>
-    </property>
-   </widget>
-   <widget class="QRadioButton" name="rButton_test">
-    <property name="geometry">
-     <rect>
-      <x>71</x>
-      <y>389</y>
-      <width>225</width>
-      <height>66</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>30</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>送检测软件</string>
-    </property>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QRadioButton" name="rButton_normal">
+       <property name="font">
+        <font>
+         <pointsize>30</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>正式软件</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QRadioButton" name="rButton_project">
+       <property name="font">
+        <font>
+         <pointsize>30</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>工程软件</string>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>30</width>
+         <height>30</height>
+        </size>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QRadioButton" name="rButton_check">
+       <property name="font">
+        <font>
+         <pointsize>30</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>送检软件</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QRadioButton" name="rButton_play">
+       <property name="font">
+        <font>
+         <pointsize>30</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>演示软件</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QRadioButton" name="rButton_test">
+       <property name="font">
+        <font>
+         <pointsize>30</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>送检测软件</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </widget>
   </widget>
   <widget class="QPushButton" name="pButton_machine_back">

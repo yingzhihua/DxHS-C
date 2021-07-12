@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1736</width>
+    <width>2017</width>
     <height>976</height>
    </rect>
   </property>
@@ -561,99 +561,6 @@
     </item>
     <item>
      <widget class="QLabel" name="label_PID6_D_TXT">
-      <property name="font">
-       <font>
-        <pointsize>30</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: rgb(32, 32, 225);</string>
-      </property>
-      <property name="text">
-       <string>TextLa</string>
-      </property>
-     </widget>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QWidget" name="layoutWidget_7">
-   <property name="geometry">
-    <rect>
-     <x>19</x>
-     <y>749</y>
-     <width>874</width>
-     <height>47</height>
-    </rect>
-   </property>
-   <layout class="QHBoxLayout" name="horizontalLayout_10">
-    <item>
-     <widget class="QLabel" name="label_PID10_P">
-      <property name="font">
-       <font>
-        <pointsize>30</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>PID10_P:</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLabel" name="label_PID10_P_TXT">
-      <property name="font">
-       <font>
-        <pointsize>30</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: rgb(32, 32, 225);</string>
-      </property>
-      <property name="text">
-       <string>TextLa</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLabel" name="label_PID10_I">
-      <property name="font">
-       <font>
-        <pointsize>30</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>PID10_I:</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLabel" name="label_PID10_I_TXT">
-      <property name="font">
-       <font>
-        <pointsize>30</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: rgb(32, 32, 225);</string>
-      </property>
-      <property name="text">
-       <string>TextLa</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLabel" name="label_PID10_D">
-      <property name="font">
-       <font>
-        <pointsize>30</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>PID10_D:</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLabel" name="label_PID10_D_TXT">
       <property name="font">
        <font>
         <pointsize>30</pointsize>
@@ -1435,6 +1342,123 @@
    </property>
    <property name="flat">
     <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_PID10_P">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>750</y>
+     <width>163</width>
+     <height>45</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>PID10_P:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_PID10_P_TXT">
+   <property name="geometry">
+    <rect>
+     <x>189</x>
+     <y>750</y>
+     <width>121</width>
+     <height>45</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(32, 32, 225);</string>
+   </property>
+   <property name="text">
+    <string>TextLa</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_PID10_I">
+   <property name="geometry">
+    <rect>
+     <x>290</x>
+     <y>750</y>
+     <width>149</width>
+     <height>45</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>PID10_I:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_PID10_I_TXT">
+   <property name="geometry">
+    <rect>
+     <x>460</x>
+     <y>750</y>
+     <width>121</width>
+     <height>45</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(32, 32, 225);</string>
+   </property>
+   <property name="text">
+    <string>TextLa</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_PID10_D">
+   <property name="geometry">
+    <rect>
+     <x>560</x>
+     <y>750</y>
+     <width>167</width>
+     <height>45</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>PID10_D:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_PID10_D_TXT">
+   <property name="geometry">
+    <rect>
+     <x>740</x>
+     <y>750</y>
+     <width>121</width>
+     <height>45</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(32, 32, 225);</string>
+   </property>
+   <property name="text">
+    <string>TextLa</string>
    </property>
   </widget>
  </widget>

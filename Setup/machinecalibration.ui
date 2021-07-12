@@ -22,7 +22,7 @@
    <property name="geometry">
     <rect>
      <x>60</x>
-     <y>140</y>
+     <y>80</y>
      <width>211</width>
      <height>81</height>
     </rect>
@@ -40,7 +40,7 @@
    <property name="geometry">
     <rect>
      <x>60</x>
-     <y>230</y>
+     <y>170</y>
      <width>211</width>
      <height>81</height>
     </rect>
@@ -58,7 +58,7 @@
    <property name="geometry">
     <rect>
      <x>60</x>
-     <y>320</y>
+     <y>260</y>
      <width>211</width>
      <height>81</height>
     </rect>
@@ -76,7 +76,7 @@
    <property name="geometry">
     <rect>
      <x>60</x>
-     <y>410</y>
+     <y>350</y>
      <width>211</width>
      <height>81</height>
     </rect>
@@ -94,7 +94,7 @@
    <property name="geometry">
     <rect>
      <x>60</x>
-     <y>500</y>
+     <y>440</y>
      <width>211</width>
      <height>81</height>
     </rect>
@@ -112,7 +112,7 @@
    <property name="geometry">
     <rect>
      <x>60</x>
-     <y>590</y>
+     <y>530</y>
      <width>211</width>
      <height>81</height>
     </rect>
@@ -130,7 +130,7 @@
    <property name="geometry">
     <rect>
      <x>260</x>
-     <y>140</y>
+     <y>90</y>
      <width>191</width>
      <height>61</height>
     </rect>
@@ -151,7 +151,7 @@
    <property name="geometry">
     <rect>
      <x>480</x>
-     <y>140</y>
+     <y>90</y>
      <width>181</width>
      <height>61</height>
     </rect>
@@ -172,7 +172,7 @@
    <property name="geometry">
     <rect>
      <x>700</x>
-     <y>140</y>
+     <y>90</y>
      <width>171</width>
      <height>61</height>
     </rect>
@@ -193,7 +193,7 @@
    <property name="geometry">
     <rect>
      <x>900</x>
-     <y>150</y>
+     <y>100</y>
      <width>141</width>
      <height>41</height>
     </rect>
@@ -207,26 +207,11 @@
     <string>TextLa</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lEdit_V1_data">
-   <property name="geometry">
-    <rect>
-     <x>1070</x>
-     <y>140</y>
-     <width>181</width>
-     <height>61</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>30</pointsize>
-    </font>
-   </property>
-  </widget>
   <widget class="QPushButton" name="pButton_v1_set">
    <property name="geometry">
     <rect>
-     <x>1320</x>
-     <y>140</y>
+     <x>1310</x>
+     <y>90</y>
      <width>131</width>
      <height>61</height>
     </rect>
@@ -246,8 +231,8 @@
   <widget class="QPushButton" name="pButton_v1_save">
    <property name="geometry">
     <rect>
-     <x>1490</x>
-     <y>140</y>
+     <x>1480</x>
+     <y>90</y>
      <width>131</width>
      <height>61</height>
     </rect>
@@ -268,7 +253,7 @@
    <property name="geometry">
     <rect>
      <x>260</x>
-     <y>230</y>
+     <y>180</y>
      <width>191</width>
      <height>61</height>
     </rect>
@@ -289,7 +274,7 @@
    <property name="geometry">
     <rect>
      <x>480</x>
-     <y>230</y>
+     <y>180</y>
      <width>181</width>
      <height>61</height>
     </rect>
@@ -310,7 +295,7 @@
    <property name="geometry">
     <rect>
      <x>700</x>
-     <y>230</y>
+     <y>180</y>
      <width>171</width>
      <height>61</height>
     </rect>
@@ -331,7 +316,7 @@
    <property name="geometry">
     <rect>
      <x>900</x>
-     <y>240</y>
+     <y>190</y>
      <width>141</width>
      <height>41</height>
     </rect>
@@ -345,26 +330,11 @@
     <string>TextLa</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lEdit_V2_data">
-   <property name="geometry">
-    <rect>
-     <x>1070</x>
-     <y>220</y>
-     <width>181</width>
-     <height>61</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>30</pointsize>
-    </font>
-   </property>
-  </widget>
   <widget class="QPushButton" name="pButton_v2_set">
    <property name="geometry">
     <rect>
-     <x>1320</x>
-     <y>220</y>
+     <x>1310</x>
+     <y>180</y>
      <width>131</width>
      <height>61</height>
     </rect>
@@ -384,8 +354,8 @@
   <widget class="QPushButton" name="pButton_v2_save">
    <property name="geometry">
     <rect>
-     <x>1490</x>
-     <y>220</y>
+     <x>1480</x>
+     <y>180</y>
      <width>131</width>
      <height>61</height>
     </rect>
@@ -406,7 +376,7 @@
    <property name="geometry">
     <rect>
      <x>480</x>
-     <y>320</y>
+     <y>270</y>
      <width>181</width>
      <height>61</height>
     </rect>
@@ -426,8 +396,8 @@
   <widget class="QPushButton" name="pButton_v3_save">
    <property name="geometry">
     <rect>
-     <x>1490</x>
-     <y>310</y>
+     <x>1480</x>
+     <y>270</y>
      <width>131</width>
      <height>61</height>
     </rect>
@@ -448,7 +418,7 @@
    <property name="geometry">
     <rect>
      <x>900</x>
-     <y>330</y>
+     <y>280</y>
      <width>141</width>
      <height>41</height>
     </rect>
@@ -466,7 +436,7 @@
    <property name="geometry">
     <rect>
      <x>700</x>
-     <y>320</y>
+     <y>270</y>
      <width>171</width>
      <height>61</height>
     </rect>
@@ -486,8 +456,8 @@
   <widget class="QPushButton" name="pButton_v3_set">
    <property name="geometry">
     <rect>
-     <x>1320</x>
-     <y>310</y>
+     <x>1310</x>
+     <y>270</y>
      <width>131</width>
      <height>61</height>
     </rect>
@@ -504,26 +474,11 @@
     <string>设置</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lEdit_V3_data">
-   <property name="geometry">
-    <rect>
-     <x>1070</x>
-     <y>310</y>
-     <width>181</width>
-     <height>61</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>30</pointsize>
-    </font>
-   </property>
-  </widget>
   <widget class="QPushButton" name="pButton_v3_hard">
    <property name="geometry">
     <rect>
      <x>260</x>
-     <y>320</y>
+     <y>270</y>
      <width>191</width>
      <height>61</height>
     </rect>
@@ -544,7 +499,7 @@
    <property name="geometry">
     <rect>
      <x>480</x>
-     <y>410</y>
+     <y>360</y>
      <width>181</width>
      <height>61</height>
     </rect>
@@ -564,8 +519,8 @@
   <widget class="QPushButton" name="pButton_v4_save">
    <property name="geometry">
     <rect>
-     <x>1490</x>
-     <y>410</y>
+     <x>1480</x>
+     <y>360</y>
      <width>131</width>
      <height>61</height>
     </rect>
@@ -586,7 +541,7 @@
    <property name="geometry">
     <rect>
      <x>900</x>
-     <y>430</y>
+     <y>370</y>
      <width>141</width>
      <height>41</height>
     </rect>
@@ -604,7 +559,7 @@
    <property name="geometry">
     <rect>
      <x>700</x>
-     <y>410</y>
+     <y>360</y>
      <width>171</width>
      <height>61</height>
     </rect>
@@ -624,8 +579,8 @@
   <widget class="QPushButton" name="pButton_v4_set">
    <property name="geometry">
     <rect>
-     <x>1320</x>
-     <y>410</y>
+     <x>1310</x>
+     <y>360</y>
      <width>131</width>
      <height>61</height>
     </rect>
@@ -642,26 +597,11 @@
     <string>设置</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lEdit_V4_data">
-   <property name="geometry">
-    <rect>
-     <x>1070</x>
-     <y>410</y>
-     <width>181</width>
-     <height>61</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>30</pointsize>
-    </font>
-   </property>
-  </widget>
   <widget class="QPushButton" name="pButton_v4_hard">
    <property name="geometry">
     <rect>
      <x>260</x>
-     <y>410</y>
+     <y>360</y>
      <width>191</width>
      <height>61</height>
     </rect>
@@ -682,7 +622,7 @@
    <property name="geometry">
     <rect>
      <x>480</x>
-     <y>500</y>
+     <y>450</y>
      <width>181</width>
      <height>61</height>
     </rect>
@@ -702,8 +642,8 @@
   <widget class="QPushButton" name="pButton_door_save">
    <property name="geometry">
     <rect>
-     <x>1490</x>
-     <y>500</y>
+     <x>1480</x>
+     <y>450</y>
      <width>131</width>
      <height>61</height>
     </rect>
@@ -724,7 +664,7 @@
    <property name="geometry">
     <rect>
      <x>900</x>
-     <y>520</y>
+     <y>460</y>
      <width>141</width>
      <height>41</height>
     </rect>
@@ -742,7 +682,7 @@
    <property name="geometry">
     <rect>
      <x>700</x>
-     <y>500</y>
+     <y>450</y>
      <width>171</width>
      <height>61</height>
     </rect>
@@ -762,8 +702,8 @@
   <widget class="QPushButton" name="pButton_door_set">
    <property name="geometry">
     <rect>
-     <x>1320</x>
-     <y>500</y>
+     <x>1310</x>
+     <y>450</y>
      <width>131</width>
      <height>61</height>
     </rect>
@@ -780,26 +720,11 @@
     <string>设置</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lEdit_door_data">
-   <property name="geometry">
-    <rect>
-     <x>1070</x>
-     <y>500</y>
-     <width>181</width>
-     <height>61</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>30</pointsize>
-    </font>
-   </property>
-  </widget>
   <widget class="QPushButton" name="pButton_door_hard">
    <property name="geometry">
     <rect>
      <x>260</x>
-     <y>500</y>
+     <y>450</y>
      <width>191</width>
      <height>61</height>
     </rect>
@@ -820,7 +745,7 @@
    <property name="geometry">
     <rect>
      <x>480</x>
-     <y>590</y>
+     <y>540</y>
      <width>181</width>
      <height>61</height>
     </rect>
@@ -840,8 +765,8 @@
   <widget class="QPushButton" name="pButton_push_save">
    <property name="geometry">
     <rect>
-     <x>1490</x>
-     <y>590</y>
+     <x>1480</x>
+     <y>540</y>
      <width>131</width>
      <height>61</height>
     </rect>
@@ -862,7 +787,7 @@
    <property name="geometry">
     <rect>
      <x>900</x>
-     <y>610</y>
+     <y>550</y>
      <width>141</width>
      <height>41</height>
     </rect>
@@ -880,7 +805,7 @@
    <property name="geometry">
     <rect>
      <x>700</x>
-     <y>590</y>
+     <y>540</y>
      <width>171</width>
      <height>61</height>
     </rect>
@@ -900,8 +825,8 @@
   <widget class="QPushButton" name="pButton_push_set">
    <property name="geometry">
     <rect>
-     <x>1320</x>
-     <y>590</y>
+     <x>1310</x>
+     <y>540</y>
      <width>131</width>
      <height>61</height>
     </rect>
@@ -918,26 +843,11 @@
     <string>设置</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lEdit_push_data">
-   <property name="geometry">
-    <rect>
-     <x>1070</x>
-     <y>590</y>
-     <width>181</width>
-     <height>61</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>30</pointsize>
-    </font>
-   </property>
-  </widget>
   <widget class="QPushButton" name="pButton_push_hard">
    <property name="geometry">
     <rect>
      <x>260</x>
-     <y>590</y>
+     <y>540</y>
      <width>191</width>
      <height>61</height>
     </rect>
@@ -958,7 +868,7 @@
    <property name="geometry">
     <rect>
      <x>60</x>
-     <y>720</y>
+     <y>640</y>
      <width>341</width>
      <height>51</height>
     </rect>
@@ -969,32 +879,14 @@
     </font>
    </property>
    <property name="text">
-    <string>仓门电机：  步数：</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="lEdit_door_step">
-   <property name="geometry">
-    <rect>
-     <x>420</x>
-     <y>710</y>
-     <width>191</width>
-     <height>61</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>30</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>0</string>
+    <string>仓门电机：步数：</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_gear">
    <property name="geometry">
     <rect>
-     <x>650</x>
-     <y>710</y>
+     <x>630</x>
+     <y>640</y>
      <width>121</width>
      <height>61</height>
     </rect>
@@ -1008,29 +900,11 @@
     <string>档位：</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lEdit_gear">
-   <property name="geometry">
-    <rect>
-     <x>770</x>
-     <y>710</y>
-     <width>181</width>
-     <height>61</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>30</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>6</string>
-   </property>
-  </widget>
   <widget class="QPushButton" name="pButton_door_in">
    <property name="geometry">
     <rect>
-     <x>1000</x>
-     <y>710</y>
+     <x>1010</x>
+     <y>630</y>
      <width>131</width>
      <height>61</height>
     </rect>
@@ -1050,8 +924,8 @@
   <widget class="QPushButton" name="pButton_door_out">
    <property name="geometry">
     <rect>
-     <x>1150</x>
-     <y>710</y>
+     <x>1190</x>
+     <y>630</y>
      <width>131</width>
      <height>61</height>
     </rect>
@@ -1091,6 +965,177 @@ background-color: rgb(186, 189, 182);</string>
    </property>
    <property name="flat">
     <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="spinBox_V1">
+   <property name="geometry">
+    <rect>
+     <x>1070</x>
+     <y>80</y>
+     <width>181</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>35</pointsize>
+    </font>
+   </property>
+   <property name="maximum">
+    <number>100000</number>
+   </property>
+   <property name="singleStep">
+    <number>100</number>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="spinBox_V2">
+   <property name="geometry">
+    <rect>
+     <x>1070</x>
+     <y>170</y>
+     <width>181</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>35</pointsize>
+    </font>
+   </property>
+   <property name="maximum">
+    <number>100000</number>
+   </property>
+   <property name="singleStep">
+    <number>100</number>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="spinBox_V3">
+   <property name="geometry">
+    <rect>
+     <x>1070</x>
+     <y>260</y>
+     <width>181</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>35</pointsize>
+    </font>
+   </property>
+   <property name="maximum">
+    <number>100000</number>
+   </property>
+   <property name="singleStep">
+    <number>100</number>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="spinBox_V4">
+   <property name="geometry">
+    <rect>
+     <x>1070</x>
+     <y>350</y>
+     <width>181</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>35</pointsize>
+    </font>
+   </property>
+   <property name="maximum">
+    <number>100000</number>
+   </property>
+   <property name="singleStep">
+    <number>100</number>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="spinBox_Door">
+   <property name="geometry">
+    <rect>
+     <x>1070</x>
+     <y>440</y>
+     <width>181</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>35</pointsize>
+    </font>
+   </property>
+   <property name="maximum">
+    <number>100000</number>
+   </property>
+   <property name="singleStep">
+    <number>100</number>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="spinBox_Pump">
+   <property name="geometry">
+    <rect>
+     <x>1070</x>
+     <y>530</y>
+     <width>181</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>35</pointsize>
+    </font>
+   </property>
+   <property name="maximum">
+    <number>100000</number>
+   </property>
+   <property name="singleStep">
+    <number>100</number>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="spinBox_door_step">
+   <property name="geometry">
+    <rect>
+     <x>380</x>
+     <y>630</y>
+     <width>221</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>35</pointsize>
+    </font>
+   </property>
+   <property name="minimum">
+    <number>-30000</number>
+   </property>
+   <property name="maximum">
+    <number>30000</number>
+   </property>
+   <property name="singleStep">
+    <number>100</number>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="spinBox_speed">
+   <property name="geometry">
+    <rect>
+     <x>750</x>
+     <y>630</y>
+     <width>181</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>35</pointsize>
+    </font>
+   </property>
+   <property name="maximum">
+    <number>15</number>
+   </property>
+   <property name="value">
+    <number>6</number>
    </property>
   </widget>
  </widget>

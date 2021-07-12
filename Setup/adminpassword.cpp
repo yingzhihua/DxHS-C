@@ -3,6 +3,8 @@
 #include "../module/uihandler.h"
 #include "../module/exglobal.h"
 #include <QMessageBox>
+#include "components/twobutton.h"
+
 AdminPassword::AdminPassword(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::AdminPassword)
@@ -33,18 +35,23 @@ AdminPassword::~AdminPassword()
 void AdminPassword::on_pushButton_OK_clicked()
 {
     if (ui->lineEdit_oldpwd->text()=="")
-    {
-        QMessageBox msgBox;
-      //  msgBox.resize(1000,500);
-        msgBox.size().setWidth(500);
-        msgBox.size().setHeight(300);
-        //msgBox.information(this,"title","message");
-        msgBox.setText("Messageee");
-        msgBox.exec();
-    }
-       // MessageBox(NULL,"密码不能是空","",1);
-    //userModel->updatePassword(ui->lineEdit_oldpwd,ui->lineEdit_newpwd);
-    userModel->updatePassword(ui->lineEdit_oldpwd->text(),ui->lineEdit_newpwd->text());
+     {
+        TwoButton::display_one_bt(tr("修改密码"),tr("密码不能为空！"),tr("返回"));
+        return;
+      }
+    if (ui->lineEdit_newpwd->text()=="")
+     {
+        TwoButton::display_one_bt(tr("修改密码"),tr("新密码不能为空！"),tr("返回"));
+        return;
+      }
+
+    if (ui->lineEdit_newpwd->text()!=ui->lineEdit_newpwd_2->text())
+     {
+        TwoButton::display_one_bt(tr("修改密码"),tr("新密码和确认密码不相同！"),tr("返回"));
+        return;
+      }
+     userModel->updatePassword(ui->lineEdit_oldpwd->text(),ui->lineEdit_newpwd->text());
+     UIHandler::GoPage(UIHandler::PageId::Page_Setup);
 }
 
 void AdminPassword::on_pushButton_Cencel_clicked()

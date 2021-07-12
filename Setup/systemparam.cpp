@@ -12,6 +12,15 @@ SystemParam::SystemParam(QWidget *parent) :
     ui(new Ui::SystemParam)
 {
     ui->setupUi(this);
+
+    ui->rButton_normal->setStyleSheet("QRadioButton::indicator{width:35px;height:35px;bord-radius:7px}");
+    ui->rButton_play->setStyleSheet("QRadioButton::indicator{width:35px;height:35px;bord-radius:7px}");
+    ui->rButton_check->setStyleSheet("QRadioButton::indicator{width:35px;height:35px;bord-radius:7px}");
+    ui->rButton_project->setStyleSheet("QRadioButton::indicator{width:35px;height:35px;bord-radius:7px}");
+    ui->rButton_test->setStyleSheet("QRadioButton::indicator{width:35px;height:35px;bord-radius:7px}");
+
+    ui->pButton_machine_back->setGeometry(1580,740,300,115);
+
 }
 
 SystemParam::~SystemParam()

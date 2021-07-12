@@ -20,6 +20,9 @@ public:
     explicit Version2(QWidget *parent = nullptr);
     ~Version2();
 
+private slots:
+    void on_pushButton_clicked();
+
 private:
     Ui::Version2 *ui;
 };

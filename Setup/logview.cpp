@@ -1,6 +1,9 @@
 #include "logview.h"
 #include "ui_logview.h"
 #include "../module/dao/logmodel.h"
+
+#include "../module/uihandler.h"
+#include "../module/sequence.h"
 #include "../module/exglobal.h"
 
 LogView::LogView(QWidget *parent) :
@@ -8,7 +11,10 @@ LogView::LogView(QWidget *parent) :
     ui(new Ui::LogView)
 {
     ui->setupUi(this);
-   // display_data();
+   ui->pButton_machine_back->setGeometry(1580,748,300,115);\
+  // ui->ltWidget_log->verticalScrollBar()->setStyleSheet("QScrollBar::indicator{width:35px}");
+  // ui->ltWidget_log->setVerticalScrollBar("QScrollBar{width:35px}");//
+   ui->ltWidget_log->setStyleSheet("QScrollBar::vertical{width:50px}");
 }
 
 LogView::~LogView()
@@ -32,20 +38,20 @@ void LogView::display_data(void)
       //  qDebug()<<"LogView--ii=="<<ii;
        ExGlobal::pLogModel->setCurrLog(ii);
        record=QString::number(ExGlobal::pLogModel->getCurrLodID(),10);
-       record.resize(6,' ');
+       record.resize(10,' ');
       //  qDebug()<<"LogView--getCurrLodID=="<<ExGlobal::pLogModel->getCurrLodID();
        record=record+ExGlobal::pLogModel->getCurrLogType();
-       record.resize(14,' ');
+       record.resize(18,' ');
        // qDebug()<<"LogView--getCurrLogType=="<<ExGlobal::pLogModel->getCurrLogType();
        record=record+ExGlobal::pLogModel->getCurrLogResult();
-        record.resize(22,' ');
+        record.resize(26,' ');
       // qDebug()<<"LogView--getCurrLogResult=="<<ExGlobal::pLogModel->getCurrLogResult();
        record=record+ExGlobal::pLogModel->getCurrValidDateTime();
-       record.resize(42,' ');
+       record.resize(44,' ');
         // qDebug()<<"LogView--getCurrValidDateTime=="<<ExGlobal::pLogModel->getCurrValidDateTime();
 
        record=record+ExGlobal::pLogModel->getCurrLogMsg();
-       record.resize(70,' ');
+       record.resize(78,' ');
        // qDebug()<<"LogView--getCurrLogMsg=="<<ExGlobal::pLogModel->getCurrLogMsg();
          // qDebug()<<"LogView--getCurrValidDateTime=="<<ExGlobal::pLogModel->getCurrValidDateTime();
        ui->ltWidget_log->addItem(record);
@@ -67,20 +73,20 @@ void LogView::refresh_data(void)
       //  qDebug()<<"LogView--ii=="<<ii;
        ExGlobal::pLogModel->setCurrLog(ii);
        record=QString::number(ExGlobal::pLogModel->getCurrLodID(),10);
-       record.resize(6,' ');
+       record.resize(10,' ');
    //     qDebug()<<"LogView--getCurrLodID=="<<ExGlobal::pLogModel->getCurrLodID();
        record=record+ExGlobal::pLogModel->getCurrLogType();
-       record.resize(14,' ');
+       record.resize(18,' ');
      //   qDebug()<<"LogView--getCurrLogType=="<<ExGlobal::pLogModel->getCurrLogType();
        record=record+ExGlobal::pLogModel->getCurrLogResult();
-        record.resize(22,' ');
+        record.resize(26,' ');
      //  qDebug()<<"LogView--getCurrLogResult=="<<ExGlobal::pLogModel->getCurrLogResult();
         record=record+ExGlobal::pLogModel->getCurrValidDateTime();
-        record.resize(42,' ');
+        record.resize(46,' ');
         // qDebug()<<"LogView--getCurrValidDateTime=="<<ExGlobal::pLogModel->getCurrValidDateTime();
 
         record=record+ExGlobal::pLogModel->getCurrLogMsg();
-       record.resize(70,' ');
+       record.resize(74,' ');
        record=record.mid(0,70);
         qDebug()<<"LogView--getCurrLogMsg=="<<ExGlobal::pLogModel->getCurrLogMsg();
           ui->ltWidget_log->addItem(record);
@@ -98,4 +104,9 @@ void LogView::on_cBox_log_selest_currentIndexChanged(int index)
     ExGlobal::pLogModel->refresh(index);
     qDebug()<<"on_comboBox_currentIndexChanged"<<index;
     refresh_data();
+}
+
+void LogView::on_pButton_machine_back_clicked()
+{
+     UIHandler::GoPage(UIHandler::PageId::Page_Setup);
 }

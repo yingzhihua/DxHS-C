@@ -12,6 +12,7 @@ PIDParam::PIDParam(QWidget *parent) :
 {
     ui->setupUi(this);
     show_data();
+     ui->pButton_machine_back->setGeometry(1580,740,300,115);
 }
 
 PIDParam::~PIDParam()

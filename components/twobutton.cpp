@@ -126,7 +126,7 @@ void TwoButton::display_two_bt_noedit(QString title, QString l1,QString b1, QStr
       onebutton->ui->label_twobt_lb2->hide();
       onebutton->ui->pButton_twobt_return->hide();
 
-      onebutton->ui->label_twobt_lb1->setGeometry(220,180,450,60);
+      onebutton->ui->label_twobt_lb1->setGeometry(220,180,550,60);
       onebutton->ui->pButton_twobt_ok->setGeometry(280,334,250,85);
       onebutton->ui->pButton_twobt_ok->setText(tr("返回"));
 
