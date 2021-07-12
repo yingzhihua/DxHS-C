@@ -192,7 +192,8 @@ background: url(:/images/back.png);
     QLabel#Data_View_lbReference {font-size: 40px;color:#898989;}
     QPushButton#Data_View_btRef {font-size: 40px;color:#898989;}
 /* Setup */
-
+    /* CameraSetup */
+    QLabel#Setup_CameraSetup_lbCam {border: 1px solid gray;}
 
 /*
 {

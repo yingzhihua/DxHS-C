@@ -224,8 +224,10 @@ void MainWindow::GoPage(UIHandler::PageId id)
             ui->btSetup->setStyleSheet("QPushButton {font-size:60px;padding-left:30;color:#a7a7a7;background: url(:/images/setuprelease.png);background-repeat:no-repeat}");
             ui->btHome->setStyleSheet("QPushButton {font-size:60px;padding-left:30;color:#ffffff;background: url(:/images/homepress.png);background-repeat:no-repeat}");
             ui->btData->setStyleSheet("QPushButton {font-size:60px;padding-left:30;color:#a7a7a7;background: url(:/images/datarelease.png);background-repeat:no-repeat}");
-            if (Sequence::getPtr()->readStage() == Sequence::StageState::Stage_idle)
-                UIHandler::GoPage(UIHandler::PageId::Page_Main_Idle);
+            if (Sequence::getPtr()->readStage() == Sequence::StageState::Stage_test)
+                UIHandler::GoPage(UIHandler::PageId::Page_Main_Test);
+            else if (Sequence::getPtr()->readStage() == Sequence::StageState::Stage_idle)
+                UIHandler::GoPage(UIHandler::PageId::Page_Main_Idle);            
             else
                 UIHandler::GoPage(UIHandler::PageId::Page_Main_BoxReady);
         }
@@ -543,7 +545,10 @@ void MainWindow::TitleNotify(int titleparam, QString title)
 {
     qDebug()<<"TitleNotify,"<<titleparam<<title;
     if (titleparam == 0)
+    {
         ui->lbTitle->setText(title);
+        ui->Home_Main_lbUnfinish->setGeometry(0,0,0,HEADER_HEIGHT);
+    }
     else if (titleparam == 1)
         ui->lbDate->setVisible(false);
     else if (titleparam == 2)

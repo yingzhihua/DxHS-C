@@ -942,6 +942,7 @@ void Sequence::FinishSequence()
     {
         currSequenceId = SequenceId::Sequence_Test;
         //UIHandler::sendUIMsg("main/2");
+        UIHandler::GoPage(UIHandler::PageId::Page_Main);
     }
 
     lampDo(LampState::Lamp_Light_blue);

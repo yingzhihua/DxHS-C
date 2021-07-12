@@ -355,7 +355,11 @@ void ImageAnalysis::AddImage(void *data, int imageType, QString fileName){
     qDebug()<<"firstcenter"<<firstCenter.x<<","<<firstCenter.y;
     qDebug()<<"addcenter"<<currCenter.x<<currCenter.y;
     pushData(temp,currCenter);
-    imwrite(fileName.toStdString(),temp(Rect(scapx-firstCenter.x+currCenter.x,scapy-firstCenter.y+currCenter.y,scapwidth,scapheight)));
+    int x = scapx-firstCenter.x+currCenter.x;
+    if (x < 0) x = 0;
+    int y = scapy-firstCenter.y+currCenter.y;
+    if (y < 0) y = 0;
+    imwrite(fileName.toStdString(),temp(Rect(x,y,scapwidth,scapheight)));
 }
 
 void ImageAnalysis::SetBlackImage(void *data, int imageType){

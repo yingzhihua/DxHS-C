@@ -83,13 +83,15 @@ void Idle::sequenceFinish(Sequence::SequenceResult result)
         UIHandler::UpdateState(UIHandler::StateId::State_Loading_Close);
     }
     else if(result == Sequence::SequenceResult::Result_CloseBox_ok)
-    {
-        UIHandler::UpdateState(UIHandler::StateId::State_Loading_Close);
+    {        
         if (Sequence::getPtr()->readBoxState())
             Sequence::getPtr()->sequenceDo(Sequence::SequenceId::Sequence_Pierce);
+        else
+            UIHandler::UpdateState(UIHandler::StateId::State_Loading_Close);
     }
     else if(result == Sequence::SequenceResult::Result_Box_Valid)
     {
+        UIHandler::UpdateState(UIHandler::StateId::State_Loading_Close);
         UIHandler::GoPage(UIHandler::PageId::Page_Main_BoxReady);
     }
     else if(result == Sequence::SequenceResult::Result_Box_Invalid)

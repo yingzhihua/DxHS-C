@@ -774,6 +774,23 @@ QByteArray ActionParser::ParamToByte(const QString &action, int value, int param
 
         FormatBytes(0x01,data);
     }
+    else if(action == "LowPower")
+    {
+        data.resize(17);
+
+        data[6] = 0x00;
+        data[7] = 0x31;
+        data[8] = 0x00;
+        data[9] = 0x06;
+
+        data[10] = 0x01;    //保留
+        data[11] = param1&0xFF;
+        data[12] = 0x02;
+        data[13] = param2&0xFF;
+        data[14] = 0x01;    //保留
+        data[15] = 0x01;    //保留
+        FormatBytes(0x01,data);
+    }
     else if(action == "Version")
     {
         data.resize(11);

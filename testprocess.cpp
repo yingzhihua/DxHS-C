@@ -1,7 +1,6 @@
 #include "testprocess.h"
 #include "ui_testprocess.h"
 #include <QPainter>
-#include "module/exglobal.h"
 
 TestProcess::TestProcess(QWidget *parent) :
     QDialog(parent),
@@ -60,7 +59,7 @@ void TestProcess::hideEvent(QHideEvent *event){
 
 void TestProcess::on_Home_TestProcess_btCancelTest_clicked()
 {
-
+    Sequence::getPtr()->sequenceCancel();
 }
 
 void TestProcess::on_ProcessFinish(int total, int finish)
@@ -74,12 +73,19 @@ void TestProcess::on_SequenceFinish(Sequence::SequenceResult result)
     qDebug()<<"testprocess, on_SequenceFinish"<<result;
     if (result == Sequence::SequenceResult::Result_CannelTest_ok){
         UIHandler::GoPage(UIHandler::PageId::Page_Main_Idle);
+        Sequence::getPtr()->setTitle("待机");
     }
     else if (result == Sequence::SequenceResult::Result_Test_HandleData){
         UIHandler::UpdateState(UIHandler::StateId::State_Loading_Open);
     }
     else if (result == Sequence::SequenceResult::Result_Test_finish){
         UIHandler::UpdateState(UIHandler::StateId::State_Loading_Close);
+        UIHandler::GoPage(UIHandler::PageId::Page_Data_View);
+        ExGlobal::getPtr()->setDataEntry(1);
+        Sequence::getPtr()->setStage(Sequence::StageState::Stage_idle);
+    }
+    else{
         UIHandler::GoPage(UIHandler::PageId::Page_Main_Idle);
+        Sequence::getPtr()->setStage(Sequence::StageState::Stage_idle);
     }
 }

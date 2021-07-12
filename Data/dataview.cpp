@@ -40,7 +40,6 @@ void DataView::showEvent(QShowEvent *event){
     Q_UNUSED(event);
     ui->Data_View_lbPanelName->setText(ExGlobal::pTestModel->getCurrTestPanelName()+"   "+ExGlobal::pTestModel->getCurrTestPanelCode());
     ui->Data_View_lbBoxSerial->setText(ExGlobal::pTestModel->getCurrTestSerial());
-    ui->Data_View_btCheck->setText(tr("通过审核"));
     ui->Data_View_lbReference->setText(tr("测试有效"));
     ui->Data_View_btRef->setText(ExGlobal::getPosName(2));
 
@@ -61,6 +60,21 @@ void DataView::showEvent(QShowEvent *event){
         list.append(bt);
     }
     qDebug()<<itemName<<list.size();
+
+    if (ExGlobal::pTestModel->mayCheck()){
+        ui->Data_View_btCheck->setVisible(true);
+        if (ExGlobal::pTestModel->haveCheck())
+        {
+            ui->Data_View_btCheck->setText(tr("撤回审核"));
+            ui->Data_View_btCheck->setStyleSheet("background-image: url(:/images/CancelTest.png);color: #323232");
+        }
+        else{
+            ui->Data_View_btCheck->setText(tr("通过审核"));
+            ui->Data_View_btCheck->setStyleSheet("background-image: url(:/images/confirmbt.png);color: #ffffff");
+        }
+    }
+    else
+        ui->Data_View_btCheck->setVisible(false);
 }
 
 void DataView::hideEvent(QHideEvent *event){
@@ -72,7 +86,14 @@ void DataView::hideEvent(QHideEvent *event){
 
 void DataView::on_Data_View_btCheck_clicked()
 {
-
+    if (ui->Data_View_btCheck->text() == tr("撤回审核"))
+        ExGlobal::pTestModel->uncheckTest();
+    else
+        ExGlobal::pTestModel->checkTest();
+    if (ExGlobal::getPtr()->dataEntry() == 1)
+        UIHandler::GoPage(UIHandler::PageId::Page_Main_Idle);
+    else
+        UIHandler::GoPage(UIHandler::PageId::Page_Data);
 }
 
 void DataView::on_Item_clicked(){
@@ -84,5 +105,8 @@ void DataView::on_Item_clicked(){
 
 void DataView::on_Data_View_btBack_clicked()
 {
-    UIHandler::GoPage(UIHandler::PageId::Page_Data);
+    if (ExGlobal::getPtr()->dataEntry() == 1)
+        UIHandler::GoPage(UIHandler::PageId::Page_Main_Idle);
+    else
+        UIHandler::GoPage(UIHandler::PageId::Page_Data);
 }
