@@ -374,8 +374,7 @@ void MainWindow::GoPage(UIHandler::PageId id)
                   }
 
     else if(id == UIHandler::PageId::Page_Setup_Camera){
-                      if (ui->stackedWidget->currentWidget() != camerasetup){
-                          camerasetup->load_data();
+                      if (ui->stackedWidget->currentWidget() != camerasetup){                          
                           ui->lbDate->setVisible(false);
                           ui->lbUser->setVisible(false);
                           ui->lbTitleIcon->setPixmap(QPixmap::fromImage(QImage(":/images/setupmenu_about.png")));

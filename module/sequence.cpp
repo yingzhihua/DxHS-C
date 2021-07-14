@@ -1381,8 +1381,8 @@ static double autoFocus_FirstClarityValue;
 void Sequence::CameraView(QImage img)
 {
     //imageProvider->img = img;
-    emit callQmlRefeshView();
-
+    //emit callQmlRefeshView();
+    emit callRefeshView(img);
     if (bAutoFocus){
         Log::LogByFile("Focus.txt",QString("CameraView,JumpStep:%1,CurrPoint:%2,ClearValue:%3,ClearPoint:%4").arg(autoFocus_JumpStep).arg(autoFocus_CurrPoint).arg(autoFocus_ClarityValue).arg(autoFocus_ClarityPoint));
         qDebug()<<"JumpStep:"<<autoFocus_JumpStep<<"CurrPoint:"<<autoFocus_CurrPoint<<"ClarityValue:"<<autoFocus_ClarityValue<<"ClarityPoint:"<<autoFocus_ClarityPoint;

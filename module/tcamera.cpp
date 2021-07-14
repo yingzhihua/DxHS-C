@@ -65,6 +65,7 @@ bool TCamera::capture(QString fileName, int nCount){
 }
 
 bool TCamera::preview(int viewType){
+    qDebug()<<"tcamera prview"<<viewType;
     if (cameraType == CAMERA_TYPE_CK)
         return ckCamera->preview(viewType);
     else if(cameraType == CAMERA_TYPE_V4L2)

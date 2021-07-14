@@ -180,6 +180,7 @@ signals:
     void boxStateChanged();
     void errOccur(QString error);
     void callQmlRefeshView();
+    void callRefeshView(QImage img);
     void callQmlRefeshQrImg();
     void refreshLightValue();
     void callQmlRefeshAnaMainImg();

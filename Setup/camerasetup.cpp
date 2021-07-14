@@ -11,8 +11,8 @@ CameraSetup::CameraSetup(QWidget *parent) :
     ui(new Ui::CameraSetup)
 {
     ui->setupUi(this);
-
     ui->Setup_CameraSetup_lbCam->setGeometry(20,20,931,761);
+    ui->Setup_CameraSetup_lbCam->setAlignment(Qt::AlignCenter);
 }
 
 CameraSetup::~CameraSetup()
@@ -20,8 +20,8 @@ CameraSetup::~CameraSetup()
     delete ui;
 }
 
-void CameraSetup::load_data(void)
-{
+void CameraSetup::showEvent(QShowEvent *event){
+    Q_UNUSED(event);
     ui->sBox_time->setValue(Sequence::getPtr()->getAbs());  //曝光时间
     ui->sBox_gain->setValue(Sequence::getPtr()->getGain());  //增益
     ui->sBox_focus->setValue(ExGlobal::getPtr()->getCaliParam("CamFocus")); //焦距
@@ -39,8 +39,16 @@ void CameraSetup::load_data(void)
     ui->lineEdit_w->setText(QString::number(ExGlobal::getPtr()->getCaliParam("FocusWidth")));
     ui->lineEdit_h->setText(QString::number(ExGlobal::getPtr()->getCaliParam("FocusHeight")));
 
+    connect(Sequence::getPtr(),&Sequence::callRefeshView,this,&CameraSetup::CameraView);
+    ui->Setup_CameraSetup_lbCam->setText(tr("预览停止"));
 }
-
+void CameraSetup::hideEvent(QHideEvent *event){
+    Q_UNUSED(event);
+    Sequence::getPtr()->stopView();
+    Sequence::getPtr()->actionDo("Light",1,0,0,0);
+    bView = false;
+    Sequence::getPtr()->disconnect(this);
+}
 
 void CameraSetup::on_pButton_backl_clicked()
 {
@@ -49,17 +57,19 @@ void CameraSetup::on_pButton_backl_clicked()
 
 void CameraSetup::on_pButton_open_view_clicked()
 {
-   // viewText.text = qsTr("图像加载中。。。");
-    bView = true;
+   // viewText.text = qsTr("图像加载中。。。");    
+    ui->Setup_CameraSetup_lbCam->setText(tr("图像加载中。。。"));
     Sequence::getPtr()->startView(ui->cBox_show_box->checkState()?1:0);
+    bView = true;
 }
 
 void CameraSetup::on_pButton_stop_view_clicked()
-{
-    bView = false;
+{    
     Sequence::getPtr()->stopView();
+    bView = false;
     //viewText.text = "";
     //cameraBox.source = "";
+    ui->Setup_CameraSetup_lbCam->setText(tr("预览停止"));
 }
 
 void CameraSetup::on_pButton_open_light_clicked()
@@ -123,4 +133,10 @@ void CameraSetup::on_cBox_show_box_clicked()
         Sequence::getPtr()->setViewType(1);
     else
         Sequence::getPtr()->setViewType(0);
+}
+
+void CameraSetup::CameraView(QImage img)
+{
+    if (bView)
+        ui->Setup_CameraSetup_lbCam->setPixmap(QPixmap::fromImage(img.scaled(ui->Setup_CameraSetup_lbCam->size(),Qt::KeepAspectRatio)));
 }

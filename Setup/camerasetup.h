@@ -13,9 +13,11 @@ class CameraSetup : public QDialog
 
 public:
     explicit CameraSetup(QWidget *parent = nullptr);
-    ~CameraSetup();
-    void load_data(void);
-    bool bView= false;
+    ~CameraSetup();    
+
+protected:
+    void showEvent(QShowEvent *event);
+    void hideEvent(QHideEvent *event);
 
 private slots:
     void on_pButton_backl_clicked();
@@ -44,8 +46,10 @@ private slots:
 
     void on_cBox_show_box_clicked();
 
+    void CameraView(QImage img);
 private:
     Ui::CameraSetup *ui;
+    bool bView= false;
 };
 
 #endif // CAMERASETUP_H
