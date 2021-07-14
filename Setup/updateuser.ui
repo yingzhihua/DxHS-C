@@ -24,9 +24,9 @@
   <widget class="QLabel" name="label_edituser_pwd_2">
    <property name="geometry">
     <rect>
-     <x>404</x>
+     <x>360</x>
      <y>460</y>
-     <width>191</width>
+     <width>221</width>
      <height>41</height>
     </rect>
    </property>
@@ -36,7 +36,7 @@
     </font>
    </property>
    <property name="text">
-    <string>确认密码：</string>
+    <string>确认新密码</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="lEdit_edituser_user">
@@ -72,9 +72,9 @@
   <widget class="QLabel" name="label_edituser_disp_name">
    <property name="geometry">
     <rect>
-     <x>400</x>
-     <y>300</y>
-     <width>191</width>
+     <x>430</x>
+     <y>290</y>
+     <width>131</width>
      <height>41</height>
     </rect>
    </property>
@@ -84,14 +84,14 @@
     </font>
    </property>
    <property name="text">
-    <string>显示名字：</string>
+    <string>显示名</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_edituser_pwd">
    <property name="geometry">
     <rect>
-     <x>484</x>
-     <y>380</y>
+     <x>420</x>
+     <y>360</y>
      <width>121</width>
      <height>41</height>
     </rect>
@@ -102,7 +102,7 @@
     </font>
    </property>
    <property name="text">
-    <string>密码：</string>
+    <string>新密码</string>
    </property>
   </widget>
   <widget class="QCheckBox" name="cBox_edituser_type">
@@ -207,7 +207,7 @@
     </font>
    </property>
    <property name="text">
-    <string>帐号：</string>
+    <string>帐号</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="lEdit_edituser_pwd">
@@ -225,6 +225,34 @@
     </font>
    </property>
   </widget>
+  <widget class="QLabel" name="label_background">
+   <property name="geometry">
+    <rect>
+     <x>340</x>
+     <y>150</y>
+     <width>711</width>
+     <height>471</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-image: url(:/images/loginbk.png);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <zorder>label_background</zorder>
+  <zorder>label_edituser_pwd_2</zorder>
+  <zorder>lEdit_edituser_user</zorder>
+  <zorder>lEdit_edituser_disp_name</zorder>
+  <zorder>label_edituser_disp_name</zorder>
+  <zorder>label_edituser_pwd</zorder>
+  <zorder>cBox_edituser_type</zorder>
+  <zorder>pButton_edituser_ok</zorder>
+  <zorder>pButton_edituser_back</zorder>
+  <zorder>lEdit_edituser_pwd_2</zorder>
+  <zorder>label_edituser_user</zorder>
+  <zorder>lEdit_edituser_pwd</zorder>
  </widget>
  <resources/>
  <connections/>

@@ -354,7 +354,6 @@ void MainWindow::GoPage(UIHandler::PageId id)
 
     else if(id == UIHandler::PageId::Page_Setup_User){
                       if (ui->stackedWidget->currentWidget() != user){
-                          user->load_data();
                           ui->lbDate->setVisible(false);
                           ui->lbUser->setVisible(false);
                           ui->lbTitleIcon->setPixmap(QPixmap::fromImage(QImage(":/images/setupmenu_about.png")));
@@ -493,7 +492,6 @@ void MainWindow::GoPage(UIHandler::PageId id)
                 }
     else if(id == UIHandler::PageId::Page_User_UpdateUser){
                     if (ui->stackedWidget->currentWidget() != updateuser){
-                        updateuser->show_data();
                         ui->lbDate->setVisible(false);
                         ui->lbUser->setVisible(false);
                         ui->lbTitleIcon->setPixmap(QPixmap::fromImage(QImage(":/images/setupmenu_about.png")));

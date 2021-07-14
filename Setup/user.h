@@ -22,6 +22,9 @@ public:
     explicit User(QWidget *parent = nullptr);
     ~User();
     void load_data(void);
+    int currIndex=0;
+
+    void mode_data();
 
 
 private slots:
@@ -41,6 +44,8 @@ private slots:
 
     void deleteUserBack();
 
+
+    void on_pushButton_back_clicked();
 
 private:
     Ui::User *ui;

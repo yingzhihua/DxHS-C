@@ -243,3 +243,9 @@ QStringList UserModel::getLogUser(){
     }
     return userArr;
 }
+
+ int UserModel::getUserNum(void)
+ {
+
+     return m_display_list.size();
+ }
