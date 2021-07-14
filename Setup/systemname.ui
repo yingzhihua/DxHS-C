@@ -16,9 +16,9 @@
   <widget class="QLabel" name="label_hospital">
    <property name="geometry">
     <rect>
-     <x>400</x>
-     <y>180</y>
-     <width>261</width>
+     <x>350</x>
+     <y>190</y>
+     <width>181</width>
      <height>61</height>
     </rect>
    </property>
@@ -28,15 +28,15 @@
     </font>
    </property>
    <property name="text">
-    <string>医院名称：</string>
+    <string>医院名称</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_device">
    <property name="geometry">
     <rect>
-     <x>400</x>
-     <y>290</y>
-     <width>261</width>
+     <x>350</x>
+     <y>280</y>
+     <width>201</width>
      <height>81</height>
     </rect>
    </property>
@@ -46,14 +46,14 @@
     </font>
    </property>
    <property name="text">
-    <string>设备名称：</string>
+    <string>仪器名称</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_print">
    <property name="geometry">
     <rect>
-     <x>450</x>
-     <y>400</y>
+     <x>320</x>
+     <y>360</y>
      <width>231</width>
      <height>101</height>
     </rect>
@@ -64,21 +64,21 @@
     </font>
    </property>
    <property name="text">
-    <string>打印机：</string>
+    <string>打印机设置</string>
    </property>
   </widget>
   <widget class="QComboBox" name="comboBox_print">
    <property name="geometry">
     <rect>
-     <x>650</x>
-     <y>410</y>
+     <x>570</x>
+     <y>390</y>
      <width>451</width>
      <height>61</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <pointsize>30</pointsize>
+     <pointsize>35</pointsize>
     </font>
    </property>
    <property name="styleSheet">
@@ -98,21 +98,31 @@
   <widget class="QLineEdit" name="lineEdit_hospital">
    <property name="geometry">
     <rect>
-     <x>650</x>
-     <y>170</y>
-     <width>521</width>
+     <x>570</x>
+     <y>180</y>
+     <width>441</width>
      <height>61</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>35</pointsize>
+    </font>
    </property>
   </widget>
   <widget class="QLineEdit" name="lineEdit_device">
    <property name="geometry">
     <rect>
-     <x>650</x>
-     <y>290</y>
-     <width>521</width>
+     <x>570</x>
+     <y>280</y>
+     <width>451</width>
      <height>61</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>35</pointsize>
+    </font>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButton">
@@ -164,6 +174,31 @@
     <bool>true</bool>
    </property>
   </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>270</x>
+     <y>130</y>
+     <width>801</width>
+     <height>381</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-image: url(:/images/upasswdbg.png);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <zorder>label</zorder>
+  <zorder>label_hospital</zorder>
+  <zorder>label_device</zorder>
+  <zorder>label_print</zorder>
+  <zorder>comboBox_print</zorder>
+  <zorder>lineEdit_hospital</zorder>
+  <zorder>lineEdit_device</zorder>
+  <zorder>pushButton</zorder>
+  <zorder>pushButton_2</zorder>
  </widget>
  <resources/>
  <connections/>

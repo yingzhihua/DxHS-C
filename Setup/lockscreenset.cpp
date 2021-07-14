@@ -14,12 +14,12 @@ LockScreenSet::LockScreenSet(QWidget *parent) :
     int init_y = (ExGlobal::contentHeight-565)/2+150;
     setGeometry(init_x,init_y,810,565);
 
-    ui->label_switch->setGeometry(500,200,200,60);
-    ui->pushButton_switch->setGeometry(750,200,500,60);
-    ui->label_time->setGeometry(500,300,200,60);
-    ui->comboBox_time->setGeometry(750,300,500,60);
-    ui->pushButton_return->setGeometry(1580,740,300,115);
-
+    ui->label_background->setGeometry(668,290,584,306);
+    ui->label_switch->setGeometry(717,319,257,42);
+    ui->pushButton_switch->setGeometry(1099,312,90,58);
+    ui->label_time->setGeometry(718,470,164,42);
+    ui->comboBox_time->setGeometry(910,456,293,64);
+    ui->pushButton_return->setGeometry(1450,754,299,106);
 
 }
 

@@ -18,14 +18,14 @@ struct SetupMenuItem
 
 const static SetupMenuItem item[] = {
     {":/images/setupmenu_system.png", "系统设置", UIHandler::PageId::Page_Setup_SystemName},
-    {":/images/setupmenu_system.png", "锁屏时间", UIHandler::PageId::Page_Setup_LockScreen},
+    {":/images/setupmenu_lock.png", "锁屏时间", UIHandler::PageId::Page_Setup_LockScreen},
     {":/images/setupmenu_system.png", "背光设置", UIHandler::PageId::Page_Setup_Backlight},
-    {":/images/setupmenu_system.png", "语言", UIHandler::PageId::Page_Setup_Language},
-    {":/images/setupmenu_system.png", "修改密码", UIHandler::PageId::Page_Setup_Password},
-    {":/images/setupmenu_system.png", "无线网络", UIHandler::PageId::Page_Setup_Wifi},
-    {":/images/setupmenu_system.png", "有线网络", UIHandler::PageId::Page_Setup_Network},
-    {":/images/setupmenu_system.png", "时间设置", UIHandler::PageId::Page_Setup_Time},
-    {":/images/setupmenu_system.png", "用户帐号", UIHandler::PageId::Page_Setup_User},
+    {":/images/setupmenu_lauguage.png", "语言", UIHandler::PageId::Page_Setup_Language},
+    {":/images/setupmenu_password.png", "修改密码", UIHandler::PageId::Page_Setup_Password},
+    {":/images/setupmenu_wifi.png", "无线网络", UIHandler::PageId::Page_Setup_Wifi},
+    {":/images/setupmenu_net.png", "有线网络", UIHandler::PageId::Page_Setup_Network},
+    {":/images/setupmenu_time.png", "时间设置", UIHandler::PageId::Page_Setup_Time},
+    {":/images/setupmenu_user.png", "用户帐号", UIHandler::PageId::Page_Setup_User},
     {":/images/setupmenu_system.png", "机械校准", UIHandler::PageId::Page_Setup_Machine},
     {":/images/setupmenu_system.png", "摄像头参数设置", UIHandler::PageId::Page_Setup_Camera},
     {":/images/setupmenu_system.png", "测试设置", UIHandler::PageId::Page_Setup_TestSetup},
@@ -37,7 +37,7 @@ const static SetupMenuItem item[] = {
     {":/images/setupmenu_system.png", "流体参数", UIHandler::PageId::Page_Setup_PumpParam},
     {":/images/setupmenu_system.png", "查看Log信息", UIHandler::PageId::Page_Setup_Log},
     {":/images/setupmenu_system.png", "查看PID参数", UIHandler::PageId::Page_Setup_PID},
-    {":/images/setupmenu_system.png", "关于", UIHandler::PageId::Page_Setup_Version}
+    {":/images/setupmenu_about.png", "关于", UIHandler::PageId::Page_Setup_Version}
 };
 
 SetupMenu::SetupMenu(QWidget *parent) :

@@ -11,28 +11,30 @@ NetWork::NetWork(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    ui->label_background->setGeometry(560,255,799,375);
 
-    ui->label->setGeometry(625,200,200,60);
-    ui->label_2->setGeometry(580,300,200,60);
-    ui->label_3->setGeometry(670,400,200,60);
-    ui->lineEdit_ip1->setGeometry(800,200,100,60);
-    ui->lineEdit_ip2->setGeometry(920,200,100,60);
-    ui->lineEdit_ip3->setGeometry(1040,200,100,60);
-    ui->lineEdit_ip4->setGeometry(1160,200,100,60);
-    ui->lineEdit_mask1->setGeometry(800,300,100,60);
-    ui->lineEdit_mask2->setGeometry(920,300,100,60);
-    ui->lineEdit_mask3->setGeometry(1040,300,100,60);
-    ui->lineEdit_mask4->setGeometry(1160,300,100,60);
+    ui->label->setGeometry(648,359,121,42);
+    ui->label_2->setGeometry(604,433,166,42);
+    ui->label_3->setGeometry(685,507,84,42);
+    ui->lineEdit_ip1->setGeometry(792,351,122,54);
+    ui->lineEdit_ip2->setGeometry(923,351,122,54);
+    ui->lineEdit_ip3->setGeometry(1054,351,122,54);
+    ui->lineEdit_ip4->setGeometry(1185,351,122,54);
+    ui->lineEdit_mask1->setGeometry(792,425,122,54);
+    ui->lineEdit_mask2->setGeometry(923,425,122,54);
+    ui->lineEdit_mask3->setGeometry(1054,425,122,54);
+    ui->lineEdit_mask4->setGeometry(1185,425,122,54);
 
-    ui->lineEdit_gate1->setGeometry(800,400,100,60);
-    ui->lineEdit_gate2->setGeometry(920,400,100,60);
-    ui->lineEdit_gate3->setGeometry(1040,400,100,60);
-    ui->lineEdit_gate4->setGeometry(1160,400,100,60);
+    ui->lineEdit_gate1->setGeometry(792,499,122,54);
+    ui->lineEdit_gate2->setGeometry(923,499,122,54);
+    ui->lineEdit_gate3->setGeometry(1054,499,122,54);
+    ui->lineEdit_gate4->setGeometry(1185,499,122,54);
 
     ui->lineEdit_ip4->setFocus();
 
-    ui->pushButton_ok->setGeometry(1180,740,300,115);
-    ui->pushButton_cencel->setGeometry(1580,740,300,115);
+    ui->pushButton_ok->setGeometry(1450,624,299,106);
+    ui->pushButton_cencel->setGeometry(1450,754,299,106);
+
 
 }
 
@@ -44,7 +46,21 @@ NetWork::~NetWork()
 void NetWork::showEvent(QShowEvent *event){
     Q_UNUSED(event);
 
-      connect(ExGlobal::getPtr(),&ExGlobal::netFinish,this,&NetWork::ConnectFinish);
+    QStringList net = ExGlobal::getPtr()->getNetWork();
+    ui->lineEdit_ip1->setText(net[0]);
+    ui->lineEdit_ip2->setText(net[1]);
+    ui->lineEdit_ip3->setText(net[2]);
+    ui->lineEdit_ip4->setText(net[3]);
+    ui->lineEdit_gate1->setText(net[4]);
+    ui->lineEdit_gate2->setText(net[5]);
+    ui->lineEdit_gate3->setText(net[6]);
+    ui->lineEdit_gate4->setText(net[7]);
+    ui->lineEdit_mask1->setText(net[8]);
+    ui->lineEdit_mask2->setText(net[9]);
+    ui->lineEdit_mask3->setText(net[10]);
+    ui->lineEdit_mask4->setText(net[11]);
+
+    connect(ExGlobal::getPtr(),&ExGlobal::netFinish,this,&NetWork::ConnectFinish);
 
 }
 void NetWork::hideEvent(QHideEvent *event){
