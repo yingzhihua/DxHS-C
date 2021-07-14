@@ -11,9 +11,18 @@ TimeSet::TimeSet(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    ui->pushButton_3->setGeometry(1180,740,300,115);
-    ui->pushButton_2->setGeometry(1580,740,300,115);
 
+
+
+    ui->pushButton_3->setGeometry(1450,624,299,106);
+    ui->pushButton_2->setGeometry(1450,754,299,106);
+    ui->calendarWidget->setGeometry(378,147,698,610);
+    ui->label->setGeometry(1200,147,220,45);
+    ui->pushButton->setGeometry(1430,147,90,58);
+    ui->label_2->setGeometry(1200,277,220,45);
+    ui->comboBox->setGeometry(1430,257,400,80);
+    ui->label_3->setGeometry(1200,397,220,45);
+    ui->dTEdit_time->setGeometry(1430,367,450,80);
 }
 
 TimeSet::~TimeSet()

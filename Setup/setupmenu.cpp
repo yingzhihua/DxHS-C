@@ -99,7 +99,7 @@ void SetupMenu::LoadMenu()
         row->setPixmap(QPixmap(":/images/row1.png"));
 
         QLabel *info = new QLabel(w);
-        info->setGeometry(ExGlobal::contentWidth-21-120-350,15,300,80);
+        info->setGeometry(ExGlobal::contentWidth-21-120-350,15,380,80);
         info->setAlignment(Qt::AlignVCenter|Qt::AlignRight);
         info->setText(getItemInfo(item[i].Eid));
         info->setStyleSheet("font-size: 35px;color: #636363");
