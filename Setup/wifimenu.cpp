@@ -19,11 +19,14 @@ WifiMenu::WifiMenu(QWidget *parent) :
     int init_x = (ExGlobal::contentWidth-810)/2;
     int init_y = (ExGlobal::contentHeight-565)/2+150;
     setGeometry(init_x,init_y,810,565);
-    ui->label->setGeometry(780,100,300,60);
-    ui->tableWidget_wifi->setGeometry(480,200,810,900);
-    ui->pButton_brock->setGeometry(1580,400,300,115);
-    ui->pButton_refresh->setGeometry(1580,570,300,115);
-    ui->pButton_return->setGeometry(1580,740,300,115);
+
+    ui->label_background->setGeometry(560,208,799,469);
+    ui->label->setGeometry(792,237,315,42);
+    ui->tableWidget_wifi->setGeometry(561,304,799,373);
+
+    ui->pButton_brock->setGeometry(1450,494,299,106);
+    ui->pButton_refresh->setGeometry(1450,624,299,106);
+    ui->pButton_return->setGeometry(1450,754,299,106);
 }
 
 WifiMenu::~WifiMenu()
@@ -51,38 +54,45 @@ void WifiMenu::wifiShow()
    QTableWidgetItem *item_connect[wifi_count],*item_SSID[wifi_count],*item_signal[wifi_count];
    QStringList str_title={"是否连接","wifi名称","信号强度"};
 
+   qDebug()<<"wifi_count:==="<<wifi_count<<"++++++++wifi_password:";
 
    ui->tableWidget_wifi->clear();
    ui->tableWidget_wifi->setSelectionBehavior(QAbstractItemView::SelectItems);  //行选择
+   //ui->tableWidget_wifi->setStyleSheet("selection-background-color:rgb(255,0,0)");
+      ui->tableWidget_wifi->setStyleSheet("selection-background-color:lightgreen");
+      ui->tableWidget_wifi->setSelectionMode(QAbstractItemView::SingleSelection);
    ui->tableWidget_wifi->setEditTriggers(QAbstractItemView::NoEditTriggers);   //不能编辑
    ui->tableWidget_wifi->horizontalHeader()->setStretchLastSection(true);  //表头自适应
-   ui->tableWidget_wifi->setFrameShape(QFrame::NoFrame); //无边框
-  // ui->tableWidget_wifi->setShowGrid(false); //不显示网格
+  // ui->tableWidget_wifi->setFrameShape(QFrame::NoFrame); //无边框
+  // ui->tableWidget_wifi->setFrameShape(QFrame::Box); //无边框
+  // ui->tableWidget_wifi->setFrameShape(QFrame::WinPanel);
+   ui->tableWidget_wifi->setFrameShape(QFrame::StyledPanel);
+   ui->tableWidget_wifi->setShowGrid(false); //不显示网格
 
    ui->tableWidget_wifi->horizontalHeader()->setFont(font_title);        //QFont("song",40));
    ui->tableWidget_wifi->verticalHeader()->setHidden(true);  //隐藏行标题
    ui->tableWidget_wifi->horizontalHeader()->setHidden(true);
-   ui->tableWidget_wifi->horizontalHeader()->setHighlightSections(false); //表头不高亮
+  // ui->tableWidget_wifi->horizontalHeader()->setHighlightSections(false); //表头不高亮
 
 
-   ui->tableWidget_wifi->setIconSize(QSize(40,40));
+   ui->tableWidget_wifi->setIconSize(QSize(45,45));
    ui->tableWidget_wifi->setRowCount(wifi_count);
    ui->tableWidget_wifi->setColumnCount(3);
 
    ui->tableWidget_wifi->horizontalHeader()->setDefaultSectionSize(50); //设置缺省列宽度
-   ui->tableWidget_wifi->verticalHeader()->setDefaultSectionSize(50); //设置缺省行高度
+   ui->tableWidget_wifi->verticalHeader()->setDefaultSectionSize(70); //设置缺省行高度
   // ui->tableWidget_wifi->horizontalHeaderItem(0)->setFont(font_title);
   // ui->tableWidget_wifi->horizontalHeaderItem(1)->setFont(font_title);
 
    ui->tableWidget_wifi->setColumnWidth(0,100);
-   ui->tableWidget_wifi->setColumnWidth(1,600);
+   ui->tableWidget_wifi->setColumnWidth(1,580);
    ui->tableWidget_wifi->setColumnWidth(2,100);
 
 
    for(int ii=0;ii<wifi_count;ii++)
    {
        ExGlobal::pWifiModel->setCurrIndex(ii);
-       ui->tableWidget_wifi->setRowHeight(ii,70);
+       ui->tableWidget_wifi->setRowHeight(ii,90);
        item_connect[ii]=new QTableWidgetItem();
        item_SSID[ii]=new QTableWidgetItem();
        item_signal[ii]=new QTableWidgetItem();
@@ -91,7 +101,7 @@ void WifiMenu::wifiShow()
 
        item_SSID[ii]->setText(ExGlobal::pWifiModel->getCurSSID());
 
-       if (ExGlobal::pWifiModel->getCurSignal()>90)
+       if (ExGlobal::pWifiModel->getCurSignal()>80)
          item_signal[ii]->setIcon(pixmap_wifi_signal3);
        else if (ExGlobal::pWifiModel->getCurSignal()>60)
          item_signal[ii]->setIcon(pixmap_wifi_signal2);
@@ -106,8 +116,11 @@ void WifiMenu::wifiShow()
    }
 
 
-   ui->tableWidget_wifi->setWindowTitle("可用wifi列表");
+   ui->tableWidget_wifi->setWindowTitle("可用WLAN列表");
    ui->tableWidget_wifi->setHorizontalHeaderLabels(str_title);
+
+   ui->tableWidget_wifi->selectRow(0);
+
 
 }
 
@@ -167,6 +180,7 @@ void WifiMenu::disconnect_wifi()
 
 void WifiMenu::on_tableWidget_wifi_cellClicked(int row, int column)
 {
+
     QAbstractItemModel *model=ui->tableWidget_wifi->model();
     QModelIndex index=model->index(row,1);
     QVariant data=model->data(index);

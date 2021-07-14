@@ -16,16 +16,19 @@ AdminPassword::AdminPassword(QWidget *parent) :
     int init_x = (ExGlobal::contentWidth-810)/2;
     int init_y = (ExGlobal::contentHeight-565)/2+150;
     setGeometry(init_x,init_y,810,565);
-    ui->label_oldpwd->setGeometry(490,200,200,60);
-    ui->lineEdit_oldpwd->setGeometry(700,200,500,60);
-    ui->label_newpwd->setGeometry(490,300,200,60);
-    ui->lineEdit_newpwd->setGeometry(700,300,500,60);
-    ui->label_newpwd_2->setGeometry(450,400,230,60);
-    ui->lineEdit_newpwd_2->setGeometry(700,400,500,60);
-    ui->pushButton_OK->setGeometry(1180,740,300,115);
-    ui->pushButton_Cencel->setGeometry(1580,740,300,115);
 
-}
+    ui->label_background->setGeometry(561,255,798,375);
+
+    ui->label_oldpwd->setGeometry(723,346,123,42);
+    ui->lineEdit_oldpwd->setGeometry(874,333,404,64);
+    ui->label_newpwd->setGeometry(723,433,123,42);
+    ui->lineEdit_newpwd->setGeometry(874,420,404,64);
+    ui->label_newpwd_2->setGeometry(641,520,207,42);
+    ui->lineEdit_newpwd_2->setGeometry(874,507,404,64);
+    ui->pushButton_OK->setGeometry(1450,624,299,106);
+    ui->pushButton_Cencel->setGeometry(1450,754,299,106);
+
+ }
 
 AdminPassword::~AdminPassword()
 {

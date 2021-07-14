@@ -28,7 +28,7 @@
     </font>
    </property>
    <property name="text">
-    <string>IP地址：</string>
+    <string>IP地址</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="lineEdit_ip1">
@@ -44,6 +44,9 @@
     <font>
      <pointsize>30</pointsize>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(245, 245, 245);</string>
    </property>
    <property name="text">
     <string>192</string>
@@ -63,6 +66,9 @@
      <pointsize>30</pointsize>
     </font>
    </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(245, 245, 245);</string>
+   </property>
    <property name="text">
     <string>168</string>
    </property>
@@ -81,6 +87,9 @@
      <pointsize>30</pointsize>
     </font>
    </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(245, 245, 245);</string>
+   </property>
    <property name="text">
     <string/>
    </property>
@@ -98,6 +107,9 @@
     <font>
      <pointsize>30</pointsize>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(245, 245, 245);</string>
    </property>
    <property name="text">
     <string/>
@@ -118,7 +130,7 @@
     </font>
    </property>
    <property name="text">
-    <string>子网掩码：</string>
+    <string>子网掩码</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="lineEdit_mask3">
@@ -134,6 +146,9 @@
     <font>
      <pointsize>30</pointsize>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(245, 245, 245);</string>
    </property>
    <property name="text">
     <string>0</string>
@@ -153,6 +168,9 @@
      <pointsize>30</pointsize>
     </font>
    </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(245, 245, 245);</string>
+   </property>
    <property name="text">
     <string>1</string>
    </property>
@@ -171,6 +189,9 @@
      <pointsize>30</pointsize>
     </font>
    </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(245, 245, 245);</string>
+   </property>
    <property name="text">
     <string>168</string>
    </property>
@@ -188,6 +209,9 @@
     <font>
      <pointsize>30</pointsize>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(245, 245, 245);</string>
    </property>
    <property name="text">
     <string>192</string>
@@ -208,7 +232,7 @@
     </font>
    </property>
    <property name="text">
-    <string>网关：</string>
+    <string>网关</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="lineEdit_gate3">
@@ -224,6 +248,9 @@
     <font>
      <pointsize>30</pointsize>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(245, 245, 245);</string>
    </property>
    <property name="text">
     <string>255</string>
@@ -243,6 +270,9 @@
      <pointsize>30</pointsize>
     </font>
    </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(245, 245, 245);</string>
+   </property>
    <property name="text">
     <string>1</string>
    </property>
@@ -261,6 +291,9 @@
      <pointsize>30</pointsize>
     </font>
    </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(245, 245, 245);</string>
+   </property>
    <property name="text">
     <string>255</string>
    </property>
@@ -278,6 +311,9 @@
     <font>
      <pointsize>30</pointsize>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(245, 245, 245);</string>
    </property>
    <property name="text">
     <string>255</string>
@@ -332,6 +368,40 @@
     <bool>true</bool>
    </property>
   </widget>
+  <widget class="QLabel" name="label_background">
+   <property name="geometry">
+    <rect>
+     <x>480</x>
+     <y>540</y>
+     <width>731</width>
+     <height>321</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-image: url(:/images/upasswdbg.png);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <zorder>label_background</zorder>
+  <zorder>label</zorder>
+  <zorder>lineEdit_ip1</zorder>
+  <zorder>lineEdit_ip2</zorder>
+  <zorder>lineEdit_ip3</zorder>
+  <zorder>lineEdit_ip4</zorder>
+  <zorder>label_2</zorder>
+  <zorder>lineEdit_mask3</zorder>
+  <zorder>lineEdit_mask4</zorder>
+  <zorder>lineEdit_mask2</zorder>
+  <zorder>lineEdit_mask1</zorder>
+  <zorder>label_3</zorder>
+  <zorder>lineEdit_gate3</zorder>
+  <zorder>lineEdit_gate4</zorder>
+  <zorder>lineEdit_gate2</zorder>
+  <zorder>lineEdit_gate1</zorder>
+  <zorder>pushButton_ok</zorder>
+  <zorder>pushButton_cencel</zorder>
  </widget>
  <resources/>
  <connections/>
