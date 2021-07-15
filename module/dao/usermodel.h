@@ -50,6 +50,7 @@ public:
     /*Q_INVOKABLE*/   void setCurrIndex(int index){currIndex = index;}
     /*Q_INVOKABLE*/   QStringList getLogUser();
                       int getCurrIndex(){return currIndex;}
+                      int getUserNum(void);
 
 protected:
     QHash<int, QByteArray> roleNames() const;

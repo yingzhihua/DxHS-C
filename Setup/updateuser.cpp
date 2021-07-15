@@ -13,18 +13,21 @@ UpdateUser::UpdateUser(QWidget *parent) :
     ui->setupUi(this);
   //  show_data();
 
-    ui->label_edituser_user->setGeometry(550,150,150,60);
-    ui->lEdit_edituser_user->setGeometry(700,150,400,60);
-    ui->label_edituser_disp_name->setGeometry(460,250,200,60);
-    ui->lEdit_edituser_disp_name->setGeometry(700,250,400,60);
-    ui->label_edituser_pwd->setGeometry(540,350,170,60);
-    ui->lEdit_edituser_pwd->setGeometry(700,350,400,60);
-    ui->label_edituser_pwd_2->setGeometry(460,450,200,60);
-    ui->lEdit_edituser_pwd_2->setGeometry(700,450,400,60);
-    ui->cBox_edituser_type->setGeometry(730,550,250,60);
+    ui->label_background->setGeometry(566,180,811,485);
 
-    ui->pButton_edituser_ok->setGeometry(1180,740,300,115);
-    ui->pButton_edituser_back->setGeometry(1580,740,300,115);
+    ui->label_edituser_user->setGeometry(739,272,80,40);
+    ui->lEdit_edituser_user->setGeometry(848,258,404,64);
+    ui->label_edituser_disp_name->setGeometry(702,353,150,40);
+    ui->lEdit_edituser_disp_name->setGeometry(848,339,404,64);
+    ui->label_edituser_pwd->setGeometry(701,434,128,40);
+    ui->lEdit_edituser_pwd->setGeometry(848,420,404,64);
+    ui->label_edituser_pwd_2->setGeometry(615,514,210,40);
+    ui->lEdit_edituser_pwd_2->setGeometry(848,500,404,64);
+    ui->cBox_edituser_type->setGeometry(850,581,250,40);
+
+    ui->pButton_edituser_ok->setGeometry(1450,624,299,106);
+    ui->pButton_edituser_back->setGeometry(1450,754,299,106);
+
 
 }
 
@@ -34,6 +37,8 @@ void UpdateUser::show_data()
     qDebug()<<"UpdateUser::show_data--getCurName=="<<ExGlobal::pUserModel->getCurName();
     ui->lEdit_edituser_user->setText(ExGlobal::pUserModel->getCurName());
     ui->lEdit_edituser_disp_name->setText(ExGlobal::pUserModel->getCurDisplayName());
+    ui->lEdit_edituser_pwd->setText(ExGlobal::pUserModel->getCurPassword());
+    ui->lEdit_edituser_pwd_2->setText(ExGlobal::pUserModel->getCurPassword());
     if (ExGlobal::pUserModel->getCurUserType()==3)
         ui->cBox_edituser_type->setChecked(true);
     else

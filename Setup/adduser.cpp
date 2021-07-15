@@ -11,29 +11,26 @@ AddUser::AddUser(QWidget *parent) :
     ui->setupUi(this);
     //show_data();
 
-    ui->label_adduser_user->setGeometry(550,150,200,60);
-    ui->lEdit_adduser_user->setGeometry(700,150,400,60);
-    ui->label_adduser_disp_name->setGeometry(460,250,200,60);
-    ui->lEdit_adduser_disp_name->setGeometry(700,250,400,60);
-    ui->label_adduser_pwd->setGeometry(540,350,170,60);
-    ui->lEdit_adduser_pwd->setGeometry(700,350,400,60);
-    ui->label_adduser_pwd_2->setGeometry(460,450,200,60);
-    ui->lEdit_adduser_pwd_2->setGeometry(700,450,400,60);
-    ui->cBox_adduser_type->setGeometry(730,550,250,60);
+    ui->label_background->setGeometry(566,180,811,485);
 
-    ui->pushButton->setGeometry(1180,740,300,115);
-    ui->pushButton_2->setGeometry(1580,740,300,115);
+    ui->label_adduser_user->setGeometry(749,272,80,40);
+    ui->lEdit_adduser_user->setGeometry(848,258,404,64);
+    ui->label_adduser_disp_name->setGeometry(712,353,150,40);
+    ui->lEdit_adduser_disp_name->setGeometry(848,339,404,64);
+    ui->label_adduser_pwd->setGeometry(749,434,80,40);
+    ui->lEdit_adduser_pwd->setGeometry(848,420,404,64);
+    ui->label_adduser_pwd_2->setGeometry(658,514,170,40);
+    ui->lEdit_adduser_pwd_2->setGeometry(848,500,404,64);
+    ui->cBox_adduser_type->setGeometry(850,581,250,40);
+
+
+    ui->pushButton->setGeometry(1450,624,299,106);
+    ui->pushButton_2->setGeometry(1450,754,299,106);
 
 }
 
 void AddUser::show_data()
 {
-    ui->lEdit_adduser_user->setText(ExGlobal::pUserModel->getCurName());
-    ui->lEdit_adduser_disp_name->setText(ExGlobal::pUserModel->getCurDisplayName());
-    if (ExGlobal::pUserModel->getCurUserType()==3)
-        ui->cBox_adduser_type->setChecked(true);
-    else
-        ui->cBox_adduser_type->setChecked(false);
 
 }
 
@@ -48,6 +45,12 @@ void AddUser::showEvent(QShowEvent *event){
 
    ui->cBox_adduser_type->setIconSize(QSize(40,40));
    ui->cBox_adduser_type->setStyleSheet("QCheckBox::indicator{width:35px;height:35px;bord-radius:7px}");
+
+   ui->lEdit_adduser_user->setText("");
+   ui->lEdit_adduser_disp_name->setText("");
+   ui->lEdit_adduser_pwd->setText("");
+   ui->lEdit_adduser_pwd_2->setText("");
+    ui->cBox_adduser_type->setChecked(false);
 
 }
 
@@ -75,7 +78,7 @@ void AddUser::on_pushButton_clicked()
         return;
       }
     ExGlobal::pUserModel->addUser( ui->lEdit_adduser_user->text(),ui->lEdit_adduser_pwd_2->text(),ui->lEdit_adduser_disp_name->text(),ui->cBox_adduser_type->checkState()?3:1);
-     UIHandler::GoPage(UIHandler::PageId::Page_Setup_User);
+    UIHandler::GoPage(UIHandler::PageId::Page_Setup_User);
 }
 
 void AddUser::on_pushButton_2_clicked()
