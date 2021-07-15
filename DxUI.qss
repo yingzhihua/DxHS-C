@@ -57,6 +57,21 @@ background: url(:/images/back.png);
     padding-bottom: 3px;
     }
 /* Home */
+    /* ErrPage */
+    QPushButton#Main_ErrPage_btClose {
+    font-size: 40px;
+    padding-left: 50px;
+    padding-bottom: 4px;
+    background-image: url(:/images/shutdown.png);
+    }
+    QLabel#Main_ErrPage_lbDep {
+    font-size: 45px;
+    color: #4c4c4c
+    }
+    QLabel#Main_ErrPage_lb1 {
+    font-size: 45px;
+    color: #4c4c4c
+    }
     /* Startup */
     QPushButton#Home_Startup_btOpenDoor {
     font-size:45px;

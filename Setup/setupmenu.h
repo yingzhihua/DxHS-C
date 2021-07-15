@@ -15,11 +15,14 @@ class SetupMenu : public QDialog
 public:
     explicit SetupMenu(QWidget *parent = nullptr);
     ~SetupMenu();
-    void Init();
+
+protected:
+    void showEvent(QShowEvent *event);
 
 private:
     Ui::SetupMenu *ui;
-    QStandardItemModel *model;
+    void LoadMenu();
+    QString getItemInfo(QString eid);
 
 private slots:
     void clickItem(QModelIndex index);

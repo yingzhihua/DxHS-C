@@ -86,7 +86,8 @@ SOURCES += \
     Setup/updateuser.cpp \
     Data/dataview.cpp \
     Data/dataline.cpp \
-    components/twobutton.cpp
+    components/twobutton.cpp \
+    errpage.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -154,7 +155,8 @@ HEADERS += \
     Setup/updateuser.h \
     Data/dataview.h \
     Data/dataline.h \
-    components/twobutton.h
+    components/twobutton.h \
+    errpage.h
 
 FORMS += \
         mainwindow.ui \
@@ -191,7 +193,8 @@ FORMS += \
     Setup/updateuser.ui \
     Data/dataview.ui \
     Data/dataline.ui \
-    components/twobutton.ui
+    components/twobutton.ui \
+    errpage.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

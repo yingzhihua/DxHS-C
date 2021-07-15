@@ -24,6 +24,7 @@ Startup::~Startup()
 
 void Startup::showEvent(QShowEvent *event){
     Q_UNUSED(event);
+    qDebug()<<"startup \n\n\n";
     connect(Sequence::getPtr(),&Sequence::sequenceFinish,this,&Startup::sequenceFinish);
     Sequence::getPtr()->actionDo("Query",3,0,0,0);
 }

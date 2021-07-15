@@ -20,6 +20,7 @@ MainWindow::MainWindow(QWidget *parent) :
     sequence = Sequence::getPtr();
     connect(sequence,&Sequence::footerNotify,this,&MainWindow::FooterNotify);
     connect(sequence,&Sequence::titleNotify,this,&MainWindow::TitleNotify);
+    connect(sequence,&Sequence::errOccur,this,&MainWindow::on_err_occur);
     connect(UIHandler::getPtr(),&UIHandler::Go,this,&MainWindow::GoPage);
     connect(UIHandler::getPtr(),&UIHandler::State,this,&MainWindow::StateUpdate);
     connect(QApplication::inputMethod(),&QInputMethod::visibleChanged,this,&MainWindow::on_keyboardRectangleChanged);
@@ -29,6 +30,8 @@ MainWindow::MainWindow(QWidget *parent) :
 
     start = new Startup(this);    
     ui->stackedWidget->addWidget(start);
+    main_errpage = new ErrPage(this);
+    ui->stackedWidget->addWidget(main_errpage);
     main_login = new Login(this);
     ui->stackedWidget->addWidget(main_login);
     main_idle = new Idle(this);
@@ -115,12 +118,10 @@ MainWindow::MainWindow(QWidget *parent) :
     updateuser = new UpdateUser(this);
     ui->stackedWidget->addWidget(updateuser);
 
-
-
     if (ExGlobal::isDebug())
         ui->stackedWidget->setCurrentWidget(main_login);
         //ui->stackedWidget->setCurrentWidget(main_testprocess);
-    else
+    else if(ui->stackedWidget->currentWidget() != main_errpage)
         ui->stackedWidget->setCurrentWidget(start);
     this->startTimer(1000);
 }
@@ -237,8 +238,7 @@ void MainWindow::GoPage(UIHandler::PageId id)
             ui->lbDate->setVisible(false);
             ui->lbUser->setVisible(false);
             ui->lbTitle->setText("设置");
-            ui->lbTitleIcon->setPixmap(QPixmap::fromImage(QImage(":/images/title_setup.png")));
-            setup_menu->Init();
+            ui->lbTitleIcon->setPixmap(QPixmap::fromImage(QImage(":/images/title_setup.png")));            
             ui->stackedWidget->setCurrentWidget(setup_menu);
             ui->btSetup->setStyleSheet("QPushButton {font-size:60px;padding-left:30;color:#ffffff;background: url(:/images/setuppress.png);background-repeat:no-repeat}");
             ui->btHome->setStyleSheet("QPushButton {font-size:60px;padding-left:30;color:#a7a7a7;background: url(:/images/homerelease.png);background-repeat:no-repeat}");
@@ -564,4 +564,18 @@ void MainWindow::on_keyboardRectangleChanged()
     qDebug()<<"on_KEY"<<QApplication::inputMethod()->keyboardRectangle();
     qDebug()<<QApplication::inputMethod()->inputItemRectangle();
     qDebug()<<QApplication::inputMethod()->isWidgetType()<<QApplication::inputMethod()<<QApplication::inputMethod()<<this;
+}
+
+void MainWindow::on_err_occur(QString error)
+{
+    qDebug()<<"on_err_occur\n\n\n";
+    if (ExGlobal::isDebug())
+        return;
+    ui->lbDate->setVisible(false);
+    ui->lbUser->setVisible(false);
+    ui->lbTitleIcon->setPixmap(QPixmap::fromImage(QImage(":/images/title_error.png")));
+    ui->lbTitle->setText("系统错误");
+    main_errpage->setError(error);
+    ui->stackedWidget->setCurrentWidget(main_errpage);
+    FooterNotify(false,false,false);
 }

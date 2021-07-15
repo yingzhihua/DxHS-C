@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "errpage.h"
 #include "startup.h"
 #include "login.h"
 #include "idle.h"
@@ -63,6 +64,7 @@ private:
     TestProcess *main_testprocess;
     SetupMenu *setup_menu;
     SystemName *systemname;
+    ErrPage *main_errpage;
 
     DataMenu *data_menu;
     DataView *data_view;
@@ -105,6 +107,7 @@ private slots:
     void on_btHome_clicked();
     void on_btData_clicked();
     void on_keyboardRectangleChanged();
+    void on_err_occur(QString error);
 };
 
 #endif // MAINWINDOW_H
