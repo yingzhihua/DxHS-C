@@ -1,14 +1,16 @@
 #include "idle.h"
 #include "ui_idle.h"
+#include "components/twobtnmessagebox.h"
 
 Idle::Idle(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Idle)
 {
     ui->setupUi(this);
+    setStyleSheet("background-color:#f5f5f5");
     ui->Home_Idle_btOpenDoor->setGeometry((ExGlobal::contentWidth-219)/2,(ExGlobal::contentHeight-224)/2,219,224);
     ui->Home_Idle_lbBoxState->setGeometry((ExGlobal::contentWidth-400)/2,ui->Home_Idle_btOpenDoor->y()+280,400,60);
-    ui->Home_Idle_lbBoxState->setAlignment(Qt::AlignCenter);
+    ui->Home_Idle_lbBoxState->setAlignment(Qt::AlignHCenter|Qt::AlignTop);
     ui->Home_Idle_lbBoxState->setText(tr("未检测到试剂盒"));
     ui->Home_Idle_btQuit->setGeometry(ExGlobal::contentWidth-299-50,ExGlobal::contentHeight-106-50,299,106);
     ui->Home_Idle_btQuit->setText(tr("关机"));
@@ -96,6 +98,8 @@ void Idle::sequenceFinish(Sequence::SequenceResult result)
     }
     else if(result == Sequence::SequenceResult::Result_Box_Invalid)
     {
+        UIHandler::UpdateState(UIHandler::StateId::State_Loading_Close);
+        //TwoBtnMessageBox::display();
     }
 }
 
