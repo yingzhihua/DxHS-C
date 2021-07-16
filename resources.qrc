@@ -94,5 +94,7 @@
         <file>images/xiala.png</file>
         <file>DxUI.qss</file>
         <file>images/userback.png</file>
+        <file>images/lockcreenOFF2.png</file>
+        <file>images/lockscreenON2.png</file>
     </qresource>
 </RCC>

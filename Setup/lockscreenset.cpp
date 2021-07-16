@@ -28,14 +28,16 @@ void LockScreenSet::showEvent(QShowEvent *event){
 
     if (ExGlobal::getPtr()->lockscreenOpen())
     {
+      ui->pushButton_switch->setStyleSheet("background-image: url(:/images/lockscreenON2.png);");
       //ui->pushButton_switch->setStyleSheet("background-image: url(:/images/lockscreenON.png);background-color:rgba(255,255,255,100);");
-      ui->pushButton_switch->setStyleSheet("background-image: url(:/images/lockscreenON.png);background-color:rgba(209,209,209,100);");
+      //ui->pushButton_switch->setStyleSheet("background-image: url(:/images/lockscreenON.png);background-color:rgba(209,209,209,100);");
       ui->comboBox_time->setCurrentIndex(ExGlobal::getPtr()->lockTime());
       ui->comboBox_time->setEnabled(true);
     }
     else
     {
-      ui->pushButton_switch->setStyleSheet("background-image: url(:/images/lockcreenOFF.png);background-color:rgba(209,209,209,100);");
+      ui->pushButton_switch->setStyleSheet("background-image: url(:/images/lockcreenOFF2.png);");
+    //  ui->pushButton_switch->setStyleSheet("background-image: url(:/images/lockcreenOFF.png);background-color:rgba(209,209,209,100);");
       ui->comboBox_time->setEnabled(false);
     }
 
@@ -64,13 +66,15 @@ void LockScreenSet::on_pushButton_switch_clicked()
     {
          ExGlobal::getPtr()->setLockscreenOpen(false);
          ui->comboBox_time->setEnabled(false);
-         ui->pushButton_switch->setStyleSheet("background-image: url(:/images/lockcreenOFF.png);background-color:rgba(209,209,209,100);");
+         ui->pushButton_switch->setStyleSheet("background-image: url(:/images/lockcreenOFF2.png);");
+       //  ui->pushButton_switch->setStyleSheet("background-image: url(:/images/lockcreenOFF.png);background-color:rgba(209,209,209,100);");
     }
     else
     {
         ExGlobal::getPtr()->setLockscreenOpen(true);
         ui->comboBox_time->setEnabled(true);
-        ui->pushButton_switch->setStyleSheet("background-image: url(:/images/lockscreenON.png);background-color:rgba(209,209,209,100);");
+        ui->pushButton_switch->setStyleSheet("background-image: url(:/images/lockscreenON2.png);");
+   //     ui->pushButton_switch->setStyleSheet("background-image: url(:/images/lockscreenON.png);background-color:rgba(209,209,209,100);");
     }
 }
 
