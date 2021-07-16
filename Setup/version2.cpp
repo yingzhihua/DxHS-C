@@ -27,7 +27,7 @@ Version2::Version2(QWidget *parent) :
     ui->label_4->setGeometry(584,559,780,20);
     ui->label_serail->setGeometry(586,591,300,45);
     ui->label_serail_2->setGeometry(960,596,400,40);
-
+    ui->label_5->setGeometry(584,642,780,20);
     ui->pushButton->setGeometry(1450,754,299,106);
 
 }
