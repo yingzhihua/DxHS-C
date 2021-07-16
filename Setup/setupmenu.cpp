@@ -51,7 +51,7 @@ SetupMenu::SetupMenu(QWidget *parent) :
 
     connect(ui->listWidget,SIGNAL(clicked(QModelIndex)),this,SLOT(clickItem(QModelIndex)));
     ui->listWidget->setGeometry(0,0,ExGlobal::contentWidth,ExGlobal::contentHeight);
-    ui->listWidget->verticalScrollBar()->setStyleSheet("QScrollBar{width:60px;}");
+    //ui->listWidget->verticalScrollBar()->setStyleSheet("QScrollBar{width:60px;}");
     ui->listWidget->setVerticalScrollMode(QListWidget::ScrollMode::ScrollPerPixel);
     QScroller::grabGesture(ui->listWidget,QScroller::LeftMouseButtonGesture);
 }

@@ -150,7 +150,9 @@ void MainWindow::UISetup()
     ui->btData->setStyleSheet("QPushButton {font-size:60px;padding-left:30;color:#a7a7a7;background: url(:/images/datarelease.png)}");
 
     ui->stackedWidget->setGeometry(0,HEADER_HEIGHT,screenwidth,screenheight-HEADER_HEIGHT-FOOTER_HEIGHT);    
-    ui->lbUser->setGeometry(100,HEADER_HEIGHT+30,300,60);
+    ui->lbUser->setGeometry(50,HEADER_HEIGHT+20,300,60);
+    ui->lbDate->setAlignment(Qt::AlignLeft|Qt::AlignTop);
+    ui->lbUser->setStyleSheet("font-size: 50px;color: #1c205b;background: transparent;");
     ui->lbDate->setGeometry(1600,HEADER_HEIGHT+80,300,60);
     ui->lbDate->setStyleSheet("font-size: 30px;color: #b5b5b5;background: transparent;");
     ui->lbDate->setAlignment(Qt::AlignCenter);
@@ -159,9 +161,11 @@ void MainWindow::UISetup()
     ui->lbTime->setAlignment(Qt::AlignCenter);
 
     ui->lbTitleIcon->setGeometry(69,42,66,66);
-    ui->lbTitle->setGeometry(160,50,1000,50);
-    ui->lbMachineName->setGeometry(1300,50,500,50);
-    ui->lbMachineName->setAlignment(Qt::AlignRight);
+    ui->lbTitleIcon->setPixmap(QPixmap::fromImage(QImage(":/images/title_startup.png")));
+    ui->lbTitle->setGeometry(155,0,1300,150);
+    ui->lbTitle->setAlignment(Qt::AlignVCenter|Qt::AlignLeft);
+    ui->lbMachineName->setGeometry(1300,0,500,150);
+    ui->lbMachineName->setAlignment(Qt::AlignRight|Qt::AlignVCenter);
     ui->lbMachineName->setText(ExGlobal::getPtr()->sysName());
     qDebug()<<"sysName"<<ExGlobal::getPtr()->sysName();
 
@@ -194,6 +198,7 @@ void MainWindow::GoPage(UIHandler::PageId id)
     if (id == UIHandler::PageId::Page_Main_Login){
         if (ui->stackedWidget->currentWidget() != main_login){
             ui->lbDate->setVisible(true);
+            ui->lbTime->setVisible(true);
             ui->lbUser->setVisible(true);
             ui->lbTitleIcon->setPixmap(QPixmap::fromImage(QImage(":/images/title_login.png")));
             ui->lbTitle->setText("登录");            
@@ -203,6 +208,7 @@ void MainWindow::GoPage(UIHandler::PageId id)
     else if(id == UIHandler::PageId::Page_Main_Idle){
         if (ui->stackedWidget->currentWidget() != main_idle){
             ui->lbDate->setVisible(true);
+            ui->lbTime->setVisible(true);
             ui->lbUser->setVisible(true);
             ui->lbTitleIcon->setPixmap(QPixmap::fromImage(QImage(":/images/title_idle.png")));
             ui->lbTitle->setText("待机");
@@ -212,6 +218,7 @@ void MainWindow::GoPage(UIHandler::PageId id)
     else if(id == UIHandler::PageId::Page_Main_BoxReady){
         if (ui->stackedWidget->currentWidget() != main_boxready){
             ui->lbDate->setVisible(true);
+            ui->lbTime->setVisible(true);
             ui->lbUser->setVisible(true);
             ui->lbTitleIcon->setPixmap(QPixmap::fromImage(QImage(":/images/title_boxready.png")));
             ui->lbTitle->setText(tr("试剂盒就绪"));
@@ -221,6 +228,7 @@ void MainWindow::GoPage(UIHandler::PageId id)
     else if(id == UIHandler::PageId::Page_Main_Test){
         if (ui->stackedWidget->currentWidget() != main_testprocess){
             ui->lbDate->setVisible(true);
+            ui->lbTime->setVisible(true);
             ui->lbUser->setVisible(true);
             ui->lbTitleIcon->setPixmap(QPixmap::fromImage(QImage(":/images/title_test.png")));
             ui->lbTitle->setText(tr("测试中"));
@@ -243,6 +251,7 @@ void MainWindow::GoPage(UIHandler::PageId id)
     else if(id == UIHandler::PageId::Page_Setup){
         if (ui->stackedWidget->currentWidget() != setup_menu){
             ui->lbDate->setVisible(false);
+            ui->lbTime->setVisible(false);
             ui->lbUser->setVisible(false);
             ui->lbTitle->setText("设置");
             ui->lbTitleIcon->setPixmap(QPixmap::fromImage(QImage(":/images/title_setup.png")));            
@@ -255,6 +264,7 @@ void MainWindow::GoPage(UIHandler::PageId id)
     else if(id == UIHandler::PageId::Page_Data){
         if (ui->stackedWidget->currentWidget() != data_menu){
             ui->lbDate->setVisible(false);
+            ui->lbTime->setVisible(false);
             ui->lbUser->setVisible(false);
             ui->lbTitleIcon->setPixmap(QPixmap::fromImage(QImage(":/images/title_datamenu.png")));
             ui->lbTitle->setText("历史数据");
@@ -267,6 +277,7 @@ void MainWindow::GoPage(UIHandler::PageId id)
     else if(id == UIHandler::PageId::Page_Data_View){
         if (ui->stackedWidget->currentWidget() != data_view){
             ui->lbDate->setVisible(true);
+            ui->lbTime->setVisible(true);
             ui->lbUser->setVisible(true);
             ui->lbTitleIcon->setPixmap(QPixmap::fromImage(QImage(":/images/title_datamenu.png")));
             ui->lbTitle->setText("历史数据");
@@ -276,6 +287,7 @@ void MainWindow::GoPage(UIHandler::PageId id)
     else if(id == UIHandler::PageId::Page_Data_Line){
         if (ui->stackedWidget->currentWidget() != data_line){
             ui->lbDate->setVisible(true);
+            ui->lbTime->setVisible(true);
             ui->lbUser->setVisible(true);
             ui->lbTitleIcon->setPixmap(QPixmap::fromImage(QImage(":/images/title_datamenu.png")));
             ui->lbTitle->setText("历史数据");
@@ -285,6 +297,7 @@ void MainWindow::GoPage(UIHandler::PageId id)
     else if(id == UIHandler::PageId::Page_Setup_SystemName){
         if (ui->stackedWidget->currentWidget() != systemname){
             ui->lbDate->setVisible(false);
+            ui->lbTime->setVisible(false);
             ui->lbUser->setVisible(false);
             ui->lbTitleIcon->setPixmap(QPixmap::fromImage(QImage(":/images/setupmenu_about.png")));
             ui->lbTitle->setText("系统参数");
@@ -295,6 +308,7 @@ void MainWindow::GoPage(UIHandler::PageId id)
     else if(id == UIHandler::PageId::Page_Setup_Backlight){
                 if (ui->stackedWidget->currentWidget() != backlight){
                     ui->lbDate->setVisible(false);
+                    ui->lbTime->setVisible(false);
                     ui->lbUser->setVisible(false);
                     ui->lbTitleIcon->setPixmap(QPixmap::fromImage(QImage(":/images/setupmenu_about.png")));
                     ui->lbTitle->setText("背光设置");
@@ -305,6 +319,7 @@ void MainWindow::GoPage(UIHandler::PageId id)
       else if(id == UIHandler::PageId::Page_Setup_Language){
                         if (ui->stackedWidget->currentWidget() != languageset){
                             ui->lbDate->setVisible(false);
+                            ui->lbTime->setVisible(false);
                             ui->lbUser->setVisible(false);
                             ui->lbTitleIcon->setPixmap(QPixmap::fromImage(QImage(":/images/setupmenu_about.png")));
                             ui->lbTitle->setText("语言设置");
@@ -314,6 +329,7 @@ void MainWindow::GoPage(UIHandler::PageId id)
     else if(id == UIHandler::PageId::Page_Setup_Password){
                       if (ui->stackedWidget->currentWidget() != adminpassword){
                           ui->lbDate->setVisible(false);
+                          ui->lbTime->setVisible(false);
                           ui->lbUser->setVisible(false);
                           ui->lbTitleIcon->setPixmap(QPixmap::fromImage(QImage(":/images/setupmenu_about.png")));
                           ui->lbTitle->setText("修改密码");
@@ -324,6 +340,7 @@ void MainWindow::GoPage(UIHandler::PageId id)
     else if(id == UIHandler::PageId::Page_Setup_LockScreen){
                       if (ui->stackedWidget->currentWidget() != lockscreenset){
                           ui->lbDate->setVisible(false);
+                          ui->lbTime->setVisible(false);
                           ui->lbUser->setVisible(false);
                           ui->lbTitleIcon->setPixmap(QPixmap::fromImage(QImage(":/images/setupmenu_about.png")));
                           ui->lbTitle->setText("锁屏时间");
@@ -333,6 +350,7 @@ void MainWindow::GoPage(UIHandler::PageId id)
     else if(id == UIHandler::PageId::Page_Setup_Wifi){
                       if (ui->stackedWidget->currentWidget() != wifimenu){
                           ui->lbDate->setVisible(false);
+                          ui->lbTime->setVisible(false);
                           ui->lbUser->setVisible(false);
                           ui->lbTitleIcon->setPixmap(QPixmap::fromImage(QImage(":/images/setupmenu_about.png")));
                           ui->lbTitle->setText("wifi设置");
@@ -342,6 +360,7 @@ void MainWindow::GoPage(UIHandler::PageId id)
     else if(id == UIHandler::PageId::Page_Setup_Network){
                       if (ui->stackedWidget->currentWidget() != network){
                           ui->lbDate->setVisible(false);
+                          ui->lbTime->setVisible(false);
                           ui->lbUser->setVisible(false);
                           ui->lbTitleIcon->setPixmap(QPixmap::fromImage(QImage(":/images/setupmenu_about.png")));
                           ui->lbTitle->setText("网络设置");
@@ -352,6 +371,7 @@ void MainWindow::GoPage(UIHandler::PageId id)
     else if(id == UIHandler::PageId::Page_Setup_Time){
                       if (ui->stackedWidget->currentWidget() != timeset){
                           ui->lbDate->setVisible(false);
+                          ui->lbTime->setVisible(false);
                           ui->lbUser->setVisible(false);
                           ui->lbTitleIcon->setPixmap(QPixmap::fromImage(QImage(":/images/setupmenu_about.png")));
                           ui->lbTitle->setText("时间设置");
@@ -362,6 +382,7 @@ void MainWindow::GoPage(UIHandler::PageId id)
     else if(id == UIHandler::PageId::Page_Setup_User){
                       if (ui->stackedWidget->currentWidget() != user){
                           ui->lbDate->setVisible(false);
+                          ui->lbTime->setVisible(false);
                           ui->lbUser->setVisible(false);
                           ui->lbTitleIcon->setPixmap(QPixmap::fromImage(QImage(":/images/setupmenu_about.png")));
                           ui->lbTitle->setText("用户设置");
@@ -372,6 +393,7 @@ void MainWindow::GoPage(UIHandler::PageId id)
     else if(id == UIHandler::PageId::Page_Setup_Machine){
                       if (ui->stackedWidget->currentWidget() != machinecalibration){
                           ui->lbDate->setVisible(false);
+                          ui->lbTime->setVisible(false);
                           ui->lbUser->setVisible(false);
                           ui->lbTitleIcon->setPixmap(QPixmap::fromImage(QImage(":/images/setupmenu_about.png")));
                           ui->lbTitle->setText("机械校准");
@@ -382,6 +404,7 @@ void MainWindow::GoPage(UIHandler::PageId id)
     else if(id == UIHandler::PageId::Page_Setup_Camera){
                       if (ui->stackedWidget->currentWidget() != camerasetup){                          
                           ui->lbDate->setVisible(false);
+                          ui->lbTime->setVisible(false);
                           ui->lbUser->setVisible(false);
                           ui->lbTitleIcon->setPixmap(QPixmap::fromImage(QImage(":/images/setupmenu_about.png")));
                           ui->lbTitle->setText("摄像头参数设置");
@@ -393,6 +416,7 @@ void MainWindow::GoPage(UIHandler::PageId id)
                       if (ui->stackedWidget->currentWidget() != testsetup){
                           testsetup->load_data();
                           ui->lbDate->setVisible(false);
+                          ui->lbTime->setVisible(false);
                           ui->lbUser->setVisible(false);
                           ui->lbTitleIcon->setPixmap(QPixmap::fromImage(QImage(":/images/setupmenu_about.png")));
                           ui->lbTitle->setText("测试设置");
@@ -404,6 +428,7 @@ void MainWindow::GoPage(UIHandler::PageId id)
                      if (ui->stackedWidget->currentWidget() != testloop){
                          testloop->load_data();
                          ui->lbDate->setVisible(false);
+                         ui->lbTime->setVisible(false);
                          ui->lbUser->setVisible(false);
                          ui->lbTitleIcon->setPixmap(QPixmap::fromImage(QImage(":/images/setupmenu_about.png")));
                          ui->lbTitle->setText("循环测试");
@@ -413,6 +438,7 @@ void MainWindow::GoPage(UIHandler::PageId id)
     else if(id == UIHandler::PageId::Page_Setup_SystemParam){
                      if (ui->stackedWidget->currentWidget() != systemparam){
                          ui->lbDate->setVisible(false);
+                         ui->lbTime->setVisible(false);
                          ui->lbUser->setVisible(false);
                          ui->lbTitleIcon->setPixmap(QPixmap::fromImage(QImage(":/images/setupmenu_about.png")));
                          ui->lbTitle->setText("系统参数");
@@ -423,6 +449,7 @@ void MainWindow::GoPage(UIHandler::PageId id)
                      if (ui->stackedWidget->currentWidget() != projectparam){
                          projectparam->load_data();
                          ui->lbDate->setVisible(false);
+                         ui->lbTime->setVisible(false);
                          ui->lbUser->setVisible(false);
                          ui->lbTitleIcon->setPixmap(QPixmap::fromImage(QImage(":/images/setupmenu_about.png")));
                          ui->lbTitle->setText("工程参数");
@@ -433,6 +460,7 @@ void MainWindow::GoPage(UIHandler::PageId id)
     else if(id == UIHandler::PageId::Page_Setup_UsbFile){
                      if (ui->stackedWidget->currentWidget() != usbfile){
                          ui->lbDate->setVisible(false);
+                         ui->lbTime->setVisible(false);
                          ui->lbUser->setVisible(false);
                          ui->lbTitleIcon->setPixmap(QPixmap::fromImage(QImage(":/images/setupmenu_about.png")));
                          ui->lbTitle->setText("数据维护");
@@ -444,6 +472,7 @@ void MainWindow::GoPage(UIHandler::PageId id)
                      if (ui->stackedWidget->currentWidget() != light){
                          light->load_data();
                          ui->lbDate->setVisible(false);
+                         ui->lbTime->setVisible(false);
                          ui->lbUser->setVisible(false);
                          ui->lbTitleIcon->setPixmap(QPixmap::fromImage(QImage(":/images/setupmenu_about.png")));
                          ui->lbTitle->setText("荧光强度");
@@ -454,6 +483,7 @@ void MainWindow::GoPage(UIHandler::PageId id)
     else if(id == UIHandler::PageId::Page_Setup_PumpParam){
                     if (ui->stackedWidget->currentWidget() != pumpparam){
                         ui->lbDate->setVisible(false);
+                        ui->lbTime->setVisible(false);
                         ui->lbUser->setVisible(false);
                         ui->lbTitleIcon->setPixmap(QPixmap::fromImage(QImage(":/images/setupmenu_about.png")));
                         ui->lbTitle->setText("流体参数");
@@ -464,6 +494,7 @@ void MainWindow::GoPage(UIHandler::PageId id)
                     if (ui->stackedWidget->currentWidget() != logview){
                         logview->display_data();
                         ui->lbDate->setVisible(false);
+                        ui->lbTime->setVisible(false);
                         ui->lbUser->setVisible(false);
                         ui->lbTitleIcon->setPixmap(QPixmap::fromImage(QImage(":/images/setupmenu_about.png")));
                         ui->lbTitle->setText("LOG信息");
@@ -473,6 +504,7 @@ void MainWindow::GoPage(UIHandler::PageId id)
     else if(id == UIHandler::PageId::Page_Setup_PID){
                     if (ui->stackedWidget->currentWidget() != pidparam){
                         ui->lbDate->setVisible(false);
+                        ui->lbTime->setVisible(false);
                         ui->lbUser->setVisible(false);
                         ui->lbTitleIcon->setPixmap(QPixmap::fromImage(QImage(":/images/setupmenu_about.png")));
                         ui->lbTitle->setText("PID参数");
@@ -482,6 +514,7 @@ void MainWindow::GoPage(UIHandler::PageId id)
     else if(id == UIHandler::PageId::Page_Setup_Version){
                     if (ui->stackedWidget->currentWidget() != version2){
                         ui->lbDate->setVisible(false);
+                        ui->lbTime->setVisible(false);
                         ui->lbUser->setVisible(false);
                         ui->lbTitleIcon->setPixmap(QPixmap::fromImage(QImage(":/images/setupmenu_about.png")));
                         ui->lbTitle->setText("版本信息");
@@ -491,6 +524,7 @@ void MainWindow::GoPage(UIHandler::PageId id)
   else if(id == UIHandler::PageId::Page_User_AddUser){
                     if (ui->stackedWidget->currentWidget() != adduser){
                         ui->lbDate->setVisible(false);
+                        ui->lbTime->setVisible(false);
                         ui->lbUser->setVisible(false);
                         ui->lbTitleIcon->setPixmap(QPixmap::fromImage(QImage(":/images/setupmenu_about.png")));
                         ui->lbTitle->setText("增加用户");
@@ -500,6 +534,7 @@ void MainWindow::GoPage(UIHandler::PageId id)
     else if(id == UIHandler::PageId::Page_User_UpdateUser){
                     if (ui->stackedWidget->currentWidget() != updateuser){
                         ui->lbDate->setVisible(false);
+                        ui->lbTime->setVisible(false);
                         ui->lbUser->setVisible(false);
                         ui->lbTitleIcon->setPixmap(QPixmap::fromImage(QImage(":/images/setupmenu_about.png")));
                         ui->lbTitle->setText("修改用户");

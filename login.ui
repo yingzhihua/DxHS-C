@@ -101,11 +101,25 @@
     <bool>true</bool>
    </property>
   </widget>
+  <widget class="QLabel" name="Home_Login_lbMessage">
+   <property name="geometry">
+    <rect>
+     <x>1060</x>
+     <y>490</y>
+     <width>67</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
   <zorder>Home_Login_lbBG</zorder>
   <zorder>Home_Login_lePassword</zorder>
   <zorder>Home_Login_btLogin</zorder>
   <zorder>Home_Login_lbLogo</zorder>
   <zorder>Home_Login_cbName</zorder>
+  <zorder>Home_Login_lbMessage</zorder>
  </widget>
  <resources/>
  <connections/>
