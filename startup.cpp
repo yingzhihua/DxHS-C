@@ -4,6 +4,7 @@
 #include "module/exglobal.h"
 #include "module/uihandler.h"
 
+static int timerid = 0;
 Startup::Startup(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Startup)
@@ -31,6 +32,10 @@ void Startup::showEvent(QShowEvent *event){
 
 void Startup::hideEvent(QHideEvent *event){
     Q_UNUSED(event);
+    if (timerid != 0){
+        killTimer(timerid);
+        timerid = 0;
+    }
     Sequence::getPtr()->disconnect(this);
 }
 
@@ -72,6 +77,7 @@ void Startup::sequenceFinish(Sequence::SequenceResult result)
             ui->Home_Startup_lbLogo->setVisible(true);
             ui->Home_Startup_btOpenDoor->setVisible(false);
             Sequence::getPtr()->sequenceDo(Sequence::SequenceId::Sequence_SelfCheck);            
+            timerid = startTimer(500);
         }
     }
 }
@@ -98,5 +104,26 @@ void Startup::on_Home_Startup_btOpenDoor_clicked()
         {
             UIHandler::UpdateState(UIHandler::StateId::State_Loading_Open);
         }
+    }
+}
+
+static int titlechangecount = 0;
+void Startup::timerEvent(QTimerEvent *e)
+{
+    if (e->timerId() == timerid){
+        QString header = tr("系统启动");
+        if (titlechangecount == 1)
+            header += ".";
+        else if (titlechangecount == 2)
+            header += "..";
+        else if (titlechangecount == 3)
+            header += "...";
+        else if (titlechangecount == 4)
+            header += "....";
+        else
+            header += ".....";
+        if (++titlechangecount > 5)
+            titlechangecount = 0;
+        Sequence::getPtr()->changeTitle(header);
     }
 }

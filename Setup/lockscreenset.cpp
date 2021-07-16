@@ -9,16 +9,11 @@ LockScreenSet::LockScreenSet(QWidget *parent) :
 {
     ui->setupUi(this);
 
-
-    int init_x = (ExGlobal::contentWidth-810)/2;
-    int init_y = (ExGlobal::contentHeight-565)/2+150;
-    setGeometry(init_x,init_y,810,565);
-
     ui->label_background->setGeometry(668,290,584,306);
-    ui->label_switch->setGeometry(717,319,257,42);
-    ui->pushButton_switch->setGeometry(1099,312,90,58);
+    ui->label_switch->setGeometry(717,319,257,42);    
+    ui->pushButton_switch->setGeometry(1099,312,90,58);    
     ui->label_time->setGeometry(718,470,164,42);
-    ui->comboBox_time->setGeometry(910,456,293,64);
+    ui->comboBox_time->setGeometry(910,456,293,71);
     ui->pushButton_return->setGeometry(1450,754,299,106);
 
 }
@@ -33,13 +28,14 @@ void LockScreenSet::showEvent(QShowEvent *event){
 
     if (ExGlobal::getPtr()->lockscreenOpen())
     {
-      ui->pushButton_switch->setStyleSheet("background-image: url(:/images/lockscreenON.png);");
+      //ui->pushButton_switch->setStyleSheet("background-image: url(:/images/lockscreenON.png);background-color:rgba(255,255,255,100);");
+      ui->pushButton_switch->setStyleSheet("background-image: url(:/images/lockscreenON.png);background-color:rgba(209,209,209,100);");
       ui->comboBox_time->setCurrentIndex(ExGlobal::getPtr()->lockTime());
       ui->comboBox_time->setEnabled(true);
     }
     else
     {
-      ui->pushButton_switch->setStyleSheet("background-image: url(:/images/lockcreenOFF.png);");
+      ui->pushButton_switch->setStyleSheet("background-image: url(:/images/lockcreenOFF.png);background-color:rgba(209,209,209,100);");
       ui->comboBox_time->setEnabled(false);
     }
 
@@ -68,13 +64,13 @@ void LockScreenSet::on_pushButton_switch_clicked()
     {
          ExGlobal::getPtr()->setLockscreenOpen(false);
          ui->comboBox_time->setEnabled(false);
-         ui->pushButton_switch->setStyleSheet("background-image: url(:/images/lockcreenOFF.png);");
+         ui->pushButton_switch->setStyleSheet("background-image: url(:/images/lockcreenOFF.png);background-color:rgba(209,209,209,100);");
     }
     else
     {
         ExGlobal::getPtr()->setLockscreenOpen(true);
         ui->comboBox_time->setEnabled(true);
-        ui->pushButton_switch->setStyleSheet("background-image: url(:/images/lockscreenON.png);");
+        ui->pushButton_switch->setStyleSheet("background-image: url(:/images/lockscreenON.png);background-color:rgba(209,209,209,100);");
     }
 }
 

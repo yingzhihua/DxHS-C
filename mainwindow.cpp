@@ -149,9 +149,14 @@ void MainWindow::UISetup()
     ui->btData->setGeometry(1440,screenheight-FOOTER_HEIGHT+14,BOTTOM_BUTTON_WIDTH,BOTTOMBUTTON_HEIGHT);;
     ui->btData->setStyleSheet("QPushButton {font-size:60px;padding-left:30;color:#a7a7a7;background: url(:/images/datarelease.png)}");
 
-    ui->stackedWidget->setGeometry(0,HEADER_HEIGHT,screenwidth,screenheight-HEADER_HEIGHT-FOOTER_HEIGHT);
-    ui->lbDate->setGeometry(1540,HEADER_HEIGHT+30,300,60);
+    ui->stackedWidget->setGeometry(0,HEADER_HEIGHT,screenwidth,screenheight-HEADER_HEIGHT-FOOTER_HEIGHT);    
     ui->lbUser->setGeometry(100,HEADER_HEIGHT+30,300,60);
+    ui->lbDate->setGeometry(1600,HEADER_HEIGHT+80,300,60);
+    ui->lbDate->setStyleSheet("font-size: 30px;color: #b5b5b5;background: transparent;");
+    ui->lbDate->setAlignment(Qt::AlignCenter);
+    ui->lbTime->setGeometry(1600,HEADER_HEIGHT+30,300,60);
+    ui->lbTime->setStyleSheet("font-size: 60px;color: #b5b5b5;background: transparent;");
+    ui->lbTime->setAlignment(Qt::AlignCenter);
 
     ui->lbTitleIcon->setGeometry(69,42,66,66);
     ui->lbTitle->setGeometry(160,50,1000,50);
@@ -177,7 +182,9 @@ MainWindow::~MainWindow()
 void MainWindow::timerEvent(QTimerEvent *e)
 {
     Q_UNUSED(e);
-    ui->lbDate->setText(QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm:ss"));
+    QDateTime dt = QDateTime::currentDateTime();
+    ui->lbTime->setText(dt.time().toString("hh:mm:ss"));
+    ui->lbDate->setText(dt.date().toString(tr("yyyy年MM月dd日")));
 }
 
 void MainWindow::GoPage(UIHandler::PageId id)

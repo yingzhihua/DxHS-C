@@ -16,6 +16,7 @@ class Startup : public QDialog
 public:
     explicit Startup(QWidget *parent = nullptr);
     ~Startup();
+    virtual void timerEvent(QTimerEvent *e);
 
 private:
     Ui::Startup *ui;

@@ -140,9 +140,7 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-image: url(:/images/lockcreenOFF.png);
-alternate-background-color: rgb(211, 215, 207);
-background-color: rgb(186, 189, 182);</string>
+    <string notr="true"/>
    </property>
    <property name="text">
     <string/>
